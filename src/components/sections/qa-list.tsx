@@ -55,6 +55,10 @@ export default function QaList() {
 
   const currentData = filteredData.slice(0, visibleItems);
 
+  if (!isClient) {
+    return null;
+  }
+
   return (
     <section className="container mx-auto px-4 pb-16 md:px-6">
       <div className="sticky top-16 z-40 bg-background/80 py-4 backdrop-blur-sm">
@@ -86,7 +90,6 @@ export default function QaList() {
       </div>
 
       <motion.div layout>
-       {isClient && (
         <Accordion type="single" collapsible className="w-full space-y-4">
           <AnimatePresence>
             {currentData.length > 0 ? (
@@ -130,9 +133,8 @@ export default function QaList() {
             )}
           </AnimatePresence>
         </Accordion>
-        )}
       </motion.div>
-       {isClient && visibleItems < filteredData.length && (
+       {visibleItems < filteredData.length && (
           <div className="mt-8 text-center">
             <Button onClick={loadMore}>Load More</Button>
           </div>
