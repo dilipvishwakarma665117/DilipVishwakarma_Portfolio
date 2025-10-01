@@ -24,7 +24,7 @@ export const heroData = {
 };
 
 export const aboutData = {
-  bio: "I am Dilip Vishwakarma, currently working as a Quality Engineer Analyst at Accenture with 2+ years of experience in Manual and Automation Testing. Skilled in ServiceNow Testing, Selenium with Java, and Automation Frameworks. Passionate about ensuring top-quality software delivery.",
+  bio: "Dilip Vishwakarma is currently working as a Quality Engineer Analyst at Accenture with 2+ years of experience in Manual and Automation Testing. Skilled in ServiceNow Testing, Selenium with Java, and Automation Frameworks. Passionate about ensuring top-quality software delivery.",
   education: {
     degree: "Bachelor of Computer Applications (BCA)",
     university: "Dr. Ram Manohar Lohia Avadh University, Ayodhya",
