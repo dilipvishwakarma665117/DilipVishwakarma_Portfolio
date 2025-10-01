@@ -1,0 +1,104 @@
+import { Award, Github, Linkedin, Mail, Star, TrendingUp, NotebookText, Code } from "lucide-react";
+import { PlaceholderImages } from "./placeholder-images";
+
+export const navLinks = [
+  { name: "About", href: "#about" },
+  { name: "Projects", href: "#projects" },
+  { name: "Achievements", href: "#achievements" },
+  { name: "Contact", href: "#contact" },
+];
+
+export const socialLinks = [
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/dilip-vishwakarma-5452b4193/", icon: Linkedin },
+  { name: "GitHub", href: "https://github.com/Dilipvishwakarma", icon: Github },
+  { name: "Email", href: "mailto:dilipvishwakarmacs@gmail.com", icon: Mail },
+];
+
+export const heroData = {
+  name: "Dilip Vishwakarma",
+  title: "Quality Engineer Analyst | Software Tester",
+  tagline: "Turning Bugs into Quality – 2+ Years of Experience in Manual & Automation Testing.",
+  resumeUrl: "/Dilip_Vishwakarma_Resume.pdf",
+  portraitUrl: PlaceholderImages.find(p => p.id === 'dilip-portrait')?.imageUrl || '',
+};
+
+export const aboutData = {
+  bio: "I am Dilip Vishwakarma, currently working as a Quality Engineer Analyst at Accenture with 2+ years of experience in Manual and Automation Testing. Skilled in ServiceNow Testing, Selenium with Java, and Automation Frameworks. Passionate about ensuring top-quality software delivery.",
+  education: {
+    degree: "Bachelor of Computer Applications (BCA)",
+    university: "Dr. Ram Manohar Lohia Avadh University, Ayodhya",
+    years: "2019 – 2022",
+  },
+  career: [
+    {
+      role: "Quality Engineer Analyst",
+      year: "2024",
+    },
+    {
+      role: "Associate Software Engineer",
+      year: "2022",
+    },
+  ],
+  skills: ["Manual Testing", "Automation Testing", "Selenium with Java", "TestNG", "ServiceNow", "ADO/Jira", "POM Framework", "Agile Methodology"]
+};
+
+export const projectsData = [
+  {
+    title: "Payment Processing App",
+    client: "Bank XYZ",
+    role: "QA Tester",
+    description: "Ensured the quality and reliability of a critical payment processing application, handling millions of transactions daily. Performed end-to-end testing, from UI validation to database verification.",
+    imageUrl: PlaceholderImages.find(p => p.id === 'project-payment-app')?.imageUrl || '',
+    imageHint: "payment app",
+    tags: ["ServiceNow", "Manual Testing", "Agile"],
+  },
+  {
+    title: "Bug Tracking System (Mini JIRA)",
+    role: "Personal Project",
+    description: "Developed a mini bug tracking system inspired by JIRA to understand the lifecycle of bugs and project management workflows. This project enhanced my understanding of the tools I use daily.",
+    imageUrl: PlaceholderImages.find(p => p.id === 'project-bug-tracker')?.imageUrl || '',
+    imageHint: "dashboard chart",
+    tags: ["Project Management", "UI/UX"],
+    githubUrl: "https://github.com/Dilipvishwakarma"
+  },
+  {
+    title: "Automation Test Framework",
+    role: "Personal Project",
+    description: "Built a robust and scalable test automation framework from scratch using Selenium, Java, and TestNG with the Page Object Model (POM) design pattern. The framework is designed for reusability and easy maintenance.",
+    imageUrl: PlaceholderImages.find(p => p.id === 'project-automation-framework')?.imageUrl || '',
+    imageHint: "code editor",
+    tags: ["Selenium", "Java", "TestNG", "POM"],
+    githubUrl: "https://github.com/Dilipvishwakarma"
+  }
+];
+
+export const achievementsData = [
+  {
+    title: "Best People Award",
+    description: "Recognized for outstanding performance and contribution to the project's success.",
+    icon: Award,
+  },
+  {
+    title: "Monthly Award",
+    description: "Awarded for exceptional dedication and consistent high-quality work during the month.",
+    icon: Star,
+  },
+  {
+    title: "Promotion to QEA",
+    description: "Promoted to Quality Engineer Analyst in 2024, acknowledging my expertise and growth.",
+    icon: TrendingUp,
+  },
+  {
+    title: "Selenium Tester Certification",
+    description: "Certified Selenium Automation Tester with Java from Vskills, validating my automation skills.",
+    icon: NotebookText,
+  }
+];
+
+export const contactData = {
+  location: "Noida, Uttar Pradesh, India",
+};
+
+export const footerData = {
+  madeBy: "Dilip Vishwakarma",
+};

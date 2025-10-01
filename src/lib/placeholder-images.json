@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "dilip-portrait",
+      "description": "A professional portrait of Dilip Vishwakarma.",
+      "imageUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTkyNDQ1MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "project-payment-app",
+      "description": "Screenshot of a payment processing application.",
+      "imageUrl": "https://images.unsplash.com/photo-1730817403595-d78d929eb856?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwYXltZW50JTIwYXBwfGVufDB8fHx8MTc1OTI5NTQ1MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "payment app"
+    },
+    {
+      "id": "project-bug-tracker",
+      "description": "Screenshot of a bug tracking system.",
+      "imageUrl": "https://images.unsplash.com/photo-1748439281934-2803c6a3ee36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkYXNoYm9hcmQlMjBjaGFydHxlbnwwfHx8fDE3NTkyMzc3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dashboard chart"
+    },
+    {
+      "id": "project-automation-framework",
+      "description": "Code snippet of a test automation framework.",
+      "imageUrl": "https://images.unsplash.com/photo-1753998943619-b9cd910887e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29kZSUyMGVkaXRvcnxlbnwwfHx8fDE3NTkyNjM0MzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "code editor"
+    }
+  ]
 }
