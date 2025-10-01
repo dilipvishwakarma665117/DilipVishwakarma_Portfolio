@@ -71,13 +71,13 @@ export default function Hero() {
             </div>
           </div>
           <div className="order-1 flex justify-center md:order-2">
-            <div className="relative h-64 w-64 sm:h-80 sm:w-80 lg:h-96 lg:w-96">
+            <div className="relative h-[312px] w-[312px]">
               <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl"></div>
               <Image
                 src={heroData.portraitUrl}
                 alt="Portrait of Dilip Vishwakarma"
-                width={512}
-                height={512}
+                width={312}
+                height={312}
                 priority
                 data-ai-hint="professional portrait"
                 className="relative z-10 aspect-square rounded-full object-cover shadow-lg border-4 border-background"
