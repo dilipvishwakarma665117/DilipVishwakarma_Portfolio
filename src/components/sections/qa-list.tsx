@@ -101,7 +101,9 @@ export default function QaList() {
                 >
                   <AccordionItem value={`item-${item.id}`} className="rounded-lg border-none bg-card/50 glass-morphism">
                     <AccordionTrigger className="p-6 text-left font-sans text-lg hover:no-underline">
-                      <span className="font-bold text-primary mr-2">Q{item.id}.</span> {item.question}
+                      <span className="flex-1 text-left">
+                        <span className="font-bold text-primary mr-2">Q{item.id}.</span> {item.question}
+                      </span>
                     </AccordionTrigger>
                     <AccordionContent className="px-6 pb-6">
                       <div className="prose prose-invert max-w-none text-muted-foreground font-body">
@@ -130,7 +132,7 @@ export default function QaList() {
         </Accordion>
         )}
       </motion.div>
-       {visibleItems < filteredData.length && (
+       {isClient && visibleItems < filteredData.length && (
           <div className="mt-8 text-center">
             <Button onClick={loadMore}>Load More</Button>
           </div>
