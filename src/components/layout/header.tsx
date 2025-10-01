@@ -24,8 +24,9 @@ export default function Header() {
 
   const NavLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
     <Link href={href} passHref>
-      <Button variant="link" className="text-foreground/80 hover:text-foreground hover:no-underline transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
-        {children}
+      <Button variant="link" className="text-foreground/80 hover:text-foreground hover:no-underline transition-colors relative group" onClick={() => setIsMobileMenuOpen(false)}>
+        <span>{children}</span>
+        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
       </Button>
     </Link>
   );
@@ -33,7 +34,7 @@ export default function Header() {
   return (
     <header className={cn(
       "sticky top-0 z-50 w-full transition-all duration-300",
-      isScrolled ? "border-b bg-background/80 backdrop-blur-sm" : "bg-transparent"
+      isScrolled ? "border-b border-white/10 bg-background/80 backdrop-blur-sm" : "bg-transparent"
     )}>
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 font-bold text-lg" aria-label="Home">
@@ -54,7 +55,7 @@ export default function Header() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] glass-morphism">
                <SheetHeader className="mb-8 flex flex-row justify-between items-center">
                  <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                   <Link href="/" className="flex items-center gap-2 font-bold text-lg" onClick={() => setIsMobileMenuOpen(false)}>

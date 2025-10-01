@@ -66,7 +66,7 @@ export default function Contact() {
   }
   
   return (
-    <section id="contact" className="bg-background">
+    <section id="contact" className="bg-transparent">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Get In Touch</h2>
@@ -76,7 +76,7 @@ export default function Contact() {
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
-          <Card>
+          <Card className="glass-morphism">
             <CardHeader>
               <CardTitle>Send a Message</CardTitle>
             </CardHeader>
@@ -147,7 +147,7 @@ export default function Contact() {
           </Card>
 
           <div className="space-y-8">
-            <Card>
+            <Card className="glass-morphism">
                 <CardHeader>
                     <CardTitle>Contact Details</CardTitle>
                 </CardHeader>

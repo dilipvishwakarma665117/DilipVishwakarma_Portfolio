@@ -7,10 +7,11 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="bg-secondary">
+    <section id="achievements" className="bg-transparent">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Achievements & Milestones</h2>
@@ -25,13 +26,20 @@ export default function Achievements() {
               align: "start",
               loop: true,
             }}
+            plugins={[
+              Autoplay({
+                delay: 3000,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true,
+              }),
+            ]}
             className="w-full"
           >
             <CarouselContent>
               {achievementsData.map(({ title, description, icon: Icon }) => (
                 <CarouselItem key={title} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
-                    <Card className="h-full">
+                    <Card className="h-full glass-morphism">
                       <CardContent className="flex flex-col items-center justify-center gap-4 p-6 text-center">
                         <div className="rounded-full bg-accent/10 p-4">
                           <Icon className="h-10 w-10 text-accent" strokeWidth={1.5} />

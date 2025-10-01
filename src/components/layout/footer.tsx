@@ -5,7 +5,7 @@ import { DVLogo } from "../icons";
 
 export default function Footer() {
   return (
-    <footer className="border-t bg-card text-card-foreground">
+    <footer className="border-t border-white/10 bg-transparent text-card-foreground">
       <div className="container mx-auto px-4 py-8 md:px-6">
         <div className="grid gap-8 md:grid-cols-3">
           <div className="flex flex-col gap-2">
@@ -40,7 +40,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
+        <div className="mt-8 border-t border-white/10 pt-8 text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Dilip's Digital Domain. Made with ❤️ by {footerData.madeBy}.</p>
         </div>
       </div>

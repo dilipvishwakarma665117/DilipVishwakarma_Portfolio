@@ -8,7 +8,7 @@ import { Github } from "lucide-react";
 
 export default function Projects() {
   return (
-    <section id="projects" className="bg-background">
+    <section id="projects" className="bg-transparent">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Featured Projects</h2>
@@ -19,7 +19,7 @@ export default function Projects() {
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projectsData.map((project) => (
-            <Card key={project.title} className="flex flex-col overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1">
+            <Card key={project.title} className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 glass-morphism">
               <div className="relative h-48 w-full">
                 <Image
                   src={project.imageUrl}
