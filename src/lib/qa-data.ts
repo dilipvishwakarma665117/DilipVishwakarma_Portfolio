@@ -1,3 +1,4 @@
+
 export type QA = {
   id: number;
   question: string;
@@ -49,8 +50,7 @@ export const qaData: QA[] = [
     id: 7,
     question: 'What is a Bug, Defect, Error, and Failure?',
     answer: 'Error: A mistake made by a programmer. Defect: An error found by a tester before the application goes to production; also called a bug. Bug: An issue found in the software that causes it to behave incorrectly. Failure: When a defect reaches the end-user and causes the system to fail to meet its requirements.',
-    category: 'Manual
-Testing',
+    category: 'Manual Testing',
   },
   {
     id: 8,
@@ -625,3 +625,5 @@ Testing',
     category: 'Coding',
   },
 ];
+
+    
