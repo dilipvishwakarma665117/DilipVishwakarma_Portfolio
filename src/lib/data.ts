@@ -19,7 +19,7 @@ export const heroData = {
   title: "Quality Engineer Analyst | Software Tester",
   tagline: "Turning Bugs into Quality – 2+ Years of Experience in Manual & Automation Testing.",
   resumeUrl: "/Dilip_Vishwakarma_Resume.pdf",
-  portraitUrl: PlaceholderImages.find(p => p.id === 'dilip-portrait')?.imageUrl || '',
+  portraitUrl: "https://raw.githubusercontent.com/dilipvishwakarma665117/studio/e95631bfef998e19a20afc89c1b84e4b7379953b/images/DP1.jpg",
 };
 
 export const aboutData = {
