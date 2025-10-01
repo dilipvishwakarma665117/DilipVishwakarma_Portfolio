@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { qaData, qaCategories } from '@/lib/qa-data';
 import { Input } from '@/components/ui/input';
@@ -27,6 +27,11 @@ export default function QaList() {
   const [category, setCategory] = useState('All');
   const [copiedId, setCopiedId] = useState<number | null>(null);
   const [visibleItems, setVisibleItems] = useState(ITEMS_PER_PAGE);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const filteredData = useMemo(() => {
     return qaData
@@ -81,6 +86,7 @@ export default function QaList() {
       </div>
 
       <motion.div layout>
+       {isClient && (
         <Accordion type="single" collapsible className="w-full space-y-4">
           <AnimatePresence>
             {currentData.length > 0 ? (
@@ -122,6 +128,7 @@ export default function QaList() {
             )}
           </AnimatePresence>
         </Accordion>
+        )}
       </motion.div>
        {visibleItems < filteredData.length && (
           <div className="mt-8 text-center">
