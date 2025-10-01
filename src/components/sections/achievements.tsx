@@ -1,3 +1,5 @@
+"use client";
+
 import { achievementsData } from "@/lib/data";
 import {
   Carousel,
