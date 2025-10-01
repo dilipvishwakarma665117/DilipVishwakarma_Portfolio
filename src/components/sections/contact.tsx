@@ -22,6 +22,7 @@ import { Loader2, LocateIcon, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { smartContactForm } from "@/ai/flows/smart-contact-form";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -66,7 +67,14 @@ export default function Contact() {
   }
   
   return (
-    <section id="contact" className="bg-transparent">
+    <motion.section 
+      id="contact" 
+      className="bg-transparent"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Get In Touch</h2>
@@ -170,6 +178,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

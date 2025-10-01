@@ -10,10 +10,18 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
+import { motion } from "framer-motion";
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="bg-transparent">
+    <motion.section 
+      id="achievements" 
+      className="bg-transparent"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Achievements & Milestones</h2>
@@ -61,6 +69,6 @@ export default function Achievements() {
           </Carousel>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
