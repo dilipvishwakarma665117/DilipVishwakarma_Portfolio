@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "@/lib/data";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { DVLogo } from "@/components/icons";
 import { cn } from "@/lib/utils";
@@ -55,8 +55,8 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="p-4">
-                <div className="mb-8 flex justify-between items-center">
+               <SheetHeader className="mb-8 flex flex-row justify-between items-center">
+                 <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                   <Link href="/" className="flex items-center gap-2 font-bold text-lg" onClick={() => setIsMobileMenuOpen(false)}>
                     <DVLogo className="h-6 w-6 text-primary" />
                     <span>Dilip's Domain</span>
@@ -65,7 +65,8 @@ export default function Header() {
                     <X/>
                     <span className="sr-only">Close menu</span>
                   </Button>
-                </div>
+                </SheetHeader>
+              <div className="p-4">
                 <nav className="flex flex-col items-start gap-4">
                   {navLinks.map((link) => (
                     <NavLink key={link.href} href={link.href}>{link.name}</NavLink>
