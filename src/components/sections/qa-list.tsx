@@ -56,10 +56,6 @@ export default function QaList() {
 
   const currentData = filteredData.slice(0, visibleItems);
 
-  if (!isClient) {
-    return null;
-  }
-
   return (
     <section className="container mx-auto px-4 pb-16 md:px-6">
       <Card className="sticky top-16 z-40 bg-background/80 py-4 backdrop-blur-sm p-4 mb-8">
@@ -90,51 +86,53 @@ export default function QaList() {
         </div>
       </Card>
 
-      <motion.div layout>
-        <Accordion type="single" collapsible className="w-full space-y-4">
-          <AnimatePresence>
-            {currentData.length > 0 ? (
-              currentData.map((item, index) => (
-                <motion.div
-                  key={item.id}
-                  layout
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                >
-                  <AccordionItem value={`item-${item.id}`} className="rounded-lg border-none bg-card/50 glass-morphism">
-                    <AccordionTrigger className="p-6 text-left font-sans text-lg hover:no-underline">
-                      <span className="flex-1 text-left">
-                        <span className="font-bold text-primary mr-2">Q{item.id}.</span> {item.question}
-                      </span>
-                    </AccordionTrigger>
-                    <AccordionContent className="px-6 pb-6">
-                      <div className="prose prose-invert max-w-none text-muted-foreground font-body">
-                        {item.answer}
-                        <div className="mt-4 flex justify-end">
-                          <Button variant="ghost" size="icon" onClick={() => handleCopy(item.answer, item.id)}>
-                            {copiedId === item.id ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
-                            <span className="sr-only">Copy answer</span>
-                          </Button>
+      {isClient && (
+        <motion.div layout>
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            <AnimatePresence>
+              {currentData.length > 0 ? (
+                currentData.map((item, index) => (
+                  <motion.div
+                    key={item.id}
+                    layout
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                  >
+                    <AccordionItem value={`item-${item.id}`} className="rounded-lg border-none bg-card/50 glass-morphism">
+                      <AccordionTrigger className="p-6 text-left font-sans text-lg hover:no-underline">
+                        <span className="flex-1 text-left">
+                          <span className="font-bold text-primary mr-2">Q{item.id}.</span> {item.question}
+                        </span>
+                      </AccordionTrigger>
+                      <AccordionContent className="px-6 pb-6">
+                        <div className="prose prose-invert max-w-none text-muted-foreground font-body">
+                          {item.answer}
+                          <div className="mt-4 flex justify-end">
+                            <Button variant="ghost" size="icon" onClick={() => handleCopy(item.answer, item.id)}>
+                              {copiedId === item.id ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+                              <span className="sr-only">Copy answer</span>
+                            </Button>
+                          </div>
                         </div>
-                      </div>
-                    </AccordionContent>
-                  </AccordionItem>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </motion.div>
+                ))
+              ) : (
+                  <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="text-center text-muted-foreground py-16"
+                  >
+                  <p>No questions found matching your criteria.</p>
                 </motion.div>
-              ))
-            ) : (
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="text-center text-muted-foreground py-16"
-                >
-                <p>No questions found matching your criteria.</p>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </Accordion>
-      </motion.div>
+              )}
+            </AnimatePresence>
+          </Accordion>
+        </motion.div>
+      )}
        {visibleItems < filteredData.length && (
           <div className="mt-8 text-center">
             <Button onClick={loadMore}>Load More</Button>
