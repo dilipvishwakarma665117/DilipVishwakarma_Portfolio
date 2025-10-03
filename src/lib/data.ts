@@ -45,13 +45,12 @@ export const aboutData = {
 
 export const projectsData = [
   {
-    title: "Payment Processing App",
-    client: "Bank XYZ",
+    title: "ServiceNow EAM Project",
     role: "QA Tester",
-    description: "Ensured the quality and reliability of a critical payment processing application, handling millions of transactions daily. Performed end-to-end testing, from UI validation to database verification.",
+    description: "I worked on ServiceNow Enterprise Asset Management (EAM) projects, focusing on ensuring the quality of asset lifecycle processes, workflows, and integrations through Manual and Automation Testing. Using Selenium, Java, TestNG, and automation frameworks, along with hands-on manual testing, I collaborated with teams to identify issues, solve complex testing challenges, and enhance overall system performance.",
     imageUrl: PlaceholderImages.find(p => p.id === 'project-payment-app')?.imageUrl || '',
     imageHint: "payment app",
-    tags: ["ServiceNow", "Manual Testing", "Agile"],
+    tags: ["ServiceNow EAM", "Manual Testing", "Automation", "Selenium", "Java"],
   },
   {
     title: "Bug Tracking System (Mini JIRA)",
