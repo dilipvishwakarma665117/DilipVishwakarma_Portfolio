@@ -10,6 +10,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { Resend } from 'resend';
 
 const SmartContactFormInputSchema = z.object({
   name: z.string().describe('The name of the person submitting the form.'),
@@ -81,8 +82,39 @@ const smartContactFormFlow = ai.defineFlow(
       threatAssessment = await assessThreat({message: input.message});
     }
 
-    // TODO: Implement sending the form data to Gmail (ensure proper environment configuration)
-    // console.log("Sending form data to Gmail:", input);
+    if (process.env.RESEND_API_KEY) {
+        const resend = new Resend(process.env.RESEND_API_KEY);
+        try {
+            await resend.emails.send({
+                from: 'onboarding@resend.dev', // Must be a verified domain on Resend
+                to: 'dileepv9721@gmail.com',
+                subject: `New Message from ${input.name} via Portfolio`,
+                html: `
+                    <p>You have received a new message from your portfolio contact form:</p>
+                    <ul>
+                        <li><strong>Name:</strong> ${input.name}</li>
+                        <li><strong>Email:</strong> ${input.email}</li>
+                    </ul>
+                    <p><strong>Message:</strong></p>
+                    <p>${input.message}</p>
+                    <hr>
+                    <p><strong>AI Assessment:</strong></p>
+                    <ul>
+                        <li><strong>Spam Detected:</strong> ${isSpam}</li>
+                        <li><strong>Threat Level:</strong> ${threatAssessment.threatLevel}</li>
+                        <li><strong>Reason:</strong> ${threatAssessment.reason}</li>
+                    </ul>
+                `,
+            });
+        } catch (error) {
+            console.error("Failed to send email:", error);
+            // Optionally, you could throw an error here to notify the client
+            // For now, we'll just log it and the function will still return successfully
+        }
+    } else {
+        console.warn("RESEND_API_KEY is not set. Skipping email submission.");
+    }
+
 
     return {
       spamDetected: isSpam,
