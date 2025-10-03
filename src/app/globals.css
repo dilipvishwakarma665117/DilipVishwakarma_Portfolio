@@ -5,13 +5,13 @@
 @layer base {
   :root {
     /* Light Theme */
-    --background: 0 0% 100%; /* #FFFFFF */
-    --foreground: 215 14% 28%; /* #374151 */
+    --background: 276 100% 98%; /* #FAF5FF */
+    --foreground: 224 71% 4%; /* #111827 - A dark slate for text */
     --card: 0 0% 100%;
-    --card-foreground: 215 14% 28%;
+    --card-foreground: 224 71% 4%;
     --popover: 0 0% 100%;
-    --popover-foreground: 215 14% 28%;
-    --primary: 158 84% 39%; /* #10B981 */
+    --popover-foreground: 224 71% 4%;
+    --primary: 262 91% 65%; /* #8B5CF6 */
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96%;
     --secondary-foreground: 222 47% 11%;
@@ -23,20 +23,20 @@
     --destructive-foreground: 210 40% 98%;
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 158 84% 39%; /* #10B981 */
+    --ring: 262 91% 65%; /* #8B5CF6 */
     --radius: 0.5rem;
   }
 
   .dark {
     /* Dark Theme */
-    --background: 215 41% 11%; /* #0F172A */
-    --foreground: 210 20% 98%; /* #F8FAFC */
-    --card: 215 41% 11%;
-    --card-foreground: 210 20% 98%;
-    --popover: 215 41% 11%;
-    --popover-foreground: 210 20% 98%;
-    --primary: 188 82% 53%; /* #22D3EE */
-    --primary-foreground: 215 41% 11%;
+    --background: 242 46% 16%; /* #1E1B4B */
+    --foreground: 255 75% 97%; /* #EDE9FE */
+    --card: 242 46% 16%;
+    --card-foreground: 255 75% 97%;
+    --popover: 242 46% 16%;
+    --popover-foreground: 255 75% 97%;
+    --primary: 271 91% 76%; /* #C084FC */
+    --primary-foreground: 242 46% 16%;
     --secondary: 215 28% 17%;
     --secondary-foreground: 210 40% 98%;
     --muted: 215 28% 17%;
@@ -47,7 +47,7 @@
     --destructive-foreground: 210 40% 98%;
     --border: 215 28% 17%;
     --input: 215 28% 17%;
-    --ring: 188 82% 53%; /* #22D3EE */
+    --ring: 271 91% 76%; /* #C084FC */
   }
 }
 
