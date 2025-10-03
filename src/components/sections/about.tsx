@@ -3,7 +3,7 @@
 import { aboutData } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { GraduationCap, Briefcase, UserCircle } from "lucide-react";
+import { GraduationCap, Briefcase, UserCircle, Code } from "lucide-react";
 import { motion } from "framer-motion";
 
 const cardVariants = {
@@ -96,7 +96,8 @@ export default function About() {
             {/* Skills Card */}
             <motion.div variants={cardVariants}>
               <Card className="glass-morphism h-full">
-                <CardHeader>
+                <CardHeader className="flex flex-row items-center gap-4">
+                  <Code className="h-8 w-8 text-primary"/>
                   <CardTitle>Core Skills</CardTitle>
                 </CardHeader>
                 <CardContent>
