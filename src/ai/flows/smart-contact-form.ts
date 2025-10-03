@@ -82,13 +82,14 @@ const smartContactFormFlow = ai.defineFlow(
       threatAssessment = await assessThreat({message: input.message});
     }
 
-    if (process.env.RESEND_API_KEY) {
+    if (process.env.RESEND_API_KEY && process.env.RESEND_FROM_EMAIL) {
         const resend = new Resend(process.env.RESEND_API_KEY);
         try {
             await resend.emails.send({
-                from: 'onboarding@resend.dev', // Must be a verified domain on Resend
+                from: process.env.RESEND_FROM_EMAIL,
                 to: 'dileepv9721@gmail.com',
                 subject: `New Message from ${input.name} via Portfolio`,
+                reply_to: input.email,
                 html: `
                     <p>You have received a new message from your portfolio contact form:</p>
                     <ul>
@@ -108,11 +109,11 @@ const smartContactFormFlow = ai.defineFlow(
             });
         } catch (error) {
             console.error("Failed to send email:", error);
-            // Optionally, you could throw an error here to notify the client
-            // For now, we'll just log it and the function will still return successfully
+            // Re-throw the error to make the client aware of the failure
+            throw new Error("Sorry, there was an issue sending your message. Please try again later.");
         }
     } else {
-        console.warn("RESEND_API_KEY is not set. Skipping email submission.");
+        console.warn("RESEND_API_KEY or RESEND_FROM_EMAIL is not set. Skipping email submission.");
     }
 
 
