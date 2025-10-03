@@ -4,21 +4,21 @@
 
 @layer base {
   :root {
-    /* Light Theme */
-    --background: 220 14% 98%; /* #F9FAFB */
-    --foreground: 222 22% 20%; /* #374151 - for text */
+    /* Light Theme - Soft Gray Neutral */
+    --background: 220 14% 96%; /* #F3F4F6 */
+    --foreground: 222 22% 20%; /* #374151 */
     --card: 0 0% 100%;
     --card-foreground: 222 22% 20%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 22% 20%;
-    --primary: 221 83% 53%; /* #2563EB - for buttons */
+    --primary: 221 83% 53%; /* #2563EB */
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96%;
     --secondary-foreground: 222 47% 11%;
     --muted: 210 40% 96%;
     --muted-foreground: 215 20% 45%;
-    --accent: 210 40% 96%; /* Used for hovers */
-    --accent-foreground: 222 47% 11%;
+    --accent: 221 83% 48%; /* #1D4ED8 - for hovers */
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
     --border: 214 32% 91%;
@@ -28,20 +28,20 @@
   }
 
   .dark {
-    /* Dark Theme */
+    /* Dark Theme - Sleek & Modern */
     --background: 222 47% 11%; /* #111827 */
-    --foreground: 215 20% 86%; /* #D1D5DB - for text */
+    --foreground: 215 20% 86%; /* #D1D5DB */
     --card: 222 47% 11%;
     --card-foreground: 215 20% 86%;
     --popover: 222 47% 11%;
     --popover-foreground: 215 20% 86%;
-    --primary: 217 91% 60%; /* #3B82F6 - for buttons */
+    --primary: 217 91% 60%; /* #3B82F6 */
     --primary-foreground: 210 40% 98%;
     --secondary: 215 28% 17%;
     --secondary-foreground: 210 40% 98%;
     --muted: 215 28% 17%;
     --muted-foreground: 215 20% 65%;
-    --accent: 217 91% 60%; /* Used for hovers, same as primary */
+    --accent: 217 91% 65%; /* Lighter blue for hover */
     --accent-foreground: 210 40% 98%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
