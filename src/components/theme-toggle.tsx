@@ -13,13 +13,6 @@ export function ThemeToggle() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-  // As the default theme is dark and system theme is disabled, we can simplify this
-  // For this particular implementation, we only toggle between dark and a placeholder light theme
-  // but the new theme only supports dark mode, so we will hide this component for now.
-
-  return null;
-
-  /*
   return (
     <Button variant="ghost" size="icon" onClick={toggleTheme}>
       <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -27,5 +20,4 @@ export function ThemeToggle() {
       <span className="sr-only">Toggle theme</span>
     </Button>
   )
-  */
 }
