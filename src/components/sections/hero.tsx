@@ -15,9 +15,12 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { Card } from "../ui/card";
 
 export default function Hero() {
   const handleDownload = () => {
+    // This function creates a temporary link to trigger the download.
+    // The file 'My_Resume.pdf' MUST be in the 'public' folder at the root of your project.
     const link = document.createElement('a');
     link.href = '/My_Resume.pdf';
     link.download = 'Dilip_Vishwakarma_Resume.pdf';
