@@ -20,9 +20,8 @@ import { Card } from "../ui/card";
 export default function Hero() {
   const handleDownload = () => {
     // This function creates a temporary link to trigger the download.
-    // The file 'My_Resume.pdf' MUST be in the 'public' folder at the root of your project.
     const link = document.createElement('a');
-    link.href = '/My_Resume.pdf';
+    link.href = heroData.resumeUrl;
     link.download = 'Dilip_Vishwakarma_Resume.pdf';
     document.body.appendChild(link);
     link.click();
@@ -57,7 +56,7 @@ export default function Hero() {
                   <AlertDialogHeader>
                     <AlertDialogTitle>Confirm Download</AlertDialogTitle>
                     <AlertDialogDescription>
-                      This action will download Dilip Vishwakarma's resume (My_Resume.pdf). Do you want to continue?
+                      This action will download Dilip Vishwakarma's resume. Do you want to continue?
                     </AlertDialogDescription>
                   </AlertDialogHeader>
                   <AlertDialogFooter>
