@@ -47,7 +47,7 @@ export const projectsData = [
   {
     title: "ServiceNow EAM Project",
     role: "QA Tester",
-    description: "I worked on ServiceNow Enterprise Asset Management (EAM) projects, focusing on ensuring the quality of asset lifecycle processes, workflows, and integrations through Manual and Automation Testing. Using Selenium, Java, TestNG, and automation frameworks, along with hands-on manual testing, I collaborated with teams to identify issues, solve complex testing challenges, and enhance overall system performance.",
+    description: "Ensured quality for ServiceNow Enterprise Asset Management (EAM) projects using both manual and automated testing. My work focused on asset lifecycles and integrations, utilizing Selenium and Java to enhance system performance and identify key issues.",
     imageUrl: PlaceholderImages.find(p => p.id === 'project-payment-app')?.imageUrl || '',
     imageHint: "payment app",
     tags: ["ServiceNow EAM", "Manual Testing", "Automation", "Selenium", "Java"],
