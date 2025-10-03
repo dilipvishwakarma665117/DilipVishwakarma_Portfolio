@@ -4,36 +4,38 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222 84% 5%; /* Softer dark blue for text */
-    --card: 0 0% 98%; /* Slightly off-white cards */
-    --card-foreground: 222 84% 5%;
+    /* Light Theme */
+    --background: 210 20% 98%; /* #F9FAFB */
+    --foreground: 215 14% 28%; /* #374151 */
+    --card: 0 0% 100%;
+    --card-foreground: 215 14% 28%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 84% 5%;
-    --primary: 217 91% 60%; /* A more vibrant blue */
+    --popover-foreground: 215 14% 28%;
+    --primary: 224 82% 53%; /* #2563EB */
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96%;
     --secondary-foreground: 222 47% 11%;
     --muted: 210 40% 96%;
     --muted-foreground: 215 20% 45%;
-    --accent: 210 40% 96%; /* A subtle light gray for hovers */
+    --accent: 210 40% 96%;
     --accent-foreground: 222 47% 11%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 217 91% 60%;
+    --ring: 224 82% 53%; /* #2563EB */
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 210 40% 98%;
-    --card: 224 71% 10%;
-    --card-foreground: 210 40% 98%;
-    --popover: 224 71% 4%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217 91% 60%;
+    /* Dark Theme */
+    --background: 220 23% 11%; /* #111827 */
+    --foreground: 215 20% 85%; /* #D1D5DB */
+    --card: 220 23% 11%;
+    --card-foreground: 215 20% 85%;
+    --popover: 220 23% 11%;
+    --popover-foreground: 215 20% 85%;
+    --primary: 217 91% 60%; /* #3B82F6 */
     --primary-foreground: 210 40% 98%;
     --secondary: 215 28% 17%;
     --secondary-foreground: 210 40% 98%;
@@ -45,7 +47,7 @@
     --destructive-foreground: 210 40% 98%;
     --border: 215 28% 17%;
     --input: 215 28% 17%;
-    --ring: 217 91% 60%;
+    --ring: 217 91% 60%; /* #3B82F6 */
   }
 }
 
@@ -58,20 +60,6 @@
   }
   body {
     @apply bg-background text-foreground;
-  }
-
-  /* Light theme gradients */
-  body:not(.dark) {
-    background: radial-gradient(ellipse at top, #e0f2fe, #ffffff),
-                radial-gradient(ellipse at bottom, #d1fae5, #ffffff);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-  }
-  
-  /* Dark theme gradients */
-  .dark body {
-    background: radial-gradient(ellipse at top, #1e3a8a, #040d1c),
-                radial-gradient(ellipse at bottom, #115e59, #040d1c);
   }
 
   section {
@@ -89,7 +77,7 @@
 }
 
 .dark .glass-morphism {
-  background: rgba(17, 24, 39, 0.5);
+  background: rgba(30, 41, 59, 0.5); /* #1e293b with alpha */
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
