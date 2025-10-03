@@ -51,8 +51,8 @@ export default function Achievements() {
                   <div className="p-1">
                     <Card className="h-full glass-morphism">
                       <CardContent className="flex flex-col items-center justify-center gap-4 p-6 text-center">
-                        <div className="rounded-full bg-accent/10 p-4">
-                          <Icon className="h-10 w-10 text-accent" strokeWidth={1.5} />
+                        <div className="rounded-full bg-primary/10 p-4">
+                          <Icon className="h-10 w-10 text-primary" strokeWidth={1.5} />
                         </div>
                         <h3 className="text-xl font-semibold">{title}</h3>
                         <p className="text-sm text-muted-foreground">
