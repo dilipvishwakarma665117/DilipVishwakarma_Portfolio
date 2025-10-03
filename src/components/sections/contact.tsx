@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 import { Button } from "@/components/ui/button";
 import {
@@ -20,7 +21,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { contactData, socialLinks } from "@/lib/data";
 import { Loader2, LocateIcon, CheckCircle } from "lucide-react";
 import Link from "next/link";
-import { smartContactForm } from "@/ai/flows/smart-contact-form";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -47,19 +47,38 @@ export default function Contact() {
 
   async function onSubmit(values: FormValues) {
     setFormState('submitting');
+    
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      toast({
+        variant: "destructive",
+        title: "Configuration Error",
+        description: "Email service is not configured correctly. Please contact the site administrator.",
+      });
+      setFormState('idle');
+      return;
+    }
+
+    const templateParams = {
+        from_name: values.name,
+        from_email: values.email,
+        to_name: 'Dilip Vishwakarma',
+        message: values.message,
+    };
+
     try {
-      const result = await smartContactForm(values);
-      console.log("AI Assessment:", result);
-      
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
       setFormState('success');
       form.reset();
-
-    } catch (error: any) {
-      console.error("Form submission error:", error);
+    } catch (error) {
+      console.error("EmailJS submission error:", error);
       toast({
         variant: "destructive",
         title: "Uh oh! Something went wrong.",
-        description: error.message || "There was a problem with your request. Please try again.",
+        description: "There was a problem sending your message. Please try again later.",
       });
       setFormState('idle');
     }
