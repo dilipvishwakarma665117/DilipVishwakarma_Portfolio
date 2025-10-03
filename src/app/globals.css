@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* Light Theme - Soft Gray Neutral */
+    /* Light Theme - Clean & Professional */
     --background: 220 13% 96%; /* #F3F4F6 */
     --foreground: 215 14% 27%; /* #374151 */
     --card: 0 0% 100%;
@@ -43,7 +43,7 @@
     --secondary-foreground: 210 40% 98%;
     --muted: 215 28% 17%;
     --muted-foreground: 215 20% 65%;
-    --accent: 222 79% 49%; /* #1D4ED8 */
+    --accent: 217 91% 70%; /* #60A5FA - Lighter blue for hover */
     --accent-foreground: 210 40% 98%;
     --destructive: 0 84% 60%; /* #EF4444 */
     --destructive-foreground: 210 40% 98%;
