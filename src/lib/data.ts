@@ -10,7 +10,7 @@ export const navLinks = [
 ];
 
 export const socialLinks = [
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/dilip-vishwakarma-5452b4193/", icon: Linkedin },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/dilip-vishwakarma-b9a290222", icon: Linkedin },
   { name: "GitHub", href: "https://github.com/Dilipvishwakarma", icon: Github },
   { name: "Email", href: "mailto:dileepv9721@gmail.com", icon: Mail },
 ];
