@@ -49,7 +49,7 @@ export const projectsData = [
     role: "QA Tester",
     description: "Ensured quality for ServiceNow Enterprise Asset Management (EAM) projects using both manual and automated testing. My work focused on asset lifecycles and integrations, utilizing Selenium and Java to enhance system performance and identify key issues.",
     imageUrl: PlaceholderImages.find(p => p.id === 'project-payment-app')?.imageUrl || '',
-    imageHint: "payment app",
+    imageHint: "team project",
     tags: ["ServiceNow EAM", "Manual Testing", "Automation", "Selenium", "Java"],
   },
   {
