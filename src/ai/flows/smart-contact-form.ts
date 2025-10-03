@@ -57,7 +57,7 @@ const threatAssessmentPrompt = ai.definePrompt({
   Analyze the following message and determine the threat level (low, medium, or high) and the reason for your assessment.
 
   Message: {{{message}}}
-  \n
+  
   Respond in JSON format.
   `,
 });
@@ -85,7 +85,7 @@ const smartContactFormFlow = ai.defineFlow(
     if (process.env.RESEND_API_KEY && process.env.RESEND_FROM_EMAIL) {
         const resend = new Resend(process.env.RESEND_API_KEY);
         try {
-            await resend.emails.send({
+            const { data, error } = await resend.emails.send({
                 from: process.env.RESEND_FROM_EMAIL,
                 to: 'dileepv9721@gmail.com',
                 subject: `New Message from ${input.name} via Portfolio`,
@@ -107,13 +107,20 @@ const smartContactFormFlow = ai.defineFlow(
                     </ul>
                 `,
             });
-        } catch (error) {
+
+            if (error) {
+              console.error("Resend API Error:", error);
+              throw new Error(`Sorry, there was an issue sending your message. Error: ${error.message}`);
+            }
+
+        } catch (error: any) {
             console.error("Failed to send email:", error);
-            // Re-throw the error to make the client aware of the failure
-            throw new Error("Sorry, there was an issue sending your message. Please try again later.");
+            // Re-throw a more specific error to the client
+            throw new Error(error.message || "Sorry, there was an issue sending your message. Please try again later.");
         }
     } else {
         console.warn("RESEND_API_KEY or RESEND_FROM_EMAIL is not set. Skipping email submission.");
+        throw new Error("Email service is not configured. Please contact the site administrator.");
     }
 
 

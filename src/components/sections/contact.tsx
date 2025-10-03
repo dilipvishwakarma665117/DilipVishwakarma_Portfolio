@@ -51,16 +51,15 @@ export default function Contact() {
       const result = await smartContactForm(values);
       console.log("AI Assessment:", result);
       
-      // Assuming successful submission regardless of threat level, as per requirements
       setFormState('success');
       form.reset();
 
-    } catch (error) {
+    } catch (error: any) {
       console.error("Form submission error:", error);
       toast({
         variant: "destructive",
         title: "Uh oh! Something went wrong.",
-        description: "There was a problem with your request. Please try again.",
+        description: error.message || "There was a problem with your request. Please try again.",
       });
       setFormState('idle');
     }
