@@ -27,7 +27,9 @@ Example for Interview:
   {
     id: 2,
     question: 'Difference between Verification and Validation?',
-    answer: `Verification:
+    answer: `Verification vs Validation:
+
+Verification:
 Ensures that the product is being built correctly according to the specified requirements and design. It is a static process (no code execution).
 Example: Reviewing the Requirement Specification Document (SRS) or design diagrams to ensure they meet the client’s requirements.
 
@@ -78,15 +80,15 @@ Quick Tip for Interview:
     answer: `A Test Case is a documented set of conditions, steps, inputs, and expected results designed to verify a specific functionality or feature of the software. It helps ensure that the application behaves as intended.
 
 Example:
-- Test Case for Login Functionality:
-  - Test Case ID: TC_Login_01
-  - Description: Verify login with valid credentials
-  - Precondition: User is on the login page
-  - Steps:
-    1. Enter valid username
-    2. Enter valid password
-    3. Click on Login button
-  - Expected Result: User should be redirected to the dashboard
+Test Case for Login Functionality:
+- Test Case ID: TC_Login_01
+- Description: Verify login with valid credentials
+- Precondition: User is on the login page
+- Steps:
+  1. Enter valid username
+  2. Enter valid password
+  3. Click on Login button
+- Expected Result: User should be redirected to the dashboard
 
 Quick Tip for Interview:
 “A test case is a detailed step-by-step instruction to check if a feature works as expected.”`,
@@ -95,17 +97,19 @@ Quick Tip for Interview:
   {
     id: 6,
     question: 'Difference between Test Case and Test Scenario?',
-    answer: `Test Scenario:
+    answer: `Test Scenario vs Test Case:
+
+Test Scenario:
 A high-level idea of what to test. It defines what functionality needs to be tested, without going into detailed steps.
 Example: Test Scenario → “Verify Login functionality.”
 
 Test Case:
 A detailed step-by-step document to test a specific scenario. It includes inputs, actions, and expected results.
 Example: Test Case →
-  - Step 1: Enter valid username
-  - Step 2: Enter valid password
-  - Step 3: Click Login button
-  - Expected Result: User is redirected to dashboard
+- Step 1: Enter valid username
+- Step 2: Enter valid password
+- Step 3: Click Login button
+- Expected Result: User is redirected to dashboard
 
 Quick Tip for Interview:
 “Scenario is ‘what to test’, Test Case is ‘how to test’.”`,
@@ -114,7 +118,9 @@ Quick Tip for Interview:
   {
     id: 7,
     question: 'What is a Bug, Defect, Error, and Failure?',
-    answer: `Error:
+    answer: `Bug / Defect / Error / Failure:
+
+Error:
 A mistake made by a developer in the code or logic.
 Example: Using == instead of .equals() in Java to compare strings.
 
@@ -133,7 +139,9 @@ Quick Tip for Interview:
   {
     id: 8,
     question: 'What is Severity and Priority? Explain with an example.',
-    answer: `Severity:
+    answer: `Severity vs Priority:
+
+Severity:
 Refers to the impact of a defect on the system or application. It is usually determined by the tester.
 
 Priority:
@@ -203,7 +211,9 @@ Quick Tip for Interview:
   {
     id: 11,
     question: 'What is Smoke Testing vs Sanity Testing?',
-    answer: `Smoke Testing:
+    answer: `Smoke Testing vs Sanity Testing:
+
+Smoke Testing:
 - Definition: A high-level test to check whether the critical functionalities of a build are working and the build is stable enough for further testing.
 - When: Done on a new build.
 - Example: In an e-commerce app, checking if the app launches, login works, and main pages load.
@@ -220,7 +230,9 @@ Quick Tip for Interview:
   {
     id: 12,
     question: 'Difference between Regression and Retesting?',
-    answer: `Regression Testing:
+    answer: `Regression Testing vs Retesting:
+
+Regression Testing:
 - Definition: Testing to ensure that new changes (enhancements, bug fixes) have not broken existing functionalities.
 - Scope: Covers a broad range of test cases across the application.
 - Example: If a new “Wishlist” feature is added to an e-commerce app, regression ensures login, cart, payment, and other old features still work fine.
@@ -266,7 +278,8 @@ Quick Tip for Interview:
   {
     id: 15,
     question: 'What is UAT (User Acceptance Testing)?',
-    answer: `UAT is the final phase of testing where the end users or clients test the application to verify whether it meets the business requirements and is ready for production.
+    answer: `UAT (User Acceptance Testing):
+- Definition: UAT is the final phase of testing where the end users or clients test the application to verify whether it meets the business requirements and is ready for production.
 - Who performs: Performed by the business users or client representatives, not testers or developers.
 - When: Conducted after system testing and before go-live (deployment).
 - Goal: To confirm the system is acceptable for real-world use.
@@ -279,69 +292,206 @@ Quick Tip for Interview:
     category: 'Manual Testing',
   },
 
-  // 2. Test Design Techniques
+  // 2. Automation Testing Basics (16-25)
   {
     id: 16,
-    question: 'What is Boundary Value Analysis?',
-    answer: 'Boundary Value Analysis (BVA) is a test design technique that focuses on testing the boundary values of an input domain. It includes testing the minimum, maximum, just inside, and just outside the boundaries. This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Test Design',
+    question: 'What is Automation testing?',
+    answer: `Automation Testing:
+Definition: Automation testing is the process of using software tools to execute pre-scripted tests and then compare the actual outcomes with predicted or expected outcomes. It is a method of performing tests automatically, managing test data, and utilizing results to improve software quality.
+
+Goal: To automate repetitive tasks, reduce human error, increase test coverage, and speed up the testing process.
+
+Common Areas for Automation:
+1. Regression Testing: Running tests to ensure new changes haven’t broken existing features.
+2. Data-Driven Testing: Testing with multiple data sets to check functionality across various inputs.
+3. Smoke/Sanity Testing: Quickly checking basic functionality after a new build.
+
+Quick Tip for Interview:
+“Automation testing is the practice of executing tests automatically, which is ideal for repetitive regression testing, saving time and increasing accuracy.”`,
+    category: 'Automation',
   },
   {
     id: 17,
-    question: 'What is Equivalence Partitioning?',
-    answer: 'Equivalence Partitioning is a technique where input data is divided into partitions of equivalent data from which test cases can be derived. It assumes that if one value in a partition works, all other values in that partition will also work. This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Test Design',
+    question: 'Difference between Manual testing and Automation testing?',
+    answer: `Manual Testing in Automation Testing:
+- Manual testing is performed by a human tester who directly interacts with the application. It is suitable for exploratory, usability, and ad-hoc testing.
+- Example: A tester manually navigates through a new website design to assess its user-friendliness and look for visual glitches.
+
+Automation Testing:
+- Automation testing is performed using scripts and tools to execute tests automatically, without direct human intervention. It is ideal for repetitive, regression, and performance tests.
+- Example: Using a Selenium script to test the login functionality with 100 different username/password combinations.
+
+Quick Tip for Interview:
+“Manual testing is done by a human; it’s great for exploratory and usability tests. Automation testing is done by a machine; it’s perfect for repetitive regression tests to save time and effort.”`,
+    category: 'Automation',
   },
   {
     id: 18,
-    question: 'What is Decision Table Testing?',
-    answer: 'Decision Table Testing is a technique used to test complex business logic. It involves creating a table that maps different combinations of input conditions to their corresponding actions or outcomes. This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Test Design',
+    question: 'What are the advantages and disadvantages of Automation testing?',
+    answer: `Advantages of Automation Testing:
+1. Faster Execution: Tests run much faster compared to manual execution.
+2. Reusability: Scripts can be reused for different versions of the software.
+3. Accuracy: Eliminates human error, leading to more reliable results.
+4. Wider Coverage: More test cases can be executed in a shorter amount of time.
+5. Continuous Delivery (CI/CD): Supports CI/CD pipelines by running tests automatically on every code change.
+6. Cost-Effective in the Long Run: Reduces the time and effort required for regression testing.
+
+Disadvantages of Automation Testing:
+1. High Initial Cost: Setting up frameworks, tools, and training requires significant time and resources.
+2. Script Maintenance: Test scripts need regular updates when the application UI or functionality changes.
+3. Skill Requirement: Testers need programming skills to write and maintain automation scripts.
+4. Limited Scope: Not suitable for all testing types, such as usability, look-and-feel, or exploratory testing.
+
+Quick Tip for Interview:
+“Automation is fast, reliable, and great for regression but requires a high initial investment and script maintenance. It can’t replace manual testing for creative or usability checks.”`,
+    category: 'Automation',
   },
   {
     id: 19,
-    question: 'What is State Transition Testing?',
-    answer: 'State Transition Testing is used to test systems that have a finite number of states. It focuses on how the system transitions from one state to another in response to specific events or inputs. This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Test Design',
+    question: 'Which Framework have you worked on?',
+    answer: `Personal Experience (Example answer):
+“I have worked on a Hybrid Test Automation Framework, which combined a Data-Driven approach with the Page Object Model (POM) using Selenium WebDriver with Java and TestNG.”
+
+Features:
+1. Page Object Model (POM): Kept locators and test logic separate for better maintainability.
+2. Data-Driven Testing: Used Apache POI to read test data from Excel sheets.
+3. TestNG: Used for test case management, assertions, and generating reports.
+4. Reporting: Integrated ExtentReports for clear, detailed test execution reports.
+5. Build Management: Used Maven for managing project dependencies and builds.
+
+Example:
+“In this framework, for testing the login functionality with 100 different users, the test data (usernames, passwords) was stored in an Excel file. The script would read each row from the file, perform the login, and log the result in an ExtentReport. POM was used to manage the locators for the login page elements.”
+
+Quick Tip for Interview:
+“I have hands-on experience with a Hybrid framework using Selenium, Java, and TestNG, integrating POM for maintainability, Apache POI for data-driven tests, and ExtentReports for reporting.”`,
+    category: 'Automation',
   },
   {
     id: 20,
-    question: 'What is Use Case Testing?',
-    answer: 'Use Case Testing is a black-box technique that helps testers to identify test scenarios that exercise the entire system on a transaction-by-transaction basis from start to finish. Test cases are derived from the use cases. This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Test Design',
+    question: 'Explain Data-Driven, Keyword-Driven and Hybrid Frameworks.',
+    answer: `Data-Driven Framework:
+- Definition: A framework where the test data is separated from the test scripts. The data is stored in an external source like an Excel sheet, CSV file, or database.
+- Goal: To run the same test case with multiple sets of data.
+- Example: Testing a login page with 100 different user credentials stored in an Excel file.
+
+Keyword-Driven Framework:
+- Definition: A framework where test actions (keywords) are defined in a separate library. The test script is a simple sequence of these keywords, which makes it easy for non-technical users to create tests.
+- Goal: To abstract the test logic and make test creation simpler.
+- Example: Keywords like “login,” “clickButton,” and “verifyText” are defined. A test case would be a simple sequence: login, clickButton, verifyText.
+
+Hybrid Framework:
+- Definition: A combination of two or more frameworks, usually Data-Driven and Keyword-Driven. It leverages the advantages of both models.
+- Goal: To create a flexible, maintainable, and scalable framework.
+- Example: In a hybrid framework, you might use keywords to describe actions, but the data for those actions comes from an external Excel file.
+
+Quick Tip for Interview:
+“Data-driven separates data from scripts. Keyword-driven separates actions from scripts. Hybrid combines the best of both, which is what most modern frameworks are.”`,
+    category: 'Automation',
   },
   {
     id: 21,
-    question: 'Difference between Positive and Negative Testing?',
-    answer: 'Positive Testing is done to check if the system works as expected with valid inputs. Negative Testing is done to check how the system behaves with invalid inputs and unexpected user behavior. This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Test Design',
+    question: 'What is POM (Page Object Model)?',
+    answer: `Definition:
+Page Object Model (POM) is a design pattern used in test automation that creates an Object Repository for the web elements on each page. For each page in the application, a corresponding class is created in the framework to hold its elements and the methods that interact with them.
+
+Goal:
+This approach separates the test logic from the UI locators, which makes the framework more readable, maintainable, and reusable.
+
+Example:
+LoginPage.java (Page Class):
+- WebElements: usernameField, passwordField, loginButton
+- Methods: enterUsername(), enterPassword(), clickLogin()
+
+LoginTest.java (Test Class):
+- Test logic: calls the methods from LoginPage.java to perform the login test.
+
+Quick Tip for Interview:
+“POM is a design pattern that separates UI locators from test code, making scripts cleaner and easier to maintain. You create one class per page to hold its elements and actions.”`,
+    category: 'Automation',
   },
   {
     id: 22,
-    question: 'What is Error Guessing?',
-    answer: 'Error Guessing is an experience-based testing technique where the tester uses their intuition and experience to "guess" where errors might occur in the software and design test cases to expose them. This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Test Design',
+    question: 'Difference between TestNG and JUnit?',
+    answer: `Definition:
+Both TestNG and JUnit are popular testing frameworks for Java used to write and run automated tests. However, TestNG provides more advanced and flexible features compared to JUnit.
+
+Key Differences:
+- Annotations: TestNG has more annotations like @BeforeSuite, @AfterSuite, which are not present in JUnit.
+- Parallel Execution: TestNG has built-in support for running tests in parallel, which is simpler to configure than in JUnit.
+- Test Dependencies: In TestNG, you can define dependencies between test methods (e.g., test B runs only if test A passes).
+- Grouping: TestNG allows you to group test cases (e.g., “Regression,” “Smoke”), which is useful for creating different test suites.
+- Parameterization: Passing parameters to test methods is more straightforward in TestNG using the @Parameters annotation and testng.xml.
+
+Key Points to Remember:
+- Both frameworks use annotations, assertions, and generate test reports.
+- TestNG is often preferred for more complex automation frameworks.
+
+Quick Tip for Interview:
+“Both are Java testing frameworks, but TestNG is more powerful. It offers better support for parallel execution, test dependencies, and grouping, which makes it more suitable for large-scale automation projects.”`,
+    category: 'Automation',
   },
   {
     id: 23,
-    question: 'What is White Box Testing vs Black Box Testing?',
-    answer: 'Black Box Testing is a testing method where the tester does not have knowledge of the internal code structure. White Box Testing is a method where the tester has access to and knowledge of the internal code structure. This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Test Design',
+    question: 'What is Maven and why is it used?',
+    answer: `Definition:
+Maven is a powerful build automation and project management tool. It helps in building and managing any Java-based project, including test automation projects.
+
+Why it's used in Automation:
+1. Dependency Management: It automatically downloads and manages all the project dependencies (libraries like Selenium, TestNG) specified in the pom.xml file.
+2. Standardized Project Structure: Maven enforces a standard folder structure, which makes projects easy to understand.
+3. Build Management: It handles the entire build lifecycle, from compiling the code to running tests and packaging the project.
+4. Integration with CI/CD: Maven projects are easily integrated with CI/CD tools like Jenkins.
+
+Key features:
+- pom.xml: An XML file that contains information about the project and configuration details used by Maven.
+- Dependencies: Libraries required for the project.
+- Plugins: Used to perform specific tasks like compiling code or running tests.
+
+Quick Tip for Interview:
+“Maven is a project management tool that simplifies building Java projects. In automation, its main role is to manage dependencies and standardize the build process, which is essential for any framework.”`,
+    category: 'Automation',
   },
   {
     id: 24,
-    question: 'What is Gray Box Testing?',
-    answer: 'Gray Box Testing is a combination of white-box and black-box testing. The tester has partial knowledge of the internal structure of the application, allowing for better test case design. This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Test Design',
+    question: 'What is Continuous Integration in Automation?',
+    answer: `Definition:
+Continuous Integration (CI) is a DevOps practice where developers frequently merge their code changes into a central repository, after which automated builds and tests are run automatically.
+
+Example:
+1. A developer commits a code change to a Git repository.
+2. A CI server like Jenkins automatically detects the change.
+3. Jenkins triggers a Maven build, which compiles the code and runs the entire suite of automated tests (e.g., your Selenium regression suite).
+4. If the tests pass, the build is considered successful. If they fail, the team is notified immediately.
+
+Benefits:
+- Early Defect Detection: Find and fix bugs quickly.
+- Automated Testing: Reduces manual effort.
+- Improved Code Quality: Ensures every change is tested.
+- Faster Release Cycles: Speeds up the development process.
+
+Quick Tip for Interview:
+“CI is a practice where code changes are automatically built and tested. In our projects, we use tools like Jenkins to run our Selenium regression suite on every code commit, which helps us find bugs early and maintain quality.”`,
+    category: 'Automation',
   },
   {
     id: 25,
-    question: 'What is Ad-hoc Testing?',
-    answer: 'Ad-hoc Testing is an informal, unstructured testing approach without any formal documentation or test design. It is performed randomly and is often called "Monkey Testing" or "Random Testing." This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Test Design',
+    question: 'When do you prefer Manual testing over Automation?',
+    answer: `Manual testing is still essential and is preferred over automation in several scenarios:
+
+Scenarios for Manual Testing:
+1. Exploratory Testing: When you need to explore the application without a predefined script to find unexpected bugs based on creativity and intuition.
+2. Usability Testing: To check how user-friendly and intuitive the application is. This requires human observation and feedback.
+3. Ad-hoc Testing: Random, unstructured testing performed to break the system.
+4. Testing with a Constantly Changing UI: If the application’s UI is frequently changing, automating it would be a waste of effort due to high script maintenance.
+5. Short-Term Projects: For small projects where setting up an automation framework would be too costly and time-consuming.
+6. One-Time Tests: For test cases that are executed only once or very rarely.
+
+Quick Tip for Interview:
+“Manual testing is best for exploratory and usability testing, or for projects with a rapidly changing UI, where human intelligence and observation are more valuable than automated scripts.”`,
+    category: 'Automation',
   },
 
-  // 3. Test Management Tools & Process
+  // 3. Test Management Tools & Process (26-35)
   {
     id: 26,
     question: 'What tools have you used for Test Management?',
@@ -403,69 +553,69 @@ Quick Tip for Interview:
     category: 'Test Management',
   },
 
-  // 4. Automation Testing Basics
+  // 4. Test Design Techniques (was automation)
   {
     id: 36,
-    question: 'What is Automation Testing?',
-    answer: 'Automation Testing is the practice of using software tools to execute pre-scripted tests on an application. It helps in running repetitive tests, improving test accuracy, and speeding up the testing process, especially for regression testing. This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Automation',
+    question: 'What is Boundary Value Analysis?',
+    answer: 'Boundary Value Analysis (BVA) is a test design technique that focuses on testing the boundary values of an input domain. It includes testing the minimum, maximum, just inside, and just outside the boundaries. This is a placeholder for a more detailed answer that you can provide.',
+    category: 'Test Design',
   },
   {
     id: 37,
-    question: 'Difference between Manual Testing and Automation Testing?',
-    answer: 'Manual testing is performed by a human, requires less initial investment but can be slow and prone to errors. Automation testing is performed by a machine, requires higher initial investment in tools and scripts, but is faster, more reliable, and ideal for regression tests. This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Automation',
+    question: 'What is Equivalence Partitioning?',
+    answer: 'Equivalence Partitioning is a technique where input data is divided into partitions of equivalent data from which test cases can be derived. It assumes that if one value in a partition works, all other values in that partition will also work. This is a placeholder for a more detailed answer that you can provide.',
+    category: 'Test Design',
   },
   {
     id: 38,
-    question: 'What are the advantages and disadvantages of Automation Testing?',
-    answer: 'Advantages: Faster execution, reusability of scripts, increased test coverage, reliability. Disadvantages: High initial cost, steep learning curve, script maintenance can be challenging, not suitable for all testing types (e.g., usability). This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Automation',
+    question: 'What is Decision Table Testing?',
+    answer: 'Decision Table Testing is a technique used to test complex business logic. It involves creating a table that maps different combinations of input conditions to their corresponding actions or outcomes. This is a placeholder for a more detailed answer that you can provide.',
+    category: 'Test Design',
   },
   {
     id: 39,
-    question: 'Which framework have you worked on?',
-    answer: 'I have experience working with a Hybrid framework using Selenium with Java and TestNG. This framework incorporated elements of both Data-Driven and Keyword-Driven approaches, along with the Page Object Model (POM) for maintainability. This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Automation',
+    question: 'What is State Transition Testing?',
+    answer: 'State Transition Testing is used to test systems that have a finite number of states. It focuses on how the system transitions from one state to another in response to specific events or inputs. This is a placeholder for a more detailed answer that you can provide.',
+    category: 'Test Design',
   },
   {
     id: 40,
-    question: 'Explain Hybrid, Data-Driven, and Keyword-Driven Frameworks.',
-    answer: 'Data-Driven: Test data is separated from the test script and stored in external files (like Excel). Keyword-Driven: Test actions (keywords) are separated from the test logic. Hybrid: A combination of two or more frameworks, typically combining the benefits of data-driven and keyword-driven models. This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Automation',
+    question: 'What is Use Case Testing?',
+    answer: 'Use Case Testing is a black-box technique that helps testers to identify test scenarios that exercise the entire system on a transaction-by-transaction basis from start to finish. Test cases are derived from the use cases. This is a placeholder for a more detailed answer that you can provide.',
+    category: 'Test Design',
   },
   {
     id: 41,
-    question: 'What is POM (Page Object Model)?',
-    answer: 'Page Object Model (POM) is a design pattern in test automation that creates an object repository for web UI elements on each page. It makes the test script code clean, readable, and easy to maintain by separating test logic from UI locators. This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Automation',
+    question: 'Difference between Positive and Negative Testing?',
+    answer: 'Positive Testing is done to check if the system works as expected with valid inputs. Negative Testing is done to check how the system behaves with invalid inputs and unexpected user behavior. This is a placeholder for a more detailed answer that you can provide.',
+    category: 'Test Design',
   },
   {
     id: 42,
-    question: 'Difference between TestNG and JUnit?',
-    answer: 'Both are testing frameworks for Java. TestNG is generally considered more powerful than JUnit as it offers more advanced features like parallel test execution, test dependencies, parameterization, and flexible test configuration using annotations. This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Automation',
+    question: 'What is Error Guessing?',
+    answer: 'Error Guessing is an experience-based testing technique where the tester uses their intuition and experience to "guess" where errors might occur in the software and design test cases to expose them. This is a placeholder for a more detailed answer that you can provide.',
+    category: 'Test Design',
   },
   {
     id: 43,
-    question: 'What is Maven and why is it used?',
-    answer: 'Maven is a build automation and project management tool. It is used in test automation to manage project dependencies (libraries like Selenium, TestNG), compile the code, run tests, and build the project in a structured manner using a pom.xml file. This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Automation',
+    question: 'What is White Box Testing vs Black Box Testing?',
+    answer: 'Black Box Testing is a testing method where the tester does not have knowledge of the internal code structure. White Box Testing is a method where the tester has access to and knowledge of the internal code structure. This is a placeholder for a more detailed answer that you can provide.',
+    category: 'Test Design',
   },
   {
     id: 44,
-    question: 'What is Continuous Integration in Automation?',
-    answer: 'Continuous Integration (CI) is a DevOps practice where developers frequently merge their code changes into a central repository, after which automated builds and tests are run. Tools like Jenkins or Azure Pipelines are used to automatically trigger the automation suite on every new code commit. This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Automation',
+    question: 'What is Gray Box Testing?',
+    answer: 'Gray Box Testing is a combination of white-box and black-box testing. The tester has partial knowledge of the internal structure of the application, allowing for better test case design. This is a placeholder for a more detailed answer that you can provide.',
+    category: 'Test Design',
   },
   {
     id: 45,
-    question: 'When do you prefer Manual Testing over Automation?',
-    answer: 'Manual testing is preferred for exploratory testing, usability testing, ad-hoc testing, and for applications with a rapidly changing UI. It is also more suitable for test cases that are executed only once or twice. This is a placeholder for a more detailed answer that you can provide.',
-    category: 'Automation',
+    question: 'What is Ad-hoc Testing?',
+    answer: 'Ad-hoc Testing is an informal, unstructured testing approach without any formal documentation or test design. It is performed randomly and is often called "Monkey Testing" or "Random Testing." This is a placeholder for a more detailed answer that you can provide.',
+    category: 'Test Design',
   },
 
-  // 5. Selenium WebDriver
+  // 5. Selenium WebDriver (46-65)
   {
     id: 46,
     question: 'What is Selenium WebDriver?',
@@ -803,5 +953,3 @@ Quick Tip for Interview:
     category: 'Coding',
   },
 ];
-
-    
