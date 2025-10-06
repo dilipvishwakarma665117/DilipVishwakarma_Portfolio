@@ -814,67 +814,217 @@ Quick Tip for Interview:
   {
     id: 55,
     question: 'What are Waits in Selenium (Implicit, Explicit, Fluent)?',
-    answer: 'Waits are used to handle synchronization issues. Implicit Wait tells WebDriver to wait a certain amount of time before throwing an exception. Explicit Wait is used to wait for a specific condition to occur. Fluent Wait is an advanced type of Explicit Wait with more configuration options like polling frequency. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `Definition:
+Waits are used to handle synchronization issues where the WebDriver script runs faster than the web page loads.
+
+1. Implicit Wait:
+Definition: Sets a global timeout for the entire WebDriver session. If an element is not immediately found, WebDriver waits for the specified duration before throwing a NoSuchElementException.
+Example: driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+Use Case: Simple and applies to all findElement calls.
+
+2. Explicit Wait:
+Definition: Waits for a specific condition to be met before proceeding. It's more targeted and flexible.
+Example: WebDriverWait wait = new WebDriverWait(driver, 10); wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("myElement")));
+Use Case: Waiting for a specific button to be clickable or an element to be visible.
+
+3. Fluent Wait:
+Definition: An advanced type of Explicit Wait that allows configuring the polling frequency and ignoring specific exceptions while waiting.
+Example:
+Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+  .withTimeout(Duration.ofSeconds(30))
+  .pollingEvery(Duration.ofSeconds(5))
+  .ignoring(NoSuchElementException.class);
+
+Quick Tip for Interview:
+- Implicit wait is a global setting.
+- Explicit wait is for a specific element or condition.
+- Fluent wait is an advanced explicit wait with polling options.`,
     category: 'Automation',
   },
   {
     id: 56,
     question: 'How do you capture Screenshots in Selenium?',
-    answer: 'You can cast the driver object to `TakesScreenshot` and use the `getScreenshotAs()` method, which can save the screenshot as a file. Example: `File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);`. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `You can capture a screenshot using the TakesScreenshot interface.
+
+Example (Java):
+1. Convert WebDriver object to TakesScreenshot:
+   TakesScreenshot ts = (TakesScreenshot) driver;
+2. Use getScreenshotAs() method:
+   File sourceFile = ts.getScreenshotAs(OutputType.FILE);
+3. Copy the file to a desired location:
+   FileUtils.copyFile(sourceFile, new File("./screenshots/error.png"));
+
+This is often used in a 'catch' block or in a listener to capture a screenshot when a test fails.
+
+Quick Tip for Interview:
+"I use the TakesScreenshot interface and the getScreenshotAs method to capture screenshots, especially on test failures, for easier debugging."`,
     category: 'Automation',
   },
   {
     id: 57,
     question: 'What are DesiredCapabilities in Selenium?',
-    answer: 'DesiredCapabilities is a class used to set properties of the browser, such as browser name, version, and platform, to run the automation tests. It is particularly useful for configuring tests on a Selenium Grid. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `Definition:
+DesiredCapabilities is a class used to set properties of the browser that we want to use for our test execution. This includes browser name, platform, version, and other session-specific properties.
+
+In modern Selenium (4+):
+The DesiredCapabilities class has been replaced by browser-specific Options classes (e.g., ChromeOptions, FirefoxOptions), which is the recommended approach now.
+
+Example (using ChromeOptions):
+ChromeOptions options = new ChromeOptions();
+options.setPlatformName("Windows 10");
+options.setBrowserVersion("108");
+WebDriver driver = new ChromeDriver(options);
+
+Quick Tip for Interview:
+"DesiredCapabilities were used to configure browser properties. Now, we use the browser-specific Options classes like ChromeOptions, which is the current standard."`,
     category: 'Automation',
   },
   {
     id: 58,
     question: 'How do you run Selenium scripts in multiple browsers?',
-    answer: 'This can be achieved by creating different driver instances (ChromeDriver, FirefoxDriver, etc.) based on a configuration parameter. TestNG framework also supports cross-browser testing by defining browser parameters in the `testng.xml` file. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `This is known as cross-browser testing. There are two common ways:
+
+1. Using TestNG Parameters:
+In the testng.xml file, you can define a "browser" parameter and pass different browser names (e.g., "chrome", "firefox"). In the test code, a @BeforeClass or @BeforeMethod function reads this parameter and instantiates the correct WebDriver (ChromeDriver, FirefoxDriver, etc.).
+
+Example testng.xml snippet:
+<test name="ChromeTest">
+  <parameter name="browser" value="chrome"/>
+  <classes>...</classes>
+</test>
+<test name="FirefoxTest">
+  <parameter name="browser" value="firefox"/>
+  <classes>...</classes>
+</test>
+
+2. Using Selenium Grid:
+Selenium Grid allows you to run tests in parallel on multiple machines with different browsers and operating systems. You configure the DesiredCapabilities (or Options) to specify which browser you want to use on the Grid.
+
+Quick Tip for Interview:
+"I use TestNG's parameterization feature in my framework to run the same test suite across different browsers like Chrome and Firefox by configuring them in the testng.xml file."`,
     category: 'Automation',
   },
   {
     id: 59,
     question: 'How do you handle Dynamic Web Elements?',
-    answer: 'Dynamic elements (with changing attributes) can be handled by using locators that rely on stable parts of the element. This includes using relative XPath with functions like `contains()`, `starts-with()`, or finding a stable parent/sibling element. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `Dynamic elements are elements whose attributes (like ID or class) change on every page load.
+
+Strategies to handle them:
+1. Use a stable portion of the attribute with XPath functions:
+   - contains(): //button[contains(@id, 'submit_')]
+   - starts-with(): //input[starts-with(@id, 'user_')]
+   - ends-with(): (Not available in XPath 1.0)
+2. Use a stable attribute:
+   Look for another attribute that is static, like 'name' or a custom 'data-testid'.
+3. Use Parent-Child or Sibling relationships:
+   Find a stable nearby element (parent or sibling) and navigate to the dynamic element from there.
+   Example: //div[@class='form-group']/input
+
+Quick Tip for Interview:
+"I handle dynamic elements by writing flexible locators. I prefer using XPath's 'contains()' or 'starts-with()' functions, or finding a stable parent element to locate the dynamic one."`,
     category: 'Automation',
   },
   {
     id: 60,
     question: 'How to handle file upload in Selenium?',
-    answer: 'For an `<input type="file">` element, you can directly use the `sendKeys()` method and pass the absolute path of the file you want to upload. You don\'t need to click the upload button. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `There are two common scenarios:
+
+1. Using sendKeys() (for <input type="file">):
+If the upload button is an HTML <input> tag with type="file", you can directly use the sendKeys() method on that element to provide the file path. You don't need to click the button to open the OS file dialog.
+
+Example:
+WebElement uploadElement = driver.findElement(By.id("upload-file"));
+uploadElement.sendKeys("C:\\path\\to\\your\\file.txt");
+
+2. Using Robot Class or AutoIT (for OS-based pop-ups):
+If the upload dialog is a native OS window, Selenium cannot handle it. In this case, you need to use external tools like Java's Robot class or AutoIT to automate keyboard strokes to type the file path and press Enter.
+
+Quick Tip for Interview:
+"For standard file inputs, I just use sendKeys() with the file path. If it's a native OS dialog, I use the Robot class to handle the interaction."`,
     category: 'Automation',
   },
   {
     id: 61,
     question: 'Difference between close() and quit()?',
-    answer: '`driver.close()` closes the browser window that is currently in focus. `driver.quit()` closes all browser windows opened by WebDriver and terminates the WebDriver session. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `driver.close():
+- Closes the currently focused browser window or tab.
+- If it's the only window open, it might also quit the browser session, but this is driver-dependent.
+- The WebDriver session remains active if other windows are open.
+
+driver.quit():
+- Closes all browser windows and tabs that were opened by the WebDriver session.
+- Completely terminates the WebDriver session.
+- Ends the driver process.
+
+Quick Tip for Interview:
+"close() shuts the current window, while quit() shuts all windows and ends the WebDriver session. I always use quit() in my @AfterSuite or @AfterClass method to properly clean up."`,
     category: 'Automation',
   },
   {
     id: 62,
     question: 'What is headless browser testing?',
-    answer: 'Headless testing is running UI tests in a browser without a graphical user interface. This makes tests faster and is essential for running tests in a CI/CD environment. Chrome and Firefox both support headless mode. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `Definition:
+Headless testing is running browser-based UI tests without launching the visible browser window (GUI). The browser runs in the background.
+
+Why use it?
+- Speed: Tests run faster because rendering the UI is skipped.
+- CI/CD Environments: Essential for running tests on servers (like Jenkins/Linux) that don't have a graphical interface.
+- Parallel Testing: Consumes fewer resources, making it efficient for running tests in parallel.
+
+Example (Chrome Headless):
+ChromeOptions options = new ChromeOptions();
+options.addArguments("--headless");
+WebDriver driver = new ChromeDriver(options);
+
+Quick Tip for Interview:
+"Headless testing runs UI tests without a visible browser window, which is faster and essential for our CI/CD pipeline."`,
     category: 'Automation',
   },
   {
     id: 63,
     question: 'Can Selenium handle Captcha or OTP?',
-    answer: 'No, Selenium cannot automate Captcha or OTPs. They are designed specifically to prevent automation. For testing purposes, these features are usually disabled in the test environment or a workaround is provided by the development team. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `No, Selenium cannot automate Captcha or OTPs.
+- Rationale: These are security features designed specifically to prevent automation and ensure a human is performing the action.
+- Test Environment Solution: In a test environment, these features are usually handled in one of the following ways:
+  1. Disabled: Captcha/OTP is turned off for the test environment.
+  2. Static Value: A predictable, static value is used (e.g., OTP is always "123456").
+  3. Backend Hook: The development team provides a backdoor or API to retrieve the OTP for the test script.
+
+Quick Tip for Interview:
+"No, and it's by design. For testing, we work with the dev team to either disable Captcha/OTP in the test environment or get a static value to proceed."`,
     category: 'Automation',
   },
   {
     id: 64,
     question: 'How do you integrate Selenium with TestNG?',
-    answer: 'TestNG is integrated by adding its dependency to the project (e.g., in `pom.xml`). Test methods are then annotated with TestNG annotations like `@Test`, `@BeforeMethod`, and `@AfterMethod`. Test execution is controlled via a `testng.xml` file. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `Integration is straightforward:
+
+1. Add TestNG dependency: In the project's pom.xml (if using Maven), add the TestNG dependency.
+2. Use TestNG Annotations: Replace main() method with TestNG annotations to structure the tests.
+   - @Test: To mark a method as a test case.
+   - @BeforeMethod/@AfterMethod: For setup and teardown actions for each test.
+   - @BeforeClass/@AfterClass: For one-time setup/teardown for a class.
+3. Use TestNG Assertions: Use TestNG's Assert class (e.g., Assert.assertEquals()) for verification.
+4. Create testng.xml file: This XML file is used to configure and run the test suite, define test groups, run tests in parallel, etc.
+
+Quick Tip for Interview:
+"I integrate TestNG by adding it to my Maven project, then I use its annotations like @Test to define test cases and assertions to validate outcomes. The testng.xml file helps me manage the test suite."`,
     category: 'Automation',
   },
   {
     id: 65,
     question: 'How do you generate Selenium Test Reports?',
-    answer: 'TestNG provides default HTML reports. More advanced and customizable reports can be generated using third-party libraries like ExtentReports or Allure. These reports provide a detailed view of test results with logs and screenshots. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `There are several ways to generate reports:
+
+1. TestNG Default Reports: TestNG automatically generates basic HTML reports (emailable-report.html and index.html) in the "test-output" folder.
+2. ExtentReports: A popular third-party library that creates beautiful, interactive, and detailed HTML reports. You can add logs, screenshots, and system information to them. This is what I have used in my projects.
+3. Allure Reports: Another powerful open-source reporting tool that provides a very rich and interactive web report with detailed test steps, attachments, and analytics.
+
+Example with ExtentReports:
+You initialize ExtentReports in a @BeforeSuite method, create a test in @BeforeMethod, log test steps and status (pass/fail), and call flush() in @AfterSuite to generate the report.
+
+Quick Tip for Interview:
+"While TestNG provides default reports, I prefer using ExtentReports because they are more detailed and professional-looking. I integrate it using listeners to automatically log test status and capture screenshots on failure."`,
     category: 'Automation',
   },
 
