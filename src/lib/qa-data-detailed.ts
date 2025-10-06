@@ -313,12 +313,16 @@ Quick Tip for Interview:
   {
     id: 17,
     question: 'Difference between Manual testing and Automation testing?',
-    answer: `Manual Testing in Automation Testing:
-- Manual testing is performed by a human tester who directly interacts with the application. It is suitable for exploratory, usability, and ad-hoc testing.
+    answer: `Manual Testing vs. Automation Testing:
+
+Manual Testing:
+- Performed by a human tester who directly interacts with the application.
+- Suitable for exploratory, usability, and ad-hoc testing.
 - Example: A tester manually navigates through a new website design to assess its user-friendliness and look for visual glitches.
 
 Automation Testing:
-- Automation testing is performed using scripts and tools to execute tests automatically, without direct human intervention. It is ideal for repetitive, regression, and performance tests.
+- Performed using scripts and tools to execute tests automatically, without direct human intervention.
+- Ideal for repetitive, regression, and performance tests.
 - Example: Using a Selenium script to test the login functionality with 100 different username/password combinations.
 
 Quick Tip for Interview:
@@ -619,55 +623,192 @@ Quick Tip for Interview:
   {
     id: 46,
     question: 'What is Selenium WebDriver?',
-    answer: 'Selenium WebDriver is a component of the Selenium suite that provides a programming interface to create and execute test cases. It allows you to automate web browsers by making direct calls to them, controlling them as a user would. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `Definition:
+Selenium WebDriver is a powerful open-source tool for automating web applications. It provides a programming interface to create and execute test cases by directly controlling a browser as a user would. It supports multiple programming languages and browsers.
+
+In automation:
+- Web Browser Automation: Used to automate actions like clicking buttons, filling forms, and navigating pages.
+- Cross-Browser Testing: Supports Chrome, Firefox, Safari, Edge, etc.
+- Language Support: Works with Java, Python, C#, JavaScript, etc.
+- CI/CD Integration: Can be integrated with tools like Jenkins for automated testing.
+
+Quick Tip for Interview:
+"Selenium WebDriver is a browser automation library that lets me write code to control a browser, making it ideal for testing web applications."`,
     category: 'Automation',
   },
   {
     id: 47,
     question: 'Difference between Selenium WebDriver and Selenium RC?',
-    answer: 'Selenium RC (Remote Control) was an older version that required a server to act as a proxy between the test script and the browser. Selenium WebDriver is a newer, faster, and more direct approach that communicates with the browser natively. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `Selenium WebDriver vs. Selenium RC:
+Selenium RC (Remote Control) is an older, now-deprecated version of Selenium. Selenium WebDriver is its modern successor.
+
+Selenium RC:
+- Architecture: Required a proxy server (the Selenium RC Server) to sit between your test script and the browser.
+- Communication: Injected JavaScript into the browser to drive the application.
+- Speed: Slower due to the extra server hop.
+
+Selenium WebDriver:
+- Architecture: Communicates directly with the browser using the browser's native automation support.
+- Communication: Uses a direct, faster communication channel.
+- Speed: Faster and more stable.
+- API: Provides a more object-oriented and modern programming interface.
+
+Quick Tip for Interview:
+"WebDriver is faster and more modern because it communicates directly with the browser, while the older Selenium RC needed a proxy server, which made it slower."`,
     category: 'Automation',
   },
   {
     id: 48,
     question: 'What are the different WebDriver locators?',
-    answer: 'The main locators are: ID, Name, ClassName, TagName, LinkText, PartialLinkText, CSS Selector, and XPath. CSS Selector and ID are generally the fastest and most preferred. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `Locators are used in Selenium to identify and find web elements on a page. There are 8 types of locators:
+
+1. ID: Finds an element by its unique ID. (Fastest and most reliable)
+2. Name: Finds an element by its "name" attribute.
+3. Class Name: Finds elements by their "class" attribute.
+4. Tag Name: Finds elements by their HTML tag (e.g., 'a', 'div').
+5. Link Text: Finds a link element by its exact visible text.
+6. Partial Link Text: Finds a link element by a part of its visible text.
+7. CSS Selector: Finds elements using CSS selector patterns. (Very powerful and fast)
+8. XPath: Finds elements using an XML path expression. (Powerful but can be slower)
+
+Quick Tip for Interview:
+"There are 8 locators. I always try to use ID, Name, or CSS Selector first because they are the most reliable and efficient. XPath is my last resort."`,
     category: 'Automation',
   },
   {
     id: 49,
     question: 'Difference between Absolute XPath and Relative XPath?',
-    answer: 'Absolute XPath starts from the root of the HTML document (e.g., `/html/body/div[1]/...`). It is long and brittle. Relative XPath starts from a specific element node (e.g., `//input[@id=\'username\']`). It is shorter, more readable, and less prone to breaking with UI changes. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `Absolute vs. Relative XPath:
+
+Absolute XPath:
+- Definition: Starts from the root of the HTML document (the <html> tag) and navigates all the way down to the element.
+- Structure: Begins with a single slash (/).
+- Example: /html/body/div[1]/div/input
+- Disadvantage: Very brittle. A small change in the UI can break the XPath.
+
+Relative XPath:
+- Definition: Starts from a specific, known element and navigates from there. It doesn't depend on the full path from the root.
+- Structure: Begins with a double slash (//).
+- Example: //input[@id='username']
+- Advantage: More robust, readable, and less likely to break with UI changes.
+
+Quick Tip for Interview:
+"Relative XPath is always preferred because it's shorter and less likely to break when the page structure changes. Absolute XPath is too fragile for reliable automation."`,
     category: 'Automation',
   },
   {
     id: 50,
     question: 'How do you handle Dropdowns in Selenium?',
-    answer: 'Selenium provides the `Select` class for handling dropdowns. You can select options by visible text (`selectByVisibleText()`), by value (`selectByValue()`), or by index (`selectByIndex()`). This is a placeholder for a more detailed answer that you can provide.',
+    answer: `Selenium provides a special 'Select' class for handling <select> dropdowns.
+
+Example:
+WebElement dropdownElement = driver.findElement(By.id("my-dropdown"));
+Select dropdown = new Select(dropdownElement);
+
+You can then select an option in three ways:
+1. By Visible Text:
+   dropdown.selectByVisibleText("Option 2");
+2. By Value Attribute:
+   dropdown.selectByValue("value-2");
+3. By Index:
+   dropdown.selectByIndex(1); // Index starts from 0
+
+You can also deselect options or get all selected options.
+
+Quick Tip for Interview:
+"For standard dropdowns, I use the 'Select' class, which lets me pick options by text, value, or index. For custom dropdowns built with divs, I just automate clicks on the elements."`,
     category: 'Automation',
   },
   {
     id: 51,
     question: 'How do you handle multiple windows in Selenium?',
-    answer: 'You can use `driver.getWindowHandles()` to get a set of all open window handles. Then, you can iterate through the handles and use `driver.switchTo().window(handle)` to switch to the desired window. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `When an application opens a new window or tab, WebDriver needs to be explicitly switched to it.
+
+Steps to handle multiple windows:
+1. Get the current window handle:
+   String parentWindow = driver.getWindowHandle();
+2. Perform the action that opens a new window.
+3. Get all window handles:
+   Set<String> allWindows = driver.getWindowHandles();
+4. Loop through the handles and switch to the new window:
+   for (String childWindow : allWindows) {
+     if (!parentWindow.equalsIgnoreCase(childWindow)) {
+       driver.switchTo().window(childWindow);
+       // Perform actions in the new window
+       driver.close(); // Close the new window
+     }
+   }
+5. Switch back to the parent window:
+   driver.switchTo().window(parentWindow);
+
+Quick Tip for Interview:
+"I use driver.getWindowHandles() to get a set of all window IDs, then loop through them to find the new window and switch to it using driver.switchTo().window()."`,
     category: 'Automation',
   },
   {
     id: 52,
     question: 'How do you handle Alerts in Selenium?',
-    answer: 'You can switch to an alert using `driver.switchTo().alert()`. Then you can use methods like `accept()` to click OK, `dismiss()` to click Cancel, `getText()` to get the alert text, or `sendKeys()` to enter text into a prompt. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `Alerts are JavaScript pop-ups that need to be handled before you can continue interacting with the page.
+
+Example:
+// Switch to the alert
+Alert alert = driver.switchTo().alert();
+
+You can perform four main actions:
+1. Accept the alert (click OK):
+   alert.accept();
+2. Dismiss the alert (click Cancel):
+   alert.dismiss();
+3. Get the text from the alert:
+   String alertText = alert.getText();
+4. Send text to the alert (for prompt alerts):
+   alert.sendKeys("Some text");
+
+Quick Tip for Interview:
+"I use driver.switchTo().alert() to handle JavaScript pop-ups. Then I can accept, dismiss, or get text from them."`,
     category: 'Automation',
   },
   {
     id: 53,
     question: 'How do you handle Frames in Selenium?',
-    answer: 'To work with elements inside a frame or iframe, you first need to switch to it using `driver.switchTo().frame()`. You can switch using the frame\'s name, ID, or index. To return to the main content, use `driver.switchTo().defaultContent()`. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `Frames (or iframes) are HTML documents embedded inside another. To interact with elements inside a frame, you must switch to it first.
+
+Steps to handle frames:
+1. Switch to the frame:
+   You can switch by Name/ID, Index, or WebElement.
+   driver.switchTo().frame("frameName"); // By Name or ID
+   driver.switchTo().frame(0); // By Index
+   WebElement frameElement = driver.findElement(By.tagName("iframe"));
+   driver.switchTo().frame(frameElement); // By WebElement
+2. Perform actions inside the frame.
+3. Switch back to the main document:
+   driver.switchTo().defaultContent();
+
+Quick Tip for Interview:
+"I use driver.switchTo().frame() to work with elements inside an iframe. After I'm done, I always switch back with driver.switchTo().defaultContent()."`,
     category: 'Automation',
   },
   {
     id: 54,
     question: 'Difference between findElement() and findElements()?',
-    answer: '`findElement()` returns the first matching WebElement on the page. If no element is found, it throws a `NoSuchElementException`. `findElements()` returns a list of all matching WebElements. If no elements are found, it returns an empty list. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `findElement() vs. findElements()
+
+findElement():
+- Return Type: Returns a single WebElement object.
+- Behavior: Finds the first element that matches the locator.
+- If Not Found: Throws a 'NoSuchElementException'.
+
+findElements():
+- Return Type: Returns a List<WebElement>.
+- Behavior: Finds all elements that match the locator.
+- If Not Found: Returns an empty list. No exception is thrown.
+
+Example Use Cases:
+- findElement(): To interact with a unique element, like a login button.
+- findElements(): To get a count of elements or to iterate through a list of items.
+
+Quick Tip for Interview:
+"findElement() gets one element and throws an exception if it's not found. findElements() gets a list of all matching elements and returns an empty list if none are found."`,
     category: 'Automation',
   },
   {
