@@ -29,11 +29,11 @@ Example for Interview:
     question: 'Difference between Verification and Validation?',
     answer: `Verification:
 Ensures that the product is being built correctly according to the specified requirements and design. It is a static process (no code execution).
-*Example: Reviewing the Requirement Specification Document (SRS) or design diagrams to ensure they meet the client’s requirements.*
+Example: Reviewing the Requirement Specification Document (SRS) or design diagrams to ensure they meet the client’s requirements.
 
 Validation:
 Ensures that the product that is built is the right product and meets the business needs. It is a dynamic process (actual testing).
-*Example: Testing the login functionality in the application to check if users can log in successfully with valid credentials.*
+Example: Testing the login functionality in the application to check if users can log in successfully with valid credentials.
 
 Quick Tip for Interview:
 “Verification = Are we building it right? Validation = Are we building the right product?”`,
@@ -97,15 +97,15 @@ Quick Tip for Interview:
     question: 'Difference between Test Case and Test Scenario?',
     answer: `Test Scenario:
 A high-level idea of what to test. It defines what functionality needs to be tested, without going into detailed steps.
-*Example: Test Scenario → “Verify Login functionality.”*
+Example: Test Scenario → “Verify Login functionality.”
 
 Test Case:
 A detailed step-by-step document to test a specific scenario. It includes inputs, actions, and expected results.
-*Example: Test Case →*
-  - *Step 1: Enter valid username*
-  - *Step 2: Enter valid password*
-  - *Step 3: Click Login button*
-  - *Expected Result: User is redirected to dashboard*
+Example: Test Case →
+  - Step 1: Enter valid username
+  - Step 2: Enter valid password
+  - Step 3: Click Login button
+  - Expected Result: User is redirected to dashboard
 
 Quick Tip for Interview:
 “Scenario is ‘what to test’, Test Case is ‘how to test’.”`,
@@ -116,15 +116,15 @@ Quick Tip for Interview:
     question: 'What is a Bug, Defect, Error, and Failure?',
     answer: `Error:
 A mistake made by a developer in the code or logic.
-*Example: Using == instead of .equals() in Java to compare strings.*
+Example: Using == instead of .equals() in Java to compare strings.
 
 Defect / Bug:
 A flaw found in the software when the actual result doesn’t match the expected result.
-*Example: Login button doesn’t work when valid credentials are entered.*
+Example: Login button doesn’t work when valid credentials are entered.
 
 Failure:
 When the software does not perform as expected in the actual environment.
-*Example: The login feature works in the test environment but crashes in production when multiple users try to log in simultaneously.*
+Example: The login feature works in the test environment but crashes in production when multiple users try to log in simultaneously.
 
 Quick Tip for Interview:
 “Error = developer’s mistake, Defect/Bug = issue found in software, Failure = software not working as expected in real use.”`,
@@ -141,21 +141,21 @@ Refers to how soon a defect should be fixed. It is usually decided by the busine
 
 Examples:
 1. High Severity, High Priority (Critical & Urgent)
-   - *Example:* Login button on a banking website is not working.
-   - *Impact:* Major → Users cannot access their accounts.
-   - *Fix Timing:* Must be fixed immediately.
+   - Example: Login button on a banking website is not working.
+   - Impact: Major → Users cannot access their accounts.
+   - Fix Timing: Must be fixed immediately.
 2. High Severity, Low Priority (Critical but not urgent)
-   - *Example:* In an e-commerce site, the discount calculation is wrong for a rarely used coupon.
-   - *Impact:* High → If the coupon is used, price calculation is wrong.
-   - *Fix Timing:* Can be fixed later because very few users use that coupon.
+   - Example: In an e-commerce site, the discount calculation is wrong for a rarely used coupon.
+   - Impact: High → If the coupon is used, price calculation is wrong.
+   - Fix Timing: Can be fixed later because very few users use that coupon.
 3. Low Severity, High Priority (Minor but urgent)
-   - *Example:* The “Place Order” button on the checkout page is slightly misaligned.
-   - *Impact:* Minor → Functionality works fine, but it looks unprofessional.
-   - *Fix Timing:* Should be fixed soon because checkout page is critical for user experience.
+   - Example: The “Place Order” button on the checkout page is slightly misaligned.
+   - Impact: Minor → Functionality works fine, but it looks unprofessional.
+   - Fix Timing: Should be fixed soon because checkout page is critical for user experience.
 4. Low Severity, Low Priority (Minor & not urgent)
-   - *Example:* On a company’s internal HR portal, the footer text shows the wrong year: “© 2024” instead of “© 2025”.
-   - *Impact:* Minor → Does not affect any functionality of the portal.
-   - *Fix Timing:* Can be fixed later, since it’s cosmetic and not urgent.
+   - Example: On a company’s internal HR portal, the footer text shows the wrong year: “© 2024” instead of “© 2025”.
+   - Impact: Minor → Does not affect any functionality of the portal.
+   - Fix Timing: Can be fixed later, since it’s cosmetic and not urgent.
 
 Quick Tip for Interview:
 “Severity = how serious the bug is, Priority = how soon it should be fixed.”`,
@@ -186,11 +186,11 @@ Quick Tip for Interview:
     id: 10,
     question: 'What are Functional and Non-functional testing?',
     answer: `Functional Testing:
-- Definition: Testing that verifies the software functions according to the specified requirements. It focuses on **what** the system does.
+- Definition: Testing that verifies the software functions according to the specified requirements. It focuses on what the system does.
 - Example: Testing the login feature: enter valid username and password → user should be able to log in successfully.
 
 Non-Functional Testing:
-- Definition: Testing that verifies **how** the system performs under certain conditions. It focuses on aspects like performance, security, and usability.
+- Definition: Testing that verifies how the system performs under certain conditions. It focuses on aspects like performance, security, and usability.
 - Example:
   - Performance Testing: Checking website speed under 1000 concurrent users.
   - Security Testing: Verifying password encryption and unauthorized access prevention.
@@ -803,3 +803,5 @@ Quick Tip for Interview:
     category: 'Coding',
   },
 ];
+
+    
