@@ -45,9 +45,11 @@ export default function QaList() {
   }, [searchTerm, category]);
 
   const handleCopy = (text: string, id: number) => {
-    navigator.clipboard.writeText(text);
-    setCopiedId(id);
-    setTimeout(() => setCopiedId(null), 2000);
+    if (typeof window !== 'undefined') {
+      navigator.clipboard.writeText(text);
+      setCopiedId(id);
+      setTimeout(() => setCopiedId(null), 2000);
+    }
   };
 
   const loadMore = () => {
@@ -55,6 +57,10 @@ export default function QaList() {
   }
 
   const currentData = useMemo(() => filteredData.slice(0, visibleItems), [filteredData, visibleItems]);
+
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <section className="container mx-auto px-4 pb-16 md:px-6">
@@ -86,7 +92,6 @@ export default function QaList() {
         </div>
       </Card>
 
-      {isClient && (
         <motion.div layout>
           <Accordion type="single" collapsible className="w-full space-y-4">
             <AnimatePresence>
@@ -132,8 +137,7 @@ export default function QaList() {
             </AnimatePresence>
           </Accordion>
         </motion.div>
-      )}
-       {isClient && visibleItems < filteredData.length && (
+       {visibleItems < filteredData.length && (
           <div className="mt-8 text-center">
             <Button onClick={loadMore}>Load More</Button>
           </div>
