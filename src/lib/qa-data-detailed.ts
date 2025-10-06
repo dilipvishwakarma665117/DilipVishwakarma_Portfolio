@@ -13,91 +13,256 @@ export const qaDataDetailed: QA[] = [
   {
     id: 1,
     question: 'What is Software Testing?',
-    answer: 'Software Testing is the process of evaluating and verifying that a software product or application does what it is supposed to do. The benefits of testing include preventing bugs, reducing development costs, and improving performance. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `Software Testing is the process of evaluating a software application to ensure that it meets the specified requirements, is free of defects, and works as expected. It helps in identifying errors, gaps, or missing requirements compared to the actual requirements.
+
+**In detail:**
+-   Testing verifies functionality (does the system work correctly?).
+-   Testing validates quality (is the system reliable, secure, user-friendly?).
+-   Goal is to find defects early and deliver a product that satisfies customer expectations.
+
+**Example for Interview:**
+“Software Testing is the process of verifying and validating that the software application works as intended, meets business requirements, and is defect-free. For example, if the requirement is that login should work only with valid credentials, I will test both valid and invalid inputs to confirm the behavior.”`,
     category: 'Manual Testing',
   },
   {
     id: 2,
     question: 'Difference between Verification and Validation?',
-    answer: 'Verification is the process to ensure that the product is being built according to the requirements and design specifications (i.e., "Are we building the product right?"). Validation is the process of checking whether the software product meets the customer’s expectations and requirements (i.e., "Are we building the right product?"). This is a placeholder for a more detailed answer that you can provide.',
+    answer: `**Verification:** Ensures that the product is being built correctly according to the specified requirements and design. It is a static process (no code execution).
+*Example: Reviewing the Requirement Specification Document (SRS) or design diagrams to ensure they meet the client’s requirements.*
+
+**Validation:** Ensures that the product that is built is the right product and meets the business needs. It is a dynamic process (actual testing).
+*Example: Testing the login functionality in the application to check if users can log in successfully with valid credentials.*
+
+**Quick Tip for Interview:**
+“Verification = Are we building it right? Validation = Are we building the right product?”`,
     category: 'Manual Testing',
   },
   {
     id: 3,
     question: 'What is SDLC and STLC?',
-    answer: 'SDLC (Software Development Life Cycle) is a framework that defines the entire process of software development, from planning to deployment and maintenance. STLC (Software Testing Life Cycle) is a sequence of specific activities conducted during the testing process to ensure software quality. STLC is a part of SDLC. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `**SDLC (Software Development Life Cycle):**
+SDLC is a process followed to develop software in a structured way. It includes all phases from requirement gathering to maintenance.
+-   **Phases:** Requirement → Design → Development → Testing → Deployment → Maintenance
+-   **Example:** A team gathers requirements for a banking app, designs the screens, develops login & transaction modules, tests them, deploys the app, and then maintains it after release.
+
+**STLC (Software Testing Life Cycle):**
+STLC is a process followed to test the software systematically. It focuses only on testing activities to ensure quality.
+-   **Phases:** Requirement Analysis → Test Planning → Test Design → Test Execution → Defect Reporting → Test Closure
+-   **Example:** In the banking app, testers analyze login requirements, plan test cases, design test scripts, execute them, report defects if login fails, and close testing after all bugs are fixed.
+
+**Quick Tip for Interview:**
+“SDLC is about building the software; STLC is about testing the software.”`,
     category: 'Manual Testing',
   },
   {
     id: 4,
     question: 'What is a Requirement Traceability Matrix (RTM)?',
-    answer: 'A Requirement Traceability Matrix (RTM) is a document that maps and traces user requirements with test cases. It ensures that all requirements are covered by test cases, so no functionality is missed during testing. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `An RTM is a document that maps each requirement to its corresponding test cases to ensure that all requirements are covered by testing. It helps track requirement coverage, test execution, and defect tracking.
+
+**Example:**
+-   **Requirement:** “User should be able to login with valid credentials.”
+-   **Test Cases linked in RTM:**
+    1.  Enter valid username & password → Login successful
+    2.  Enter invalid username → Error message displayed
+    3.  Enter blank password → Error message displayed
+
+**Quick Tip for Interview:**
+“RTM ensures that every requirement has at least one test case to verify it, helping us track coverage and defects efficiently.”`,
     category: 'Manual Testing',
   },
   {
     id: 5,
     question: 'What is a Test Case?',
-    answer: 'A test case is a set of actions executed to verify a particular feature or functionality of a software application. It includes test steps, test data, preconditions, and expected results. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `A Test Case is a documented set of conditions, steps, inputs, and expected results designed to verify a specific functionality or feature of the software. It helps ensure that the application behaves as intended.
+
+**Example:**
+-   **Test Case for Login Functionality:**
+    -   **Test Case ID:** TC_Login_01
+    -   **Description:** Verify login with valid credentials
+    -   **Precondition:** User is on the login page
+    -   **Steps:**
+        1.  Enter valid username
+        2.  Enter valid password
+        3.  Click on Login button
+    -   **Expected Result:** User should be redirected to the dashboard
+
+**Quick Tip for Interview:**
+“A test case is a detailed step-by-step instruction to check if a feature works as expected.”`,
     category: 'Manual Testing',
   },
   {
     id: 6,
     question: 'Difference between Test Case and Test Scenario?',
-    answer: 'A Test Scenario is a high-level description of what to test (e.g., "Verify login functionality"). A Test Case is a detailed, step-by-step procedure of how to test it, including specific inputs and expected outcomes (e.g., "Enter valid username and password, click login, verify successful login"). This is a placeholder for a more detailed answer that you can provide.',
+    answer: `**Test Scenario:** A high-level idea of what to test. It defines what functionality needs to be tested, without going into detailed steps.
+*Example: Test Scenario → “Verify Login functionality.”*
+
+**Test Case:** A detailed step-by-step document to test a specific scenario. It includes inputs, actions, and expected results.
+*Example: Test Case →*
+    - *Step 1: Enter valid username*
+    - *Step 2: Enter valid password*
+    - *Step 3: Click Login button*
+    - *Expected Result: User is redirected to dashboard*
+
+**Quick Tip for Interview:**
+“Scenario is ‘what to test’, Test Case is ‘how to test’.”`,
     category: 'Manual Testing',
   },
   {
     id: 7,
     question: 'What is a Bug, Defect, Error, and Failure?',
-    answer: 'Error: A mistake made by a programmer. Defect: An error found by a tester before the application goes to production; also called a bug. Bug: An issue found in the software that causes it to behave incorrectly. Failure: When a defect reaches the end-user and causes the system to fail to meet its requirements. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `**Error:** A mistake made by a developer in the code or logic.
+*Example: Using == instead of .equals() in Java to compare strings.*
+
+**Defect / Bug:** A flaw found in the software when the actual result doesn’t match the expected result.
+*Example: Login button doesn’t work when valid credentials are entered.*
+
+**Failure:** When the software does not perform as expected in the actual environment.
+*Example: The login feature works in the test environment but crashes in production when multiple users try to log in simultaneously.*
+
+**Quick Tip for Interview:**
+“Error = developer’s mistake, Defect/Bug = issue found in software, Failure = software not working as expected in real use.”`,
     category: 'Manual Testing',
   },
   {
     id: 8,
     question: 'What is Severity and Priority? Explain with an example.',
-    answer: 'Severity defines the impact a defect has on the application (technical impact). Priority defines the urgency of fixing the defect (business impact). Example: A company logo error on the home page has high priority but low severity. A crash on a rarely used feature has high severity but low priority. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `**Severity:** Refers to the impact of a defect on the system or application. It is usually determined by the tester.
+**Priority:** Refers to how soon a defect should be fixed. It is usually decided by the business or project manager.
+
+**Examples:**
+1.  **High Severity, High Priority (Critical & Urgent)**
+    -   *Example:* Login button on a banking website is not working.
+    -   *Impact:* Major → Users cannot access their accounts.
+    -   *Fix Timing:* Must be fixed immediately.
+2.  **High Severity, Low Priority (Critical but not urgent)**
+    -   *Example:* In an e-commerce site, the discount calculation is wrong for a rarely used coupon.
+    -   *Impact:* High → If the coupon is used, price calculation is wrong.
+    -   *Fix Timing:* Can be fixed later because very few users use that coupon.
+3.  **Low Severity, High Priority (Minor but urgent)**
+    -   *Example:* The “Place Order” button on the checkout page is slightly misaligned.
+    -   *Impact:* Minor → Functionality works fine, but it looks unprofessional.
+    -   *Fix Timing:* Should be fixed soon because checkout page is critical for user experience.
+4.  **Low Severity, Low Priority (Minor & not urgent)**
+    -   *Example:* On a company’s internal HR portal, the footer text shows the wrong year: “© 2024” instead of “© 2025”.
+    -   *Impact:* Minor → Does not affect any functionality of the portal.
+    -   *Fix Timing:* Can be fixed later, since it’s cosmetic and not urgent.
+
+**Quick Tip for Interview:**
+“Severity = how serious the bug is, Priority = how soon it should be fixed.”`,
     category: 'Manual Testing',
   },
   {
     id: 9,
     question: 'Explain Defect Life Cycle.',
-    answer: 'The Defect Life Cycle (or Bug Life Cycle) is the journey of a defect from its discovery to its closure. The typical states are: New, Assigned, Open, Fixed, Retest, Reopened, Deferred, and Closed. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `The Defect Life Cycle (or Bug Life Cycle) is the journey of a defect from its discovery to its closure. It helps track the status of a defect and ensures proper resolution.
+**Typical Stages:**
+1.  **New:** Tester identifies a defect and logs it.
+2.  **Assigned:** Project lead or developer assigns the defect to a developer.
+3.  **Open:** Developer starts analyzing and working on the defect.
+4.  **Fixed/Resolved:** Developer fixes the defect and marks it as fixed.
+5.  **Retest:** Tester retests the defect to confirm the fix works.
+6.  **Closed:** Defect is verified and closed if fixed successfully.
+7.  **Reopened:** If the defect still exists after retesting, it is reopened and goes back to the developer.
+
+**Example:**
+A tester finds that the login button does not work. They log it → Developer is assigned → Developer fixes the code → Tester retests → Login works → Defect is closed. If login still fails, the defect is reopened.
+
+**Quick Tip for Interview:**
+“Defect Life Cycle tracks a bug from identification to closure, including states like New, Assigned, Fixed, Retest, Closed, and sometimes Reopened.”`,
     category: 'Manual Testing',
   },
   {
     id: 10,
     question: 'What are Functional and Non-functional testing?',
-    answer: 'Functional testing verifies what the system does (e.g., testing login, forms, etc.). Non-functional testing verifies how the system works, focusing on aspects like performance, security, usability, and reliability. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `**Functional Testing:**
+-   **Definition:** Testing that verifies the software functions according to the specified requirements. It focuses on **what** the system does.
+-   **Example:** Testing the login feature: enter valid username and password → user should be able to log in successfully.
+
+**Non-Functional Testing:**
+-   **Definition:** Testing that verifies **how** the system performs under certain conditions. It focuses on aspects like performance, security, and usability.
+-   **Example:**
+    -   **Performance Testing:** Checking website speed under 1000 concurrent users.
+    -   **Security Testing:** Verifying password encryption and unauthorized access prevention.
+    -   **Usability Testing:** Ensuring buttons and menus are user-friendly.
+
+**Quick Tip for Interview:**
+“Functional testing checks ‘what’ the software does, Non-functional testing checks ‘how’ the software performs.”`,
     category: 'Manual Testing',
   },
   {
     id: 11,
     question: 'What is Smoke Testing vs Sanity Testing?',
-    answer: 'Smoke Testing is a quick test performed on an initial build to ensure its critical functionalities are working. It decides if a build is stable enough for further testing. Sanity Testing is a brief test of a specific functionality after a code change to ensure it works as expected. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `**Smoke Testing:**
+-   **Definition:** A high-level test to check whether the critical functionalities of a build are working and the build is stable enough for further testing.
+-   **When:** Done on a new build.
+-   **Example:** In an e-commerce app, checking if the app launches, login works, and main pages load.
+
+**Sanity Testing:**
+-   **Definition:** A narrow, focused test to verify that a specific functionality or bug fix works as expected after changes in the build.
+-   **When:** Done after receiving a build with minor changes or bug fixes.
+-   **Example:** After fixing the checkout discount calculation bug, testing only the checkout process, not the entire application.
+
+**Quick Tip for Interview:**
+“Smoke = broad check for build stability, Sanity = focused check for specific functionality or fix.”`,
     category: 'Manual Testing',
   },
   {
     id: 12,
     question: 'Difference between Regression and Retesting?',
-    answer: 'Retesting is done to ensure that a specific defect has been fixed. Regression testing is done to ensure that a recent code change has not adversely affected existing features. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `**Regression Testing:**
+-   **Definition:** Testing to ensure that new changes (enhancements, bug fixes) have not broken existing functionalities.
+-   **Scope:** Covers a broad range of test cases across the application.
+-   **Example:** If a new “Wishlist” feature is added to an e-commerce app, regression ensures login, cart, payment, and other old features still work fine.
+
+**Retesting:**
+-   **Definition:** Testing to verify that a specific defect has been fixed by the developer.
+-   **Scope:** Very narrow and focused → only on the failed test cases.
+-   **Example:** If a login bug (wrong password not showing an error message) is fixed, retesting will only check that specific scenario.
+
+**Quick Tip for Interview:**
+“Retesting = checking a defect fix, Regression = ensuring no side effects on existing features.”`,
     category: 'Manual Testing',
   },
   {
     id: 13,
     question: 'What is Exploratory Testing?',
-    answer: 'Exploratory Testing is an unscripted approach where the tester’s creativity, experience, and intuition guide the testing process. The tester explores the application to find defects that might be missed in formal, scripted testing. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `**Definition:** Exploratory Testing is a type of testing where the tester simultaneously learns, designs test cases, and executes them. It is done without predefined test cases, relying on the tester’s domain knowledge, creativity, and experience.
+-   **When:** Often performed when there is limited documentation, during time constraints, or to discover unexpected defects.
+-   **Example:** Suppose you are testing a chat application. Instead of following written steps, you randomly try things like sending empty messages, uploading unsupported file formats, or logging in from two devices at the same time. This can reveal defects that scripted testing might miss.
+
+**Quick Tip for Interview:**
+“Exploratory testing is unscripted, experience-based testing that helps discover defects beyond predefined scenarios.”`,
     category: 'Manual Testing',
   },
   {
     id: 14,
     question: 'What is Compatibility Testing?',
-    answer: 'Compatibility Testing is a type of non-functional testing to ensure the software can run on different hardware, operating systems, browsers, and network environments. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `**Definition:** Compatibility Testing is a type of non-functional testing used to check whether the application or software works as expected across different environments such as browsers, operating systems, devices, and networks.
+-   **Goal:** To ensure the software delivers a consistent experience for all users, regardless of their platform or configuration.
+
+**Examples:**
+1.  Testing a web application on Chrome, Firefox, Edge, and Safari browsers.
+2.  Checking a mobile app on Android 14 and iOS 18.
+3.  Verifying if the application works on Windows, macOS, and Linux.
+4.  Ensuring proper display on different screen resolutions (desktop vs mobile).
+
+**Quick Tip for Interview:**
+“Compatibility testing ensures the application behaves consistently across multiple browsers, devices, OS, and network environments.”`,
     category: 'Manual Testing',
   },
   {
     id: 15,
     question: 'What is UAT (User Acceptance Testing)?',
-    answer: 'UAT is the final phase of testing, performed by the end-users or clients to verify that the software meets their business requirements before it is released to the market. This is a placeholder for a more detailed answer that you can provide.',
+    answer: `**Definition:** UAT is the final phase of testing where the end users or clients test the application to verify whether it meets the business requirements and is ready for production.
+-   **Who performs:** Performed by the business users or client representatives, not testers or developers.
+-   **When:** Conducted after system testing and before go-live (deployment).
+-   **Goal:** To confirm the system is acceptable for real-world use.
+
+**Example:**
+In a banking app, before release, actual bank employees (end users) test key flows like fund transfer, account balance check, and statement download to ensure the system works as per their needs.
+
+**Quick Tip for Interview:**
+“UAT is done by end users to validate the system against business needs before going live.”`,
     category: 'Manual Testing',
   },
 
