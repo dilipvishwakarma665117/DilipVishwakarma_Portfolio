@@ -54,7 +54,8 @@ export default function DetailedQaList() {
     setVisibleItems(prev => prev + ITEMS_PER_PAGE);
   }
 
-  const currentData = filteredData.slice(0, visibleItems);
+  const currentData = useMemo(() => filteredData.slice(0, visibleItems), [filteredData, visibleItems]);
+
 
   return (
     <section className="container mx-auto px-4 pb-16 md:px-6">
@@ -107,7 +108,7 @@ export default function DetailedQaList() {
                         </span>
                       </AccordionTrigger>
                       <AccordionContent className="px-6 pb-6">
-                        <div className="prose prose-invert max-w-none text-muted-foreground font-body">
+                        <div className="prose prose-invert max-w-none text-muted-foreground font-body whitespace-pre-line">
                           {item.answer}
                           <div className="mt-4 flex justify-end">
                             <Button variant="ghost" size="icon" onClick={() => handleCopy(item.answer, item.id)}>
@@ -133,7 +134,7 @@ export default function DetailedQaList() {
           </Accordion>
         </motion.div>
       )}
-       {visibleItems < filteredData.length && (
+       {isClient && visibleItems < filteredData.length && (
           <div className="mt-8 text-center">
             <Button onClick={loadMore}>Load More</Button>
           </div>

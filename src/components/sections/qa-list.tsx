@@ -54,7 +54,7 @@ export default function QaList() {
     setVisibleItems(prev => prev + ITEMS_PER_PAGE);
   }
 
-  const currentData = filteredData.slice(0, visibleItems);
+  const currentData = useMemo(() => filteredData.slice(0, visibleItems), [filteredData, visibleItems]);
 
   return (
     <section className="container mx-auto px-4 pb-16 md:px-6">
@@ -133,7 +133,7 @@ export default function QaList() {
           </Accordion>
         </motion.div>
       )}
-       {visibleItems < filteredData.length && (
+       {isClient && visibleItems < filteredData.length && (
           <div className="mt-8 text-center">
             <Button onClick={loadMore}>Load More</Button>
           </div>

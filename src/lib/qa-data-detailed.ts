@@ -27,10 +27,12 @@ export const qaDataDetailed: QA[] = [
   {
     id: 2,
     question: 'Difference between Verification and Validation?',
-    answer: `**Verification:** Ensures that the product is being built correctly according to the specified requirements and design. It is a static process (no code execution).
+    answer: `**Verification:**
+Ensures that the product is being built correctly according to the specified requirements and design. It is a static process (no code execution).
 *Example: Reviewing the Requirement Specification Document (SRS) or design diagrams to ensure they meet the client’s requirements.*
 
-**Validation:** Ensures that the product that is built is the right product and meets the business needs. It is a dynamic process (actual testing).
+**Validation:**
+Ensures that the product that is built is the right product and meets the business needs. It is a dynamic process (actual testing).
 *Example: Testing the login functionality in the application to check if users can log in successfully with valid credentials.*
 
 **Quick Tip for Interview:**
@@ -93,10 +95,12 @@ STLC is a process followed to test the software systematically. It focuses only 
   {
     id: 6,
     question: 'Difference between Test Case and Test Scenario?',
-    answer: `**Test Scenario:** A high-level idea of what to test. It defines what functionality needs to be tested, without going into detailed steps.
+    answer: `**Test Scenario:**
+A high-level idea of what to test. It defines what functionality needs to be tested, without going into detailed steps.
 *Example: Test Scenario → “Verify Login functionality.”*
 
-**Test Case:** A detailed step-by-step document to test a specific scenario. It includes inputs, actions, and expected results.
+**Test Case:**
+A detailed step-by-step document to test a specific scenario. It includes inputs, actions, and expected results.
 *Example: Test Case →*
   - *Step 1: Enter valid username*
   - *Step 2: Enter valid password*
@@ -110,13 +114,16 @@ STLC is a process followed to test the software systematically. It focuses only 
   {
     id: 7,
     question: 'What is a Bug, Defect, Error, and Failure?',
-    answer: `**Error:** A mistake made by a developer in the code or logic.
+    answer: `**Error:**
+A mistake made by a developer in the code or logic.
 *Example: Using == instead of .equals() in Java to compare strings.*
 
-**Defect / Bug:** A flaw found in the software when the actual result doesn’t match the expected result.
+**Defect / Bug:**
+A flaw found in the software when the actual result doesn’t match the expected result.
 *Example: Login button doesn’t work when valid credentials are entered.*
 
-**Failure:** When the software does not perform as expected in the actual environment.
+**Failure:**
+When the software does not perform as expected in the actual environment.
 *Example: The login feature works in the test environment but crashes in production when multiple users try to log in simultaneously.*
 
 **Quick Tip for Interview:**
@@ -126,8 +133,11 @@ STLC is a process followed to test the software systematically. It focuses only 
   {
     id: 8,
     question: 'What is Severity and Priority? Explain with an example.',
-    answer: `**Severity:** Refers to the impact of a defect on the system or application. It is usually determined by the tester.
-**Priority:** Refers to how soon a defect should be fixed. It is usually decided by the business or project manager.
+    answer: `**Severity:**
+Refers to the impact of a defect on the system or application. It is usually determined by the tester.
+
+**Priority:**
+Refers to how soon a defect should be fixed. It is usually decided by the business or project manager.
 
 **Examples:**
 1. **High Severity, High Priority (Critical & Urgent)**
@@ -155,6 +165,7 @@ STLC is a process followed to test the software systematically. It focuses only 
     id: 9,
     question: 'Explain Defect Life Cycle.',
     answer: `The Defect Life Cycle (or Bug Life Cycle) is the journey of a defect from its discovery to its closure. It helps track the status of a defect and ensures proper resolution.
+
 **Typical Stages:**
 1. **New:** Tester identifies a defect and logs it.
 2. **Assigned:** Project lead or developer assigns the defect to a developer.
@@ -226,7 +237,8 @@ A tester finds that the login button does not work. They log it → Developer is
   {
     id: 13,
     question: 'What is Exploratory Testing?',
-    answer: `**Definition:** Exploratory Testing is a type of testing where the tester simultaneously learns, designs test cases, and executes them. It is done without predefined test cases, relying on the tester’s domain knowledge, creativity, and experience.
+    answer: `**Definition:**
+Exploratory Testing is a type of testing where the tester simultaneously learns, designs test cases, and executes them. It is done without predefined test cases, relying on the tester’s domain knowledge, creativity, and experience.
 - **When:** Often performed when there is limited documentation, during time constraints, or to discover unexpected defects.
 - **Example:** Suppose you are testing a chat application. Instead of following written steps, you randomly try things like sending empty messages, uploading unsupported file formats, or logging in from two devices at the same time. This can reveal defects that scripted testing might miss.
 
@@ -237,7 +249,8 @@ A tester finds that the login button does not work. They log it → Developer is
   {
     id: 14,
     question: 'What is Compatibility Testing?',
-    answer: `**Definition:** Compatibility Testing is a type of non-functional testing used to check whether the application or software works as expected across different environments such as browsers, operating systems, devices, and networks.
+    answer: `**Definition:**
+Compatibility Testing is a type of non-functional testing used to check whether the application or software works as expected across different environments such as browsers, operating systems, devices, and networks.
 - **Goal:** To ensure the software delivers a consistent experience for all users, regardless of their platform or configuration.
 
 **Examples:**
@@ -253,7 +266,8 @@ A tester finds that the login button does not work. They log it → Developer is
   {
     id: 15,
     question: 'What is UAT (User Acceptance Testing)?',
-    answer: `**Definition:** UAT is the final phase of testing where the end users or clients test the application to verify whether it meets the business requirements and is ready for production.
+    answer: `**Definition:**
+UAT is the final phase of testing where the end users or clients test the application to verify whether it meets the business requirements and is ready for production.
 - **Who performs:** Performed by the business users or client representatives, not testers or developers.
 - **When:** Conducted after system testing and before go-live (deployment).
 - **Goal:** To confirm the system is acceptable for real-world use.
