@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Button } from '../ui/button';
-import { BookText } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 
-export default function QaHero() {
+export default function DetailedQaHero() {
   return (
     <section className="bg-transparent py-20 md:py-28">
       <div className="container mx-auto px-4 md:px-6">
@@ -16,7 +16,7 @@ export default function QaHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Top 100 Q&A for Testers
+            Detailed Interview Answers
           </motion.h1>
           <motion.p
             className="mx-auto mt-4 max-w-3xl text-muted-foreground md:text-xl"
@@ -24,7 +24,7 @@ export default function QaHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            A curated list of frequently asked interview questions and answers for Software Testers.
+            In-depth explanations for common software testing interview questions.
           </motion.p>
           <motion.div
             className="mt-8"
@@ -32,10 +32,10 @@ export default function QaHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Link href="/qa/detailed">
-              <Button>
-                <BookText className="mr-2 h-4 w-4" />
-                View Detailed Answers
+            <Link href="/qa">
+              <Button variant="outline">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Q&A List
               </Button>
             </Link>
           </motion.div>
