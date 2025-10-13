@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useForm } from "react-hook-form";
@@ -25,9 +26,17 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+  name: z.string()
+    .trim()
+    .min(2, { message: "Name must be at least 2 characters." })
+    .max(50, { message: "Name cannot be longer than 50 characters." }),
+  email: z.string()
+    .trim()
+    .email({ message: "Please enter a valid email address." }),
+  message: z.string()
+    .trim()
+    .min(10, { message: "Message must be at least 10 characters." })
+    .max(5000, { message: "Message cannot be longer than 5000 characters." }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -207,3 +216,5 @@ export default function Contact() {
     </motion.section>
   );
 }
+
+    
