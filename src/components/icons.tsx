@@ -9,16 +9,29 @@ export function DVLogo(props: SVGProps<SVGSVGElement>) {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       {...props}
     >
-      <path d="M12 22a10 10 0 0 0 10-10A10 10 0 0 0 12 2"/>
-      <path d="M6 2v2"/>
-      <path d="M6 8v2"/>
-      <path d="M6 14v2"/>
-      <path d="M6 20v2"/>
+      {/* Outer circle */}
+      <circle cx="12" cy="12" r="11" />
+      
+      {/* Heart shape */}
+      <path d="M12 7.5a3 3 0 0 1 3-3c1.657 0 3 1.343 3 3 0 1.83-2.053 3.832-6 6.832-3.947-3-6-4.998-6-6.832 0-1.657 1.343-3 3-3a3 3 0 0 1 3 3z" />
+
+      {/* Text "Dil" */}
+      <text 
+        x="12" 
+        y="18.5" 
+        textAnchor="middle" 
+        fontSize="5" 
+        fontWeight="bold" 
+        fill="currentColor" 
+        stroke="none"
+      >
+        Dil
+      </text>
     </svg>
   );
 }
