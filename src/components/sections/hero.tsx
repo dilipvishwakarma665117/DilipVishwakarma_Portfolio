@@ -15,6 +15,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import TypingAnimation from "@/components/typing-animation";
 
 export default function Hero() {
   const handleDownload = () => {
@@ -46,9 +47,9 @@ export default function Hero() {
                 Currently at <strong className="font-semibold">Accenture</strong>
               </div>
             </div>
-            <h2 className="mt-4 text-lg font-medium text-foreground/80 sm:text-xl md:text-2xl font-headline">
-              {heroData.title}
-            </h2>
+            <div className="mt-4 h-14 md:h-7">
+                <TypingAnimation />
+            </div>
             <p className="mx-auto mt-4 max-w-lg text-muted-foreground md:mx-0">
               {heroData.tagline}
             </p>
