@@ -25,21 +25,21 @@ const services = [
     icon: ShoppingCart,
     title: "E-commerce Stores",
     description: "Launch your online store with a custom-built, user-friendly e-commerce platform.",
-    imageUrl: "https://picsum.photos/seed/ecommerce/600/400",
+    imageUrl: "https://media.istockphoto.com/id/1972284692/photo/digital-cart-icon-on-future-tech-background-online-shopping-evolution-futuristic-shopping.webp?a=1&b=1&s=612x612&w=0&k=20&c=K7G451e5Hrxv-Akc7jFFvO7qdDLbt_zwxoS2Fh1AR9o=",
     imageHint: "online store"
   },
   {
     icon: Briefcase,
     title: "Business Websites",
     description: "Establish a professional online presence for your business to attract and inform customers.",
-    imageUrl: "https://picsum.photos/seed/business/600/400",
+    imageUrl: "https://plus.unsplash.com/premium_photo-1678917651747-5c58fda9e7f1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cG9ydGZvbGlvfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
     imageHint: "corporate website"
   },
   {
     icon: Code,
     title: "Custom Web Apps",
     description: "Need something unique? I can build custom web applications tailored to your specific needs.",
-    imageUrl: "https://picsum.photos/seed/customapp/600/400",
+    imageUrl: "https://images.unsplash.com/photo-1545665277-5937489579f2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydGZvbGlvfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
     imageHint: "web application"
   },
 ];
