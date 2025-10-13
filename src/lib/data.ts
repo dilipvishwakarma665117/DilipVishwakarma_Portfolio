@@ -4,10 +4,10 @@ import { PlaceholderImages } from "./placeholder-images";
 export const navLinks = [
   { name: "About", href: "/#about" },
   { name: "Projects", href: "/#projects" },
-  { name: "My Creations", href: "/my-creations" },
-  { name: "Q&A", href: "/qa" },
   { name: "Achievements", href: "/#achievements" },
   { name: "Contact", href: "/#contact" },
+  { name: "Q&A", href: "/qa" },
+  { name: "My Creations", href: "/my-creations" },
 ];
 
 export const socialLinks = [
