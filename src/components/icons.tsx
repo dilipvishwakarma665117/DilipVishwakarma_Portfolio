@@ -27,17 +27,17 @@ export function DVLogo(props: SVGProps<SVGSVGElement>) {
       {/* Heart shape */}
       <path d="M12 7.5a3 3 0 0 1 3-3c1.657 0 3 1.343 3 3 0 1.83-2.053 3.832-6 6.832-3.947-3-6-4.998-6-6.832 0-1.657 1.343-3 3-3a3 3 0 0 1 3 3z" />
 
-      {/* Text "Dil" */}
+      {/* Text "D" */}
       <text 
         x="12" 
-        y="18.5" 
+        y="19" 
         textAnchor="middle" 
-        fontSize="5" 
+        fontSize="8" 
         fontWeight="bold" 
         fill="url(#logo-gradient)"
         stroke="none"
       >
-        Dil
+        D
       </text>
     </svg>
   );
