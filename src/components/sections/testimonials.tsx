@@ -5,8 +5,8 @@ import { testimonialsData, Testimonial } from '@/lib/testimonials-data';
 import { Card, CardContent } from '@/components/ui/card';
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <Card className="glass-morphism w-[320px] md:w-[450px] shrink-0">
-    <CardContent className="p-6 flex flex-col justify-center h-full">
+  <Card className="glass-morphism w-[350px] md:w-[500px] shrink-0">
+    <CardContent className="p-4 flex flex-col justify-center h-full">
       <p className="text-muted-foreground mb-4 text-sm md:text-base">"{testimonial.text}"</p>
       <div>
         <p className="font-semibold text-right">- {testimonial.author}</p>
