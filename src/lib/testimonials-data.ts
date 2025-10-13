@@ -3,37 +3,37 @@ export type Testimonial = {
     author: string;
     company: string;
     text: string;
-    category: 'Colleague';
+    category: 'Web Dev Project';
   };
   
   export const testimonialsData: Testimonial[] = [
     {
       id: 1,
       author: "Chirag Tiwari",
-      company: "Colleague",
-      text: "Dilip is a dedicated and detail-oriented QA professional. His commitment to quality is evident in his thorough testing and insightful feedback. He's a great team player and always willing to help out.",
-      category: "Colleague",
+      company: "Web Dev Project",
+      text: "Dilip built a sleek and responsive portfolio for me. The code is clean, and the final site exceeded my expectations. Highly recommended for web development.",
+      category: "Web Dev Project",
     },
     {
       id: 2,
       author: "Harshit Yadav",
-      company: "Colleague",
-      text: "Working with Dilip has been a pleasure. He has a strong grasp of both manual and automation testing concepts and is always eager to learn new technologies. His positive attitude is contagious.",
-      category: "Colleague",
+      company: "Web Dev Project",
+      text: "I was impressed with Dilip's ability to turn my ideas into a functional and beautiful website. He's a talented developer with a great eye for design.",
+      category: "Web Dev Project",
     },
     {
       id: 3,
       author: "Shivendra Singh",
-      company: "Colleague",
-      text: "Dilip's analytical skills are top-notch. He can quickly identify the root cause of complex issues and suggest effective solutions. He's a valuable asset to any quality assurance team.",
-      category: "Colleague",
+      company: "Web Dev Project",
+      text: "Dilip delivered a high-quality business website on time. His communication was excellent throughout the project. A pleasure to work with.",
+      category: "Web Dev Project",
     },
     {
       id: 4,
       author: "Shreeram Sharma",
-      company: "Colleague",
-      text: "I've been consistently impressed by Dilip's work ethic and his proactive approach to testing. He takes ownership of his tasks and ensures that every release is of the highest quality.",
-      category: "Colleague",
+      company: "Web Dev Project",
+      text: "The custom web app Dilip built for us is fantastic. It's fast, intuitive, and perfectly tailored to our needs. He's a skilled and reliable developer.",
+      category: "Web Dev Project",
     },
   ];
   
