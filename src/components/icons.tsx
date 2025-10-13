@@ -14,8 +14,8 @@ export function DVLogo(props: SVGProps<SVGSVGElement>) {
       strokeLinejoin="round"
       {...props}
     >
-      <path d="M8 2v20" />
-      <path d="M8 2l10 10L8 22" />
+      <path d="M6 2h4l8 10v10H6z"></path>
+      <path d="M10 2l-4 10h4l4-10z"></path>
     </svg>
   );
 }
