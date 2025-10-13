@@ -40,7 +40,7 @@ export default function Header() {
     )}>
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 font-bold text-lg" aria-label="Home">
-          <DVLogo className="h-6 w-6 text-primary" />
+          <DVLogo className="h-6 w-6 text-foreground" />
           <span className="hidden sm:inline">Dilip's Digital Domain</span>
         </Link>
         <nav className="hidden items-center gap-4 md:flex">
@@ -61,7 +61,7 @@ export default function Header() {
                <SheetHeader className="mb-8 flex flex-row justify-between items-center">
                  <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                   <Link href="/" className="flex items-center gap-2 font-bold text-lg" onClick={closeMobileMenu}>
-                    <DVLogo className="h-6 w-6 text-primary" />
+                    <DVLogo className="h-6 w-6 text-foreground" />
                     <span>Dilip's Domain</span>
                   </Link>
                    <Button variant="ghost" size="icon" onClick={closeMobileMenu}>

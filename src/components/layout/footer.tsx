@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-3">
           <div className="flex flex-col gap-2">
              <Link href="/" className="flex items-center gap-2 font-bold text-lg" aria-label="Home">
-                <DVLogo className="h-6 w-6 text-primary" />
+                <DVLogo className="h-6 w-6 text-foreground" />
                 <span>Dilip's Digital Domain</span>
               </Link>
             <p className="text-sm text-muted-foreground">
