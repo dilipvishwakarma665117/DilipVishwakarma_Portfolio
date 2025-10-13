@@ -15,7 +15,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Card } from "../ui/card";
 
 export default function Hero() {
   const handleDownload = () => {
@@ -38,7 +37,16 @@ export default function Hero() {
             <h1 className="text-4xl font-extrabold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl font-headline">
               {heroData.name}
             </h1>
-            <h2 className="mt-2 text-lg font-medium text-foreground/80 sm:text-xl md:text-2xl font-headline">
+            <div className="mt-4 flex justify-center md:justify-start">
+              <div className="inline-flex items-center gap-x-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm text-primary">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+                </span>
+                Currently at <strong className="font-semibold">Accenture</strong>
+              </div>
+            </div>
+            <h2 className="mt-4 text-lg font-medium text-foreground/80 sm:text-xl md:text-2xl font-headline">
               {heroData.title}
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-muted-foreground md:mx-0">
