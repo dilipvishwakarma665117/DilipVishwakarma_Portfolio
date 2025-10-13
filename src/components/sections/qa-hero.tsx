@@ -16,7 +16,7 @@ export default function QaHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Top 100 Q&A for Testers
+            Top 100 Question and Answers for Testers designed by me
           </motion.h1>
           <motion.p
             className="mx-auto mt-4 max-w-3xl text-muted-foreground md:text-xl"
