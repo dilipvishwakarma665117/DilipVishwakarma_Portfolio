@@ -23,8 +23,9 @@ export function DVLogo(props: SVGProps<SVGSVGElement>) {
       {/* Text "D" - Red */}
       <text 
         x="12" 
-        y="19" 
+        y="12" 
         textAnchor="middle" 
+        dy=".3em"
         fontSize="8" 
         fontWeight="bold" 
         fill="red"
