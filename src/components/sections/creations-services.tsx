@@ -81,7 +81,7 @@ export default function CreationsServices() {
                 <div className="p-1 h-full">
                   <Card className="h-full glass-morphism overflow-hidden flex flex-col">
                     <div className="relative h-48 w-full">
-                       <Image src={imageUrl} alt={title} fill objectFit="cover" data-ai-hint={imageHint} />
+                       <Image src={imageUrl} alt={title} fill style={{ objectFit: "cover" }} data-ai-hint={imageHint} />
                     </div>
                     <CardContent className="flex flex-col flex-1 items-center justify-center gap-4 p-6 text-center">
                       <div className="rounded-full bg-primary/10 p-4">
