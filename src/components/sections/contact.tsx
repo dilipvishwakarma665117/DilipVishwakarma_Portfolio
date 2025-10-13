@@ -62,11 +62,19 @@ export default function Contact() {
       return;
     }
 
+    const fullMessage = `
+      Name: ${values.name}
+      Email: ${values.email}
+      
+      Message:
+      ${values.message}
+    `;
+
     const templateParams = {
         from_name: values.name,
         from_email: values.email,
         to_name: 'Dilip Vishwakarma',
-        message: values.message,
+        message: fullMessage,
     };
 
     try {
