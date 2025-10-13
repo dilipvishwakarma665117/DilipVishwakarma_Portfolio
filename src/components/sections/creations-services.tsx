@@ -18,7 +18,7 @@ const services = [
     icon: User,
     title: "Personal Portfolios",
     description: "Showcase your skills and projects with a stunning personal website that stands out.",
-    imageUrl: "https://picsum.photos/seed/portfolio/600/400",
+    imageUrl: "https://images.unsplash.com/photo-1555066931-4365d1469c08?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb2RlfGVufDB8fHx8MTc1OTMwMDU4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
     imageHint: "personal website"
   },
   {
@@ -81,7 +81,7 @@ export default function CreationsServices() {
                 <div className="p-1 h-full">
                   <Card className="h-full glass-morphism overflow-hidden flex flex-col">
                     <div className="relative h-48 w-full">
-                       <Image src={imageUrl} alt={title} layout="fill" objectFit="cover" data-ai-hint={imageHint} />
+                       <Image src={imageUrl} alt={title} fill objectFit="cover" data-ai-hint={imageHint} />
                     </div>
                     <CardContent className="flex flex-col flex-1 items-center justify-center gap-4 p-6 text-center">
                       <div className="rounded-full bg-primary/10 p-4">
