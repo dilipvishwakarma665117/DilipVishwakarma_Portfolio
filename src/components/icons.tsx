@@ -19,7 +19,7 @@ export function DVLogo(props: SVGProps<SVGSVGElement>) {
       <path className="logo-path" />
       <text
         x="12"
-        y="12.5"
+        y="12"
         textAnchor="middle"
         dominantBaseline="middle"
         fontSize="14"
