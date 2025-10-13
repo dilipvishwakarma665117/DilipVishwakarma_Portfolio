@@ -1,4 +1,5 @@
 import type { SVGProps } from "react";
+import { cn } from "@/lib/utils";
 
 export function DVLogo(props: SVGProps<SVGSVGElement>) {
   return (
@@ -13,11 +14,12 @@ export function DVLogo(props: SVGProps<SVGSVGElement>) {
       strokeLinecap="round"
       strokeLinejoin="round"
       {...props}
+      className={cn("logo-animate", props.className)}
     >
       <circle cx="12" cy="12" r="10" />
       <text
         x="12"
-        y="12"
+        y="12.5"
         textAnchor="middle"
         dominantBaseline="middle"
         fontSize="14"
