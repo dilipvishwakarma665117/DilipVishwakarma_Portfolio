@@ -6,7 +6,7 @@ import { heroData } from "@/lib/data";
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function FreelanceHero() {
+export default function CreationsHero() {
   return (
     <section className="relative overflow-hidden bg-transparent py-20 md:py-28">
       <div className="container mx-auto px-4 md:px-6">

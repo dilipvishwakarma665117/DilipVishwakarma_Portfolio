@@ -44,7 +44,7 @@ const services = [
   },
 ];
 
-export default function FreelanceServices() {
+export default function CreationsServices() {
   return (
     <motion.section 
       id="services" 

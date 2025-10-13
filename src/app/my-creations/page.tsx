@@ -1,15 +1,15 @@
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
-import FreelanceHero from '@/components/sections/freelance-hero';
-import FreelanceServices from '@/components/sections/freelance-services';
+import CreationsHero from '@/components/sections/creations-hero';
+import CreationsServices from '@/components/sections/creations-services';
 
-export default function FreelancePage() {
+export default function MyCreationsPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        <FreelanceHero />
-        <FreelanceServices />
+        <CreationsHero />
+        <CreationsServices />
       </main>
       <Footer />
     </div>
