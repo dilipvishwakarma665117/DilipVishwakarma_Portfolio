@@ -8,12 +8,19 @@ export function DVLogo(props: SVGProps<SVGSVGElement>) {
       height="32"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="currentColor"
+      stroke="url(#logo-gradient)"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       {...props}
     >
+      <defs>
+        <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: "hsl(var(--primary))" }} />
+          <stop offset="100%" style={{ stopColor: "hsl(var(--accent))" }} />
+        </linearGradient>
+      </defs>
+
       {/* Outer circle */}
       <circle cx="12" cy="12" r="11" />
       
@@ -27,7 +34,7 @@ export function DVLogo(props: SVGProps<SVGSVGElement>) {
         textAnchor="middle" 
         fontSize="5" 
         fontWeight="bold" 
-        fill="currentColor" 
+        fill="url(#logo-gradient)"
         stroke="none"
       >
         Dil
