@@ -71,13 +71,6 @@ export default function Testimonials() {
     }),
   };
 
-  const getColumnCount = () => {
-    if (typeof window === 'undefined') return 3;
-    if (window.innerWidth < 768) return 1;
-    if (window.innerWidth < 1024) return 2;
-    return 3;
-  };
-
   return (
     <motion.section
       id="testimonials"
@@ -94,9 +87,9 @@ export default function Testimonials() {
             visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
           }}
         >
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Client Testimonials</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">What others say</h2>
           <p className="mx-auto mt-4 max-w-3xl text-muted-foreground md:text-xl">
-            Hear what my clients have to say about my work on their Personal Portfolios, E-commerce Stores, Business Websites, and Custom Web Apps.
+            Here's what my colleagues have to say about working with me.
           </p>
         </motion.div>
 
