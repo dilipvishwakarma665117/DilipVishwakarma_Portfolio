@@ -10,13 +10,13 @@ export function DVLogo(props: SVGProps<SVGSVGElement>) {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2.5"
+      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
       {...props}
       className={cn("logo-animate", props.className)}
     >
-      <circle cx="12" cy="12" r="10" />
+      <path className="logo-path" />
       <text
         x="12"
         y="12.5"
