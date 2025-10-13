@@ -8,7 +8,6 @@ import { MessageSquare } from 'lucide-react';
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
   <Card className="glass-morphism h-full w-[350px] md:w-[450px] shrink-0">
     <CardContent className="p-6">
-      <MessageSquare className="h-8 w-8 text-primary mb-4" />
       <p className="text-muted-foreground mb-4">"{testimonial.text}"</p>
       <p className="font-semibold text-right">- {testimonial.author}</p>
       <p className="text-sm text-muted-foreground text-right">{testimonial.company}</p>
