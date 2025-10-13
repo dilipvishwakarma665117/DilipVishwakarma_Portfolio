@@ -11,7 +11,7 @@ const TypingAnimation = () => {
           strings: [
             "Quality Engineer Analyst",
             "Software Tester",
-            "Turning Bugs into Quality",
+            "Test Automation Engineer",
           ],
           autoStart: true,
           loop: true,
