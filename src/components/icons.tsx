@@ -9,13 +9,13 @@ export function DVLogo(props: SVGProps<SVGSVGElement>) {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       {...props}
     >
-      <path d="M9 2v20" />
-      <path d="M9 2c8 0 8 20 0 20" />
+      <path d="M8 2v20" />
+      <path d="M8 2c10 0 10 20 0 20" />
     </svg>
   );
 }
