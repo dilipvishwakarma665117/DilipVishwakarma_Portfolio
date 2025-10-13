@@ -15,7 +15,7 @@ export function DVLogo(props: SVGProps<SVGSVGElement>) {
       {...props}
     >
       <path d="M8 2v20" />
-      <path d="M8 2c10 0 10 20 0 20" />
+      <path d="M8 2l10 10L8 22" />
     </svg>
   );
 }
