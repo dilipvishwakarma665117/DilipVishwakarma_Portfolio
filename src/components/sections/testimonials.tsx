@@ -111,12 +111,6 @@ export default function Testimonials() {
             <Loader2 className="h-8 w-8 animate-spin text-primary" />
           </div>
         )}
-
-        {!hasMore && items.length > 0 && (
-          <div className="text-center text-muted-foreground mt-8">
-            <p>You've reached the end of the testimonials.</p>
-          </div>
-        )}
       </div>
     </motion.section>
   );
