@@ -1,16 +1,12 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { testimonialsData, Testimonial } from '@/lib/testimonials-data';
 import { Card, CardContent } from '@/components/ui/card';
-import { Loader2, MessageSquare } from 'lucide-react';
-import { useIsMobile } from '@/hooks/use-mobile';
-
-const ITEMS_PER_PAGE = 6;
+import { MessageSquare } from 'lucide-react';
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <Card className="glass-morphism h-full">
+  <Card className="glass-morphism h-full w-[350px] md:w-[450px] shrink-0">
     <CardContent className="p-6">
       <MessageSquare className="h-8 w-8 text-primary mb-4" />
       <p className="text-muted-foreground mb-4">"{testimonial.text}"</p>
@@ -21,55 +17,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
 );
 
 export default function Testimonials() {
-  const [items, setItems] = useState<Testimonial[]>([]);
-  const [page, setPage] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
-  const [hasMore, setHasMore] = useState(true);
-  const observer = useRef<IntersectionObserver>();
-  const isMobile = useIsMobile();
-
-  const loadMoreTestimonials = useCallback(() => {
-    if (isLoading || !hasMore) return;
-    setIsLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      const newItems = testimonialsData.slice(0, page * ITEMS_PER_PAGE);
-      setItems(newItems);
-      setPage(prevPage => prevPage + 1);
-      if (newItems.length >= testimonialsData.length) {
-        setHasMore(false);
-      }
-      setIsLoading(false);
-    }, 500);
-  }, [isLoading, hasMore, page]);
-  
-  useEffect(() => {
-    loadMoreTestimonials();
-  }, []);
-
-  const lastTestimonialElementRef = useCallback(node => {
-    if (isLoading) return;
-    if (observer.current) observer.current.disconnect();
-    observer.current = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting && hasMore) {
-        loadMoreTestimonials();
-      }
-    });
-    if (node) observer.current.observe(node);
-  }, [isLoading, hasMore, loadMoreTestimonials]);
-
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: isMobile ? 0 : i * 0.1,
-        duration: 0.5,
-      },
-    }),
-  };
+  const duplicatedTestimonials = [...testimonialsData, ...testimonialsData];
 
   return (
     <motion.section
@@ -89,28 +37,17 @@ export default function Testimonials() {
         >
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">What others say</h2>
           <p className="mx-auto mt-4 max-w-3xl text-muted-foreground md:text-xl">
-            Here's what my colleagues have to say about working with me.
+            Feedback from colleagues.
           </p>
         </motion.div>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {items.map((testimonial, index) => (
-             <motion.div
-                key={testimonial.id}
-                custom={index % (page > 1 ? ITEMS_PER_PAGE : items.length) }
-                variants={cardVariants}
-                ref={items.length === index + 1 ? lastTestimonialElementRef : null}
-              >
-              <TestimonialCard testimonial={testimonial} />
-            </motion.div>
-          ))}
-        </div>
-        
-        {isLoading && (
-          <div className="flex justify-center items-center mt-8">
-            <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        <div className="relative mt-12 w-full overflow-hidden">
+          <div className="flex gap-8 animate-marquee hover:[animation-play-state:paused]">
+            {duplicatedTestimonials.map((testimonial, index) => (
+              <TestimonialCard key={`${testimonial.id}-${index}`} testimonial={testimonial} />
+            ))}
           </div>
-        )}
+        </div>
       </div>
     </motion.section>
   );
