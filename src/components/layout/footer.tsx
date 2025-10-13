@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { footerData, navLinks, socialLinks } from "@/lib/data";
+import { contactData, footerData, navLinks, socialLinks } from "@/lib/data";
 import { Button } from "../ui/button";
 import { DVLogo } from "../icons";
 import { cn } from "@/lib/utils";
+import { LocateIcon } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -28,8 +29,12 @@ export default function Footer() {
               ))}
             </nav>
           </div>
-          <div className="grid gap-2">
-             <h3 className="font-semibold">Connect</h3>
+          <div className="grid gap-4">
+             <h3 className="font-semibold">Contact Details</h3>
+             <div className="flex items-center gap-4">
+                <LocateIcon className="h-5 w-5 text-primary"/>
+                <p className="text-sm text-muted-foreground">{contactData.location}</p>
+            </div>
             <div className="flex items-center gap-2">
               {socialLinks.map(({ name, href, icon: Icon }) => (
                 <Link href={href} key={name} target="_blank" rel="noopener noreferrer">

@@ -19,9 +19,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { contactData, socialLinks } from "@/lib/data";
-import { Loader2, LocateIcon, CheckCircle } from "lucide-react";
-import Link from "next/link";
+import { Loader2, CheckCircle } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -118,8 +116,8 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2">
-          <Card className="glass-morphism">
+        <div className="mt-12 flex justify-center">
+          <Card className="glass-morphism w-full max-w-2xl">
             <CardHeader>
               <CardTitle>Send a Message</CardTitle>
             </CardHeader>
@@ -188,29 +186,6 @@ export default function Contact() {
               )}
             </CardContent>
           </Card>
-
-          <div className="space-y-8">
-            <Card className="glass-morphism">
-                <CardHeader>
-                    <CardTitle>Contact Details</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                    <div className="flex items-center gap-4">
-                        <LocateIcon className="h-6 w-6 text-primary"/>
-                        <p className="text-muted-foreground">{contactData.location}</p>
-                    </div>
-                    <div className="flex items-center gap-4">
-                        {socialLinks.map(({name, href, icon: Icon}) => (
-                           <Link href={href} key={name} target="_blank" rel="noopener noreferrer">
-                            <Button variant="outline" size="icon" aria-label={name}>
-                                <Icon className="h-5 w-5" />
-                            </Button>
-                            </Link>
-                        ))}
-                    </div>
-                </CardContent>
-            </Card>
-          </div>
         </div>
       </div>
     </motion.section>
