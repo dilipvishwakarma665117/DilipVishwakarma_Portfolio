@@ -47,7 +47,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Dilip's Digital Domain. Made with ❤️ by {footerData.madeBy}.</p>
+          <p>Made with ❤️ by {footerData.madeBy}.</p>
         </div>
       </div>
     </footer>
