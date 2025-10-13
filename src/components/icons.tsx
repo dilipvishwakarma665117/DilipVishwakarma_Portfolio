@@ -14,7 +14,7 @@ export function DVLogo(props: SVGProps<SVGSVGElement>) {
       strokeLinejoin="round"
       {...props}
     >
-      <circle cx="12" cy="12" r="10" />
+      <circle cx="12" cy="12" r="10" strokeWidth="2.5" />
       <text
         x="12"
         y="12"
