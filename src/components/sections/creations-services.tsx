@@ -18,8 +18,8 @@ const services = [
     icon: User,
     title: "Personal Portfolios",
     description: "Showcase your skills and projects with a stunning personal website that stands out.",
-    imageUrl: "https://images.unsplash.com/photo-1555066931-4365d1469c08?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb2RlfGVufDB8fHx8MTc1OTMwMDU4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-    imageHint: "personal website"
+    imageUrl: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydGZvbGlvfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
+    imageHint: "portfolio website"
   },
   {
     icon: ShoppingCart,
