@@ -9,23 +9,20 @@ export function DVLogo(props: SVGProps<SVGSVGElement>) {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.5"
+      strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       {...props}
     >
-      {/* Outer circle - Theme-aware */}
-      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2.5" />
-      
-      {/* Text "D" - White */}
-      <text 
-        x="12" 
-        y="12" 
-        textAnchor="middle" 
+      <circle cx="12" cy="12" r="10" />
+      <text
+        x="12"
+        y="12"
+        textAnchor="middle"
         dy=".3em"
-        fontSize="8" 
-        fontWeight="bold" 
-        fill="white"
+        fontSize="12"
+        fontWeight="bold"
+        fill="currentColor"
         stroke="none"
       >
         D
