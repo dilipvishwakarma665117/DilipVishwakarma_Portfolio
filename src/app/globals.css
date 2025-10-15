@@ -128,3 +128,36 @@
 .animate-marquee {
   animation: marquee 40s linear infinite;
 }
+
+.logo-path {
+  d: path("M12,2A10,10,0,1,1,2,12,10,10,0,0,1,12,2");
+  transition: d 0.5s;
+}
+
+.logo-animate:hover .logo-path {
+  animation: morph-to-heart 0.5s forwards, rotate-indefinite 2s linear infinite 0.5s;
+}
+
+@keyframes morph-to-heart {
+  0% {
+    d: path("M12,2A10,10,0,1,1,2,12,10,10,0,0,1,12,2");
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+     d: path("M12 5C12 5 9.5 2.5 7.5 2.5C5.5 2.5 4 4 4 6C4 8.5 7.5 12 12 16.5C16.5 12 20 8.5 20 6C20 4 18.5 2.5 16.5 2.5C14.5 2.5 12 5 12 5Z");
+     transform: scale(1.1) translate(0, 1px);
+  }
+  100% {
+    d: path("M12 6C12 6 10 3 8 3C6 3 4.5 4.5 4.5 6.5C4.5 9 8 12.5 12 17C16 12.5 19.5 9 19.5 6.5C19.5 4.5 18 3 16 3C14 3 12 6 12 6Z");
+    transform: scale(1.2) translate(0, 2px);
+  }
+}
+
+@keyframes rotate-indefinite {
+  from {
+    transform: scale(1.2) translate(0, 2px) rotate(0deg);
+  }
+  to {
+    transform: scale(1.2) translate(0, 2px) rotate(360deg);
+  }
+}
