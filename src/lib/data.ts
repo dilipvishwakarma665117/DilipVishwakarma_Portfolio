@@ -21,7 +21,7 @@ export const heroData = {
   name: "Dilip Vishwakarma",
   title: "Quality Engineer Analyst | Software Tester",
   tagline: "Turning Bugs into Quality – 2+ Years of Experience in Manual & Automation Testing.",
-  resumeUrl: "https://raw.githubusercontent.com/dilipvishwakarma665117/Pesonal-Portfolio-Web/main/docs/Dilip_Resume_3.pdf",
+  resumeUrl: "/Dilip_Resume_3.pdf",
   portraitUrl: "https://raw.githubusercontent.com/dilipvishwakarma665117/studio/e95631bfef998e19a20afc89c1b84e4b7379953b/images/DP1.jpg?raw=true",
 };
 
