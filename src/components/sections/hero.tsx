@@ -22,7 +22,7 @@ export default function Hero() {
     // This function creates a temporary link to trigger the download.
     const link = document.createElement('a');
     link.href = heroData.resumeUrl;
-    link.download = 'Dilip_Vishwakarma_Resume.pdf';
+    link.download = 'Dilip_Resume_3.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
