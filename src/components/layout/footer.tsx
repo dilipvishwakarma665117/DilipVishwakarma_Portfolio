@@ -15,15 +15,18 @@ export default function Footer() {
                 <DVLogo className="h-6 w-6 text-foreground" />
                 <span>Dilip's Digital Domain</span>
               </Link>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground font-medium">
               Quality Engineer Analyst | Software Tester
+            </p>
+            <p className="text-xs text-muted-foreground/70 max-w-xs leading-relaxed mt-1">
+              Ensuring digital excellence through rigorous manual and automation testing. Dedicated to delivering high-quality software solutions and seamless user experiences.
             </p>
           </div>
           <div className="grid gap-2">
             <h3 className="font-semibold">Quick Links</h3>
             <nav className="flex flex-col gap-1">
               {navLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="text-muted-foreground hover:text-foreground text-sm w-fit">
+                <Link key={link.href} href={link.href} className="text-muted-foreground hover:text-foreground text-sm w-fit transition-colors">
                     {link.name}
                 </Link>
               ))}
@@ -38,7 +41,7 @@ export default function Footer() {
             <div className="flex items-center gap-2">
               {socialLinks.map(({ name, href, icon: Icon }) => (
                 <Link href={href} key={name} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" size="icon" aria-label={name}>
+                  <Button variant="outline" size="icon" aria-label={name} className="rounded-xl border-white/10 hover:bg-primary/10 hover:text-primary transition-all">
                     <Icon className="h-4 w-4" />
                   </Button>
                 </Link>
