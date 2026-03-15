@@ -14,6 +14,7 @@ export default function About() {
       
       <div className="container relative z-10">
         <div className="grid gap-12 lg:gap-20 lg:grid-cols-2 items-start">
+          {/* Left Column: Sticky Summary */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -54,12 +55,14 @@ export default function About() {
             </div>
           </motion.div>
 
+          {/* Right Column: Detailed Journey */}
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="space-y-10 sm:space-y-12"
           >
+            {/* Experience Timeline */}
             <div className="space-y-6">
               <h3 className="text-xl sm:text-2xl font-black flex items-center gap-3 sm:gap-4">
                 <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20 shadow-sm shrink-0">
@@ -88,6 +91,7 @@ export default function About() {
               </div>
             </div>
 
+            {/* Academic Section */}
             <div className="space-y-6 pt-4 sm:pt-6">
               <h3 className="text-xl sm:text-2xl font-black flex items-center gap-3 sm:gap-4">
                 <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-2xl bg-secondary/10 flex items-center justify-center border border-secondary/20 shadow-sm shrink-0">
@@ -102,6 +106,7 @@ export default function About() {
               </Card>
             </div>
 
+            {/* Expertise Tags */}
             <div className="space-y-6 pt-4 sm:pt-6">
               <h3 className="text-xl sm:text-2xl font-black flex items-center gap-3 sm:gap-4">
                 <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-2xl bg-accent/10 flex items-center justify-center border border-accent/20 shadow-sm shrink-0">
