@@ -1,3 +1,4 @@
+
 'use client';
 import Image from "next/image";
 import Link from "next/link";
@@ -44,15 +45,35 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center lg:text-left order-2 lg:order-1"
           >
-            <motion.div 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-semibold mb-6 sm:mb-8"
-            >
-              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 animate-pulse" />
-              <span>Available for new opportunities</span>
-            </motion.div>
+            <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6 sm:mb-8">
+              {/* Accenture Badge */}
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="inline-flex items-center gap-3 px-4 py-1.5 rounded-2xl glass-card border-white/10 shadow-lg"
+              >
+                <div className="h-3 w-3 sm:h-4 sm:w-4 rounded-full bg-primary/20 flex items-center justify-center relative">
+                  <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-primary animate-ping absolute"></div>
+                  <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-primary"></div>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[10px] text-muted-foreground font-bold uppercase tracking-wider">Currently at</span>
+                  <span className="text-xs sm:text-sm font-black text-primary">Accenture</span>
+                </div>
+              </motion.div>
+
+              {/* Available Badge */}
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-semibold"
+              >
+                <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 animate-pulse" />
+                <span>Available for new opportunities</span>
+              </motion.div>
+            </div>
             
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight font-headline mb-4 sm:mb-6">
               I'm <span className="text-gradient">Dilip Vishwakarma</span>
@@ -106,24 +127,6 @@ export default function Hero() {
             <div className="relative group cursor-pointer max-w-[280px] sm:max-w-[400px] w-full">
               <div className="absolute inset-0 rounded-[2rem] sm:rounded-[2.5rem] bg-gradient-to-br from-primary via-secondary to-accent blur-2xl sm:blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
               
-              {/* Floating Badge at Top Left */}
-              <motion.div 
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-6 -left-6 sm:-top-10 sm:-left-10 z-20 glass-card p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl border-white/20"
-              >
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <div className="h-8 w-8 sm:h-12 sm:w-12 rounded-full bg-primary/20 flex items-center justify-center relative">
-                    <div className="h-2 w-2 sm:h-4 sm:w-4 rounded-full bg-primary animate-ping absolute"></div>
-                    <div className="h-2 w-2 sm:h-4 sm:w-4 rounded-full bg-primary"></div>
-                  </div>
-                  <div>
-                    <p className="text-[8px] sm:text-[10px] text-muted-foreground font-bold uppercase tracking-widest">Currently at</p>
-                    <p className="text-sm sm:text-base font-black">Accenture</p>
-                  </div>
-                </div>
-              </motion.div>
-
               {/* Floating Interaction Hint */}
               <motion.div 
                 animate={{ scale: [1, 1.1, 1] }}
