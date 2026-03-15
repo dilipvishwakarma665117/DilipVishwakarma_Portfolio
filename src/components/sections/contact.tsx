@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useForm } from "react-hook-form";
@@ -19,9 +18,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { Loader2, CheckCircle } from "lucide-react";
+import { Loader2, CheckCircle, Mail, MapPin } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { contactData } from "@/lib/data";
 
 const formSchema = z.object({
   name: z.string()
@@ -69,19 +69,11 @@ export default function Contact() {
       return;
     }
 
-    const fullMessage = `
-      Name: ${values.name}
-      Email: ${values.email}
-      
-      Message:
-      ${values.message}
-    `;
-
     const templateParams = {
         from_name: values.name,
         from_email: values.email,
         to_name: 'Dilip Vishwakarma',
-        message: fullMessage,
+        message: values.message,
     };
 
     try {
@@ -100,96 +92,144 @@ export default function Contact() {
   }
   
   return (
-    <motion.section 
-      id="contact" 
-      className="bg-transparent"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.8 }}
-    >
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Get In Touch</h2>
-          <p className="mx-auto mt-4 max-w-3xl text-muted-foreground md:text-xl">
-            Have a question or want to work together? Feel free to reach out.
+    <section id="contact" className="section-padding relative">
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-64 h-64 bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">
+            <span className="text-gradient">Get In Touch</span>
+          </h2>
+          <p className="mx-auto max-w-2xl text-muted-foreground text-lg">
+            Have a project in mind or just want to say hi? I'd love to hear from you.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="mt-12 flex justify-center">
-          <Card className="glass-morphism w-full max-w-2xl">
-            <CardHeader>
-              <CardTitle>Send a Message</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {formState === 'success' ? (
-                <div className="flex flex-col items-center justify-center h-full text-center gap-4 py-12">
-                  <CheckCircle className="w-16 h-16 text-green-500" />
-                  <h3 className="text-xl font-semibold">Thank You!</h3>
-                  <p className="text-muted-foreground">Your message has been sent successfully. I'll get back to you soon.</p>
-                   <Button onClick={() => setFormState('idle')}>Send Another Message</Button>
+        <div className="grid gap-12 lg:grid-cols-2 max-w-5xl mx-auto items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <div className="flex items-start gap-6 group">
+              <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <Mail className="h-6 w-6" />
+              </div>
+              <div>
+                <h4 className="text-xl font-bold mb-1">Email Me</h4>
+                <p className="text-muted-foreground">dileepv9721@gmail.com</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start gap-6 group">
+              <div className="h-12 w-12 rounded-2xl bg-accent/10 flex items-center justify-center border border-accent/20 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                <MapPin className="h-6 w-6" />
+              </div>
+              <div>
+                <h4 className="text-xl font-bold mb-1">Location</h4>
+                <p className="text-muted-foreground">{contactData.location}</p>
+              </div>
+            </div>
+
+            <Card className="glass-card border border-white/5 p-6 rounded-3xl">
+              <p className="italic text-muted-foreground mb-4">
+                "Dilip is a dedicated professional who always ensures the highest quality. His automation skills are a great asset."
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-full bg-gradient-to-r from-primary to-secondary" />
+                <div>
+                  <p className="font-bold">Colleague</p>
+                  <p className="text-xs text-muted-foreground">Accenture India</p>
                 </div>
-              ) : (
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Name</FormLabel>
-                          <FormControl>
-                            <Input placeholder="Your Name" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Email</FormLabel>
-                          <FormControl>
-                            <Input placeholder="your.email@example.com" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Message</FormLabel>
-                          <FormControl>
-                            <Textarea placeholder="Tell me how I can help." rows={5} {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <Button type="submit" className="w-full" disabled={formState === 'submitting'}>
-                      {formState === 'submitting' ? (
-                        <>
-                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                          Sending...
-                        </>
-                      ) : (
-                        "Send Message"
-                      )}
+              </div>
+            </Card>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <Card className="glass-card border border-white/5 rounded-3xl overflow-hidden">
+              <CardHeader className="bg-primary/5 pb-4">
+                <CardTitle>Send a Message</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-6">
+                {formState === 'success' ? (
+                  <div className="flex flex-col items-center justify-center h-full text-center gap-4 py-12">
+                    <CheckCircle className="w-16 h-16 text-emerald-500 animate-bounce" />
+                    <h3 className="text-2xl font-bold">Message Sent!</h3>
+                    <p className="text-muted-foreground">Thank you for reaching out. I'll get back to you shortly.</p>
+                    <Button onClick={() => setFormState('idle')} variant="outline" className="rounded-xl mt-4">
+                      Send Another
                     </Button>
-                  </form>
-                </Form>
-              )}
-            </CardContent>
-          </Card>
+                  </div>
+                ) : (
+                  <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                      <FormField
+                        control={form.control}
+                        name="name"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="font-bold">Name</FormLabel>
+                            <FormControl>
+                              <Input placeholder="John Doe" {...field} className="rounded-xl border-white/10 bg-white/5 focus:bg-white/10" />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="font-bold">Email</FormLabel>
+                            <FormControl>
+                              <Input placeholder="john@example.com" {...field} className="rounded-xl border-white/10 bg-white/5 focus:bg-white/10" />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <FormField
+                        control={form.control}
+                        name="message"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="font-bold">Message</FormLabel>
+                            <FormControl>
+                              <Textarea placeholder="How can I help you today?" rows={4} {...field} className="rounded-xl border-white/10 bg-white/5 focus:bg-white/10 resize-none" />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <Button type="submit" className="w-full btn-gradient h-12 rounded-xl border-none" disabled={formState === 'submitting'}>
+                        {formState === 'submitting' ? (
+                          <>
+                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                            Sending...
+                          </>
+                        ) : (
+                          "Send Message"
+                        )}
+                      </Button>
+                    </form>
+                  </Form>
+                )}
+              </CardContent>
+            </Card>
+          </motion.div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
-
-    

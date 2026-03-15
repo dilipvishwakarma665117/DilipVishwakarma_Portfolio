@@ -11,15 +11,18 @@ import { motion } from "framer-motion";
 
 export default function Projects() {
   return (
-    <section id="projects" className="section-padding bg-muted/30">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="projects" className="section-padding relative">
+      <div className="absolute inset-0 bg-primary/5 -skew-y-3 pointer-events-none"></div>
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">Featured Work</h2>
+          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">
+            <span className="text-gradient">Featured Work</span>
+          </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground text-lg">
             A curated selection of my projects, showcasing my expertise in manual and automation testing.
           </p>
@@ -34,7 +37,7 @@ export default function Projects() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="group flex flex-col h-full overflow-hidden rounded-2xl border-border/50 bg-card hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 hover:-translate-y-2">
+              <Card className="group flex flex-col h-full overflow-hidden rounded-2xl border border-white/5 bg-card/50 glass-card hover:border-primary/50 transition-all duration-500 hover:-translate-y-2">
                 <div className="relative h-56 w-full overflow-hidden">
                   <Image
                     src={project.imageUrl}
@@ -43,8 +46,8 @@ export default function Projects() {
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                     data-ai-hint={project.imageHint}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                    <p className="text-white text-sm font-medium">Click to view project details</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                    <p className="text-primary-foreground text-sm font-medium">Click to view project details</p>
                   </div>
                 </div>
                 <CardHeader className="pb-2">
@@ -53,7 +56,7 @@ export default function Projects() {
                       {project.role}
                     </Badge>
                   </div>
-                  <CardTitle className="text-2xl font-bold leading-tight">{project.title}</CardTitle>
+                  <CardTitle className="text-2xl font-bold leading-tight group-hover:text-primary transition-colors">{project.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-1 pt-0">
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6">
@@ -61,13 +64,13 @@ export default function Projects() {
                   </p>
                   <div className="flex flex-wrap gap-2 mt-auto">
                       {project.tags.map(tag => (
-                          <Badge key={tag} variant="outline" className="text-[10px] uppercase tracking-wider rounded-md border-border/60">
+                          <Badge key={tag} variant="outline" className="text-[10px] uppercase tracking-wider rounded-md border-border/60 hover:border-primary hover:text-primary transition-colors">
                             {tag}
                           </Badge>
                       ))}
                   </div>
                 </CardContent>
-                <CardFooter className="pt-4 border-t border-border/50">
+                <CardFooter className="pt-4 border-t border-white/5">
                   {project.githubUrl ? (
                     <Link href={project.githubUrl} target="_blank" className="w-full">
                       <Button variant="ghost" className="w-full group/btn hover:bg-primary hover:text-white rounded-xl">
@@ -77,7 +80,7 @@ export default function Projects() {
                       </Button>
                     </Link>
                   ) : (
-                    <Button disabled variant="outline" className="w-full rounded-xl opacity-50">
+                    <Button disabled variant="outline" className="w-full rounded-xl opacity-50 border-white/10">
                       Internal Corporate Project
                     </Button>
                   )}

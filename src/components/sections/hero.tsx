@@ -30,9 +30,10 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative flex min-h-screen items-center overflow-hidden bg-transparent pt-32 pb-20">
-      {/* Abstract Background Shapes */}
-      <div className="absolute top-1/4 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-1/4 -right-24 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
+      {/* Animated Background Blobs */}
+      <div className="absolute top-1/4 -left-24 w-96 h-96 bg-primary/20 rounded-full blur-[120px] animate-blob pointer-events-none"></div>
+      <div className="absolute bottom-1/4 -right-24 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] animate-blob animation-delay-2000 pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/20 rounded-full blur-[120px] animate-blob animation-delay-4000 pointer-events-none"></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid items-center gap-12 md:grid-cols-2">
@@ -48,7 +49,7 @@ export default function Hero() {
             </div>
             
             <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl font-headline mb-4">
-              I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">{heroData.name.split(' ')[0]}</span>
+              I'm <span className="text-gradient">{heroData.name.split(' ')[0]}</span>
             </h1>
             
             <div className="mb-6 h-12 md:h-10 flex justify-center md:justify-start">
@@ -62,7 +63,7 @@ export default function Hero() {
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">
               <AlertDialog>
                 <AlertDialogTrigger asChild>
-                  <Button size="lg" className="btn-gradient px-8 h-14 rounded-2xl shadow-lg shadow-primary/20 group">
+                  <Button size="lg" className="btn-gradient px-8 h-14 rounded-2xl group border-none">
                     <ArrowDownToLine className="mr-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
                     Download Resume
                   </Button>
@@ -76,13 +77,13 @@ export default function Hero() {
                   </AlertDialogHeader>
                   <AlertDialogFooter>
                     <AlertDialogCancel className="rounded-xl">Cancel</AlertDialogCancel>
-                    <AlertDialogAction onClick={handleDownload} className="btn-gradient rounded-xl">Download</AlertDialogAction>
+                    <AlertDialogAction onClick={handleDownload} className="btn-gradient rounded-xl border-none">Download</AlertDialogAction>
                   </AlertDialogFooter>
                 </AlertDialogContent>
               </AlertDialog>
               
               <Link href="#contact" passHref>
-                <Button size="lg" variant="outline" className="h-14 px-8 rounded-2xl border-2 hover:bg-muted transition-all">
+                <Button size="lg" variant="outline" className="h-14 px-8 rounded-2xl border-2 border-primary/20 hover:bg-primary/10 hover:border-primary transition-all">
                   <Send className="mr-2 h-4 w-4" />
                   Get in Touch
                 </Button>
@@ -96,14 +97,15 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.2 }}
             className="flex justify-center"
           >
-            <div className="relative">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary to-secondary blur-3xl opacity-20 animate-pulse"></div>
+            <div className="relative group">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary via-secondary to-accent blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
               
-              {/* Floating Badge at Top Right - Updated position as requested */}
-              <div className="absolute -top-6 -right-6 z-20 glass-card p-4 rounded-2xl shadow-2xl animate-float">
+              {/* Floating Badge at Top Right */}
+              <div className="absolute -top-8 -right-8 z-20 glass-card p-4 rounded-2xl shadow-2xl animate-float">
                 <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
-                    <div className="h-3 w-3 rounded-full bg-primary animate-ping"></div>
+                  <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center relative">
+                    <div className="h-3 w-3 rounded-full bg-primary animate-ping absolute"></div>
+                    <div className="h-3 w-3 rounded-full bg-primary"></div>
                   </div>
                   <div>
                     <p className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">Currently at</p>
@@ -112,14 +114,14 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="relative z-10 p-2 rounded-3xl border-2 border-white/10 glass-card">
+              <div className="relative z-10 p-2 rounded-3xl border border-white/10 glass-card">
                 <Image
                   src={heroData.portraitUrl}
                   alt="Dilip Vishwakarma"
                   width={400}
                   height={400}
                   priority
-                  className="rounded-2xl object-cover shadow-2xl hover:brightness-110 transition-all duration-700"
+                  className="rounded-2xl object-cover shadow-2xl transition-all duration-700 group-hover:scale-[1.02]"
                 />
               </div>
             </div>
