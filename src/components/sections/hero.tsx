@@ -21,8 +21,9 @@ import { motion } from "framer-motion";
 export default function Hero() {
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = heroData.resumeUrl;
-    link.download = 'Dilip_Vishwakarma_Resume.pdf';
+    // Ensure the filename matches what's expected for download
+    link.href = '/Dilip_Resume_3.pdf';
+    link.download = 'Dilip_Resume_3.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -98,6 +99,20 @@ export default function Hero() {
           >
             <div className="relative">
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary via-accent to-secondary blur-3xl opacity-30 animate-pulse"></div>
+              
+              {/* Floating Badge - Repositioned to the top-right for a modern look */}
+              <div className="absolute -top-6 -right-6 z-20 glass-card p-4 rounded-2xl shadow-2xl animate-float">
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                    <div className="h-3 w-3 rounded-full bg-green-500 animate-ping"></div>
+                  </div>
+                  <div>
+                    <p className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">Currently at</p>
+                    <p className="text-sm font-bold">Accenture</p>
+                  </div>
+                </div>
+              </div>
+
               <div className="relative z-10 p-2 rounded-3xl border-2 border-white/10 glass-card">
                 <Image
                   src={heroData.portraitUrl}
@@ -107,18 +122,6 @@ export default function Hero() {
                   priority
                   className="rounded-2xl object-cover shadow-2xl grayscale-[20%] hover:grayscale-0 transition-all duration-700"
                 />
-              </div>
-              {/* Floating Badge */}
-              <div className="absolute -bottom-6 -left-6 glass-card p-4 rounded-2xl shadow-2xl animate-float">
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-green-500/20 flex items-center justify-center">
-                    <div className="h-3 w-3 rounded-full bg-green-500 animate-ping"></div>
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground font-medium">Currently at</p>
-                    <p className="text-sm font-bold">Accenture</p>
-                  </div>
-                </div>
               </div>
             </div>
           </motion.div>
