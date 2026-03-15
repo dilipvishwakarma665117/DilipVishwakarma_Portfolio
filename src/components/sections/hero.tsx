@@ -62,17 +62,6 @@ export default function Hero() {
                   <span className="text-xs sm:text-sm font-black text-primary">Accenture</span>
                 </div>
               </motion.div>
-
-              {/* Available Badge */}
-              <motion.div 
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-semibold"
-              >
-                <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 animate-pulse" />
-                <span>Available for new opportunities</span>
-              </motion.div>
             </div>
             
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight font-headline mb-4 sm:mb-6">
@@ -122,7 +111,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="flex justify-center order-1 lg:order-2"
+            className="flex flex-col items-center justify-center order-1 lg:order-2"
           >
             <div className="relative group cursor-pointer max-w-[280px] sm:max-w-[400px] w-full">
               <div className="absolute inset-0 rounded-[2rem] sm:rounded-[2.5rem] bg-gradient-to-br from-primary via-secondary to-accent blur-2xl sm:blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
@@ -147,6 +136,18 @@ export default function Hero() {
                 />
               </div>
             </div>
+
+            {/* Available Badge moved below picture */}
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="mt-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-semibold shadow-lg shadow-primary/5"
+            >
+              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 animate-pulse" />
+              <span>Available for new opportunities</span>
+            </motion.div>
           </motion.div>
         </div>
       </div>
