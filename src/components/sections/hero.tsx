@@ -31,8 +31,8 @@ export default function Hero() {
   return (
     <section id="home" className="relative flex min-h-screen items-center overflow-hidden bg-transparent pt-32 pb-20">
       {/* Abstract Background Shapes */}
-      <div className="absolute top-1/4 -left-24 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-1/4 -right-24 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-1/4 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-1/4 -right-24 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid items-center gap-12 md:grid-cols-2">
@@ -97,13 +97,13 @@ export default function Hero() {
             className="flex justify-center"
           >
             <div className="relative">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary to-secondary blur-3xl opacity-30 animate-pulse"></div>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary to-secondary blur-3xl opacity-20 animate-pulse"></div>
               
               {/* Floating Badge at Top Right */}
               <div className="absolute -top-6 -right-6 z-20 glass-card p-4 rounded-2xl shadow-2xl animate-float">
                 <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-green-500/20 flex items-center justify-center">
-                    <div className="h-3 w-3 rounded-full bg-green-500 animate-ping"></div>
+                  <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
+                    <div className="h-3 w-3 rounded-full bg-primary animate-ping"></div>
                   </div>
                   <div>
                     <p className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">Currently at</p>
