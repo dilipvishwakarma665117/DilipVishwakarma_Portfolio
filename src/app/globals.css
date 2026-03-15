@@ -24,29 +24,27 @@
     --border: 214 32% 91%;
     --input: 214 32% 91%;
     --ring: 239 84% 67%;
-    --radius: 0.75rem;
+    --radius: 1rem;
   }
 
   .dark {
     /* Midnight Space Theme - Deep Navy & Vibrant Gradients */
-    --background: 222 47% 5%; /* Deep Slate/Navy */
+    --background: 222 47% 2%; /* Deep Slate/Navy */
     --foreground: 210 40% 98%;
-    --card: 222 47% 8%;
+    --card: 222 47% 4%;
     --card-foreground: 210 40% 98%;
-    --popover: 222 47% 8%;
+    --popover: 222 47% 4%;
     --popover-foreground: 210 40% 98%;
     --primary: 239 84% 67%;
     --primary-foreground: 210 40% 98%;
     --secondary: 262 83% 58%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 217 33% 17%;
+    --muted: 217 33% 12%;
     --muted-foreground: 215 20% 65%;
     --accent: 199 89% 48%;
     --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217 33% 18%;
-    --input: 217 33% 18%;
+    --border: 217 33% 15%;
+    --input: 217 33% 15%;
     --ring: 239 84% 67%;
   }
 }
@@ -54,16 +52,16 @@
 @layer base {
   * {
     @apply border-border;
-    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
   html {
     @apply scroll-smooth;
   }
   body {
     @apply bg-background text-foreground font-body antialiased selection:bg-primary/30;
-    background-image: radial-gradient(at 0% 0%, hsla(239, 84%, 67%, 0.05) 0, transparent 50%),
-                      radial-gradient(at 50% 0%, hsla(262, 83%, 58%, 0.05) 0, transparent 50%),
-                      radial-gradient(at 100% 0%, hsla(199, 89%, 48%, 0.05) 0, transparent 50%);
+    background-image: radial-gradient(at 0% 0%, hsla(239, 84%, 67%, 0.03) 0, transparent 50%),
+                      radial-gradient(at 100% 0%, hsla(262, 83%, 58%, 0.03) 0, transparent 50%),
+                      radial-gradient(at 50% 100%, hsla(199, 89%, 48%, 0.03) 0, transparent 50%);
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-headline tracking-tight;
@@ -71,26 +69,33 @@
 }
 
 .glass-card {
-  @apply bg-card/40 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
+  @apply bg-card/60 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)];
 }
 
 .dark .glass-card {
-  @apply bg-black/40 backdrop-blur-xl border border-white/5;
+  @apply bg-black/40 backdrop-blur-2xl border border-white/5;
 }
 
 .btn-gradient {
-  @apply bg-gradient-to-r from-primary via-secondary to-accent text-white hover:opacity-90 transition-all duration-300 shadow-lg shadow-primary/20;
+  @apply bg-gradient-to-r from-primary via-secondary to-accent text-white hover:opacity-90 transition-all duration-300 shadow-lg shadow-primary/20 active:scale-95;
 }
 
 .text-gradient {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent font-bold;
+  background-size: 200% auto;
+  animation: gradient-text 4s linear infinite;
+}
+
+@keyframes gradient-text {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
 }
 
 @keyframes float {
-  0% { transform: translate(0px, 0px); }
-  33% { transform: translate(15px, -20px); }
-  66% { transform: translate(-10px, 15px); }
-  100% { transform: translate(0px, 0px); }
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
 }
 
 @keyframes blob {
@@ -104,18 +109,18 @@
   animation: blob 7s infinite alternate;
 }
 
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
-
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
 
 .section-padding {
   @apply py-24 sm:py-32;
+}
+
+.hover-lift {
+  @apply hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300;
+}
+
+.glowing-border {
+  @apply relative before:absolute before:inset-0 before:-z-10 before:rounded-[inherit] before:bg-gradient-to-r before:from-primary/50 before:to-accent/50 before:opacity-0 before:blur-sm hover:before:opacity-100 transition-all;
 }
