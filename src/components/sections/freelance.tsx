@@ -83,7 +83,7 @@ export default function Freelance() {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <Link href="#contact" passHref>
-            <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white transition-all duration-300 hover:scale-105">
+            <Button size="lg" className="bg-gradient-to-r from-primary to-secondary text-white transition-all duration-300 hover:scale-105">
               <MessageCircle className="mr-2 h-5 w-5" />
               Get a Free Quote
             </Button>

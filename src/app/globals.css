@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* Light Theme - Modern & Professional */
+    /* Light Theme - Modern & Professional SaaS Style */
     --background: 210 40% 98%; /* #F8FAFC */
     --foreground: 222 47% 11%;
     --card: 0 0% 100%;
@@ -13,11 +13,11 @@
     --popover-foreground: 222 47% 11%;
     --primary: 239 84% 67%; /* Deep Indigo */
     --primary-foreground: 210 40% 98%;
-    --secondary: 199 89% 48%; /* Soft Cyan */
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 262 83% 58%; /* Soft Violet (Replaces Cyan) */
+    --secondary-foreground: 210 40% 98%;
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
-    --accent: 262 83% 58%; /* Soft Purple */
+    --accent: 250 84% 54%; /* Vibrant Indigo */
     --accent-foreground: 210 40% 98%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
@@ -28,7 +28,7 @@
   }
 
   .dark {
-    /* Dark Theme - Sleek & Modern */
+    /* Dark Theme - Sleek & Deep Dark Mode */
     --background: 222 47% 4%; /* Near Black */
     --foreground: 213 31% 91%;
     --card: 222 47% 7%;
@@ -37,11 +37,11 @@
     --popover-foreground: 213 31% 91%;
     --primary: 239 84% 67%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 199 89% 48%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 262 83% 58%; /* Violet */
+    --secondary-foreground: 210 40% 98%;
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
-    --accent: 262 83% 58%;
+    --accent: 250 84% 54%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
@@ -76,7 +76,7 @@
 }
 
 .btn-gradient {
-  @apply bg-gradient-to-r from-primary via-accent to-secondary text-primary-foreground hover:opacity-90 transition-opacity;
+  @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground hover:opacity-90 transition-all duration-300;
 }
 
 @keyframes float {
@@ -91,4 +91,8 @@
 
 .section-padding {
   @apply py-24 sm:py-32;
+}
+
+.animated-footer-bg {
+  @apply bg-gradient-to-b from-transparent to-muted/20;
 }

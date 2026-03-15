@@ -21,7 +21,6 @@ import { motion } from "framer-motion";
 export default function Hero() {
   const handleDownload = () => {
     const link = document.createElement('a');
-    // Ensure the filename matches what's expected for download
     link.href = '/Dilip_Resume_3.pdf';
     link.download = 'Dilip_Resume_3.pdf';
     document.body.appendChild(link);
@@ -49,7 +48,7 @@ export default function Hero() {
             </div>
             
             <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl font-headline mb-4">
-              I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">{heroData.name.split(' ')[0]}</span>
+              I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">{heroData.name.split(' ')[0]}</span>
             </h1>
             
             <div className="mb-6 h-12 md:h-10 flex justify-center md:justify-start">
@@ -98,9 +97,9 @@ export default function Hero() {
             className="flex justify-center"
           >
             <div className="relative">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary via-accent to-secondary blur-3xl opacity-30 animate-pulse"></div>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary to-secondary blur-3xl opacity-30 animate-pulse"></div>
               
-              {/* Floating Badge - Repositioned to the top-right for a modern look */}
+              {/* Floating Badge at Top Right */}
               <div className="absolute -top-6 -right-6 z-20 glass-card p-4 rounded-2xl shadow-2xl animate-float">
                 <div className="flex items-center gap-3">
                   <div className="h-10 w-10 rounded-full bg-green-500/20 flex items-center justify-center">

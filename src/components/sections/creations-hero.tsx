@@ -18,7 +18,7 @@ export default function CreationsHero() {
             transition={{ duration: 0.8 }}
           >
             <div className="relative h-[350px] w-[350px]">
-               <div className="absolute inset-0.5 -m-2 rounded-full bg-gradient-to-r from-primary to-accent opacity-50 blur-xl"></div>
+               <div className="absolute inset-0.5 -m-2 rounded-full bg-gradient-to-r from-primary to-secondary opacity-50 blur-xl"></div>
               <Image
                 src={heroData.portraitUrl}
                 alt="Portrait of Dilip Vishwakarma"
@@ -47,7 +47,7 @@ export default function CreationsHero() {
             </p>
             <div className="mt-8 flex justify-center md:justify-start">
               <Link href="/#contact" passHref>
-                <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white transition-all duration-300 hover:scale-105">
+                <Button size="lg" className="bg-gradient-to-r from-primary to-secondary text-white transition-all duration-300 hover:scale-105">
                   <MessageCircle className="mr-2 h-5 w-5" />
                   Contact Me
                 </Button>
