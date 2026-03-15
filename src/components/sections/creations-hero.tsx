@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function CreationsHero() {
   return (
-    <section className="relative overflow-hidden bg-transparent py-20 md:py-28">
+    <section className="relative overflow-hidden bg-transparent pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <motion.div 
@@ -17,7 +17,7 @@ export default function CreationsHero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative h-[350px] w-[350px]">
+            <div className="relative h-[300px] w-[300px] sm:h-[350px] sm:w-[350px]">
                <div className="absolute inset-0.5 -m-2 rounded-full bg-gradient-to-r from-primary to-secondary opacity-50 blur-xl"></div>
               <Image
                 src={heroData.portraitUrl}

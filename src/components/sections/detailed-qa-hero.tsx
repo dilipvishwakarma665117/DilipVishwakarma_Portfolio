@@ -7,7 +7,7 @@ import { ArrowLeft } from 'lucide-react';
 
 export default function DetailedQaHero() {
   return (
-    <section className="bg-transparent py-20 md:py-28">
+    <section className="bg-transparent pt-24 pb-12 sm:pt-28 sm:pb-16 md:pt-32">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center">
           <motion.h1

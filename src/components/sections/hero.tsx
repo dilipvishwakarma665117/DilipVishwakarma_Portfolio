@@ -31,7 +31,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative flex min-h-screen items-center overflow-hidden bg-transparent pt-28 pb-16 sm:pt-32 sm:pb-20">
+    <section id="home" className="relative flex min-h-[90vh] items-center overflow-hidden bg-transparent pt-20 pb-12 sm:pt-24 sm:pb-16 lg:pt-28">
       {/* Animated Background Blobs */}
       <div className="absolute top-1/4 -left-24 w-72 h-72 sm:w-96 sm:h-96 bg-primary/10 rounded-full blur-[80px] sm:blur-[120px] animate-blob pointer-events-none opacity-60 sm:opacity-100"></div>
       <div className="absolute bottom-1/4 -right-24 w-72 h-72 sm:w-96 sm:h-96 bg-secondary/10 rounded-full blur-[80px] sm:blur-[120px] animate-blob animation-delay-2000 pointer-events-none opacity-60 sm:opacity-100"></div>

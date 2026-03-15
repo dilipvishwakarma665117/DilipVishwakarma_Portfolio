@@ -112,7 +112,7 @@
 }
 
 .section-padding {
-  @apply py-16 sm:py-24 md:py-32;
+  @apply py-12 sm:py-20 md:py-24;
 }
 
 .hover-lift {
@@ -127,12 +127,10 @@
   @apply px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
