@@ -99,7 +99,7 @@ export default function Hero() {
             <div className="relative">
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary to-secondary blur-3xl opacity-20 animate-pulse"></div>
               
-              {/* Floating Badge at Top Right */}
+              {/* Floating Badge at Top Right - Updated position as requested */}
               <div className="absolute -top-6 -right-6 z-20 glass-card p-4 rounded-2xl shadow-2xl animate-float">
                 <div className="flex items-center gap-3">
                   <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
@@ -119,7 +119,7 @@ export default function Hero() {
                   width={400}
                   height={400}
                   priority
-                  className="rounded-2xl object-cover shadow-2xl grayscale-[20%] hover:grayscale-0 transition-all duration-700"
+                  className="rounded-2xl object-cover shadow-2xl hover:brightness-110 transition-all duration-700"
                 />
               </div>
             </div>
