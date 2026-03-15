@@ -3,115 +3,100 @@
 import { aboutData } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { GraduationCap, Briefcase, UserCircle, Code } from "lucide-react";
+import { GraduationCap, Briefcase, UserCircle, Code, Star } from "lucide-react";
 import { motion } from "framer-motion";
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
 
 export default function About() {
   return (
-    <motion.section 
-      id="about" 
-      className="bg-transparent"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ staggerChildren: 0.2 }}
-    >
+    <section id="about" className="section-padding overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div 
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About Me</h2>
-          <p className="mx-auto mt-4 max-w-3xl text-muted-foreground md:text-xl">
-            A passionate quality advocate dedicated to delivering flawless software.
-          </p>
-        </motion.div>
-
-        <div className="mt-12 grid gap-8">
-          {/* Bio Card */}
-          <motion.div variants={cardVariants}>
-            <Card className="glass-morphism h-full">
-              <CardHeader className="flex flex-row items-center gap-4">
-                <UserCircle className="h-8 w-8 text-primary"/>
-                <CardTitle className="text-2xl">Who I Am</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{aboutData.bio}</p>
-              </CardContent>
-            </Card>
+        <div className="grid gap-16 lg:grid-cols-2 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-sm font-medium mb-6">
+              <UserCircle className="h-4 w-4" />
+              <span>Who I Am</span>
+            </div>
+            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl mb-8">Passionate about <span className="text-primary">Software Quality</span></h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              {aboutData.bio}
+            </p>
+            
+            <div className="grid gap-6 sm:grid-cols-2">
+              <Card className="border-none bg-muted/50 p-6 rounded-2xl shadow-none">
+                <Star className="h-10 w-10 text-primary mb-4" />
+                <h4 className="font-bold text-xl mb-2">Quality First</h4>
+                <p className="text-sm text-muted-foreground">Ensuring every release meets the highest standards of excellence.</p>
+              </Card>
+              <Card className="border-none bg-muted/50 p-6 rounded-2xl shadow-none">
+                <Code className="h-10 w-10 text-secondary mb-4" />
+                <h4 className="font-bold text-xl mb-2">Modern Stack</h4>
+                <p className="text-sm text-muted-foreground">Leveraging Selenium, Java, and TestNG for robust automation.</p>
+              </Card>
+            </div>
           </motion.div>
 
-          <div className="grid gap-8 md:grid-cols-3">
-            {/* Education Card */}
-            <motion.div variants={cardVariants}>
-              <Card className="glass-morphism h-full">
-                <CardHeader className="flex flex-row items-center gap-4">
-                  <GraduationCap className="h-8 w-8 text-primary"/>
-                  <CardTitle>Education</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  <h3 className="font-semibold">{aboutData.education.degree}</h3>
-                  <p className="text-sm text-muted-foreground">{aboutData.education.university}</p>
-                  <p className="text-sm text-muted-foreground">{aboutData.education.years}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Career Journey Card */}
-            <motion.div variants={cardVariants}>
-              <Card className="glass-morphism h-full">
-                <CardHeader className="flex flex-row items-center gap-4">
-                  <Briefcase className="h-8 w-8 text-primary"/>
-                  <CardTitle>Career Journey</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <ul className="space-y-4">
-                        {aboutData.career.map((job, index) => (
-                            <li key={job.role} className="flex items-center gap-4">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold">{aboutData.career.length - index}</div>
-                                <div>
-                                    <h3 className="font-semibold">{job.role}</h3>
-                                    <p className="text-sm text-muted-foreground">{job.year}</p>
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Skills Card */}
-            <motion.div variants={cardVariants}>
-              <Card className="glass-morphism h-full">
-                <CardHeader className="flex flex-row items-center gap-4">
-                  <Code className="h-8 w-8 text-primary"/>
-                  <CardTitle>Core Skills</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {aboutData.skills.map((skill) => (
-                      <Badge key={skill} variant="secondary" className="text-sm">{skill}</Badge>
-                    ))}
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold flex items-center gap-3">
+                <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <Briefcase className="h-4 w-4 text-primary" />
+                </div>
+                Professional Experience
+              </h3>
+              <div className="space-y-6 pl-4 border-l-2 border-primary/20 ml-4">
+                {aboutData.career.map((job) => (
+                  <div key={job.role} className="relative">
+                    <div className="absolute -left-[25px] top-1 h-4 w-4 rounded-full bg-primary border-4 border-background"></div>
+                    <p className="text-xs font-bold text-primary mb-1">{job.year}</p>
+                    <h4 className="font-bold text-lg">{job.role}</h4>
+                    <p className="text-sm text-muted-foreground">Accenture</p>
                   </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-4 pt-6">
+              <h3 className="text-2xl font-bold flex items-center gap-3">
+                <div className="h-8 w-8 rounded-lg bg-secondary/10 flex items-center justify-center">
+                  <GraduationCap className="h-4 w-4 text-secondary" />
+                </div>
+                Academic Background
+              </h3>
+              <div className="p-6 rounded-2xl bg-card border border-border/50">
+                <p className="text-xs font-bold text-secondary mb-1">{aboutData.education.years}</p>
+                <h4 className="font-bold text-lg">{aboutData.education.degree}</h4>
+                <p className="text-sm text-muted-foreground">{aboutData.education.university}</p>
+              </div>
+            </div>
+
+            <div className="space-y-4 pt-6">
+              <h3 className="text-2xl font-bold flex items-center gap-3">
+                <div className="h-8 w-8 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <Code className="h-4 w-4 text-accent" />
+                </div>
+                Core Expertise
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {aboutData.skills.map((skill) => (
+                  <Badge key={skill} variant="secondary" className="px-4 py-1.5 rounded-full bg-accent/5 text-accent border border-accent/20 hover:bg-accent hover:text-white transition-colors">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

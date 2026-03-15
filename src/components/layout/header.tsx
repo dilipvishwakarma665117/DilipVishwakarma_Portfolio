@@ -16,7 +16,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -24,57 +24,52 @@ export default function Header() {
   
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
-  const NavLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
-    <Link href={href} passHref>
-      <Button variant="link" className="text-foreground/80 hover:text-foreground hover:no-underline transition-colors relative group" onClick={closeMobileMenu}>
-        <span>{children}</span>
-        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-      </Button>
-    </Link>
-  );
-
   return (
     <header className={cn(
-      "sticky top-0 z-50 w-full transition-all duration-300",
-      isScrolled ? "border-b border-white/10 bg-background/80 backdrop-blur-sm" : "bg-transparent"
+      "fixed top-0 z-50 w-full transition-all duration-300 px-4 pt-4",
     )}>
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2 font-bold text-lg" aria-label="Home">
-          <DVLogo className="h-6 w-6 text-foreground" />
-          <span className="hidden sm:inline">Dilip's Digital Domain</span>
+      <div className={cn(
+        "container mx-auto flex h-16 items-center justify-between px-6 rounded-2xl transition-all duration-300",
+        isScrolled ? "bg-background/70 backdrop-blur-lg border border-border shadow-lg" : "bg-transparent"
+      )}>
+        <Link href="/" className="flex items-center gap-2 font-bold text-xl" aria-label="Home">
+          <DVLogo className="h-7 w-7 text-primary" />
+          <span className="hidden sm:inline font-headline tracking-tighter">DILIP</span>
         </Link>
-        <nav className="hidden items-center gap-4 md:flex">
+        
+        <nav className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (
-            <NavLink key={link.href} href={link.href}>{link.name}</NavLink>
+            <Link key={link.href} href={link.href} passHref>
+              <Button variant="ghost" className="text-sm font-medium hover:text-primary transition-colors">
+                {link.name}
+              </Button>
+            </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
+
+        <div className="flex items-center gap-3">
           <ThemeToggle />
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
-                <Menu />
+              <Button variant="outline" size="icon" className="md:hidden rounded-full">
+                <Menu className="h-5 w-5" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px] glass-morphism">
+            <SheetContent side="right" className="w-[300px] border-l border-border/50 bg-background/95 backdrop-blur-xl">
                <SheetHeader className="mb-8 flex flex-row justify-between items-center">
                  <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                   <Link href="/" className="flex items-center gap-2 font-bold text-lg" onClick={closeMobileMenu}>
-                    <DVLogo className="h-6 w-6 text-foreground" />
+                    <DVLogo className="h-6 w-6 text-primary" />
                     <span>Dilip's Domain</span>
                   </Link>
-                   <Button variant="ghost" size="icon" onClick={closeMobileMenu}>
-                    <X/>
-                    <span className="sr-only">Close menu</span>
-                  </Button>
                 </SheetHeader>
-              <div className="p-4">
-                <nav className="flex flex-col items-start gap-4">
-                  {navLinks.map((link) => (
-                    <NavLink key={link.href} href={link.href}>{link.name}</NavLink>
-                  ))}
-                </nav>
+              <div className="flex flex-col gap-4 mt-8">
+                {navLinks.map((link) => (
+                  <Link key={link.href} href={link.href} onClick={closeMobileMenu} className="text-lg font-medium px-4 py-2 hover:bg-muted rounded-lg transition-colors">
+                    {link.name}
+                  </Link>
+                ))}
               </div>
             </SheetContent>
           </Sheet>
