@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion } from 'framer-motion';
@@ -11,26 +12,37 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-import { Quote } from 'lucide-react';
+import { Quote, Sparkles } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <Card className="glass-card h-full border-white/10 group hover:border-primary/50 transition-all duration-500 overflow-hidden">
-    <CardContent className="p-8 flex flex-col h-full relative">
-      <div className="absolute top-4 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
-        <Quote className="h-12 w-12 text-primary rotate-180" />
+  <Card className="glass-card h-full border-white/10 group hover:border-primary/50 transition-all duration-500 overflow-hidden relative">
+    <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors" />
+    <CardContent className="p-8 flex flex-col h-full relative z-10">
+      <div className="mb-6">
+        <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-4 border border-primary/20 shadow-lg shadow-primary/5">
+          <Quote className="h-6 w-6 text-primary" />
+        </div>
       </div>
       
-      <p className="text-muted-foreground mb-8 text-base md:text-lg italic leading-relaxed relative z-10">
+      <p className="text-muted-foreground mb-8 text-lg font-medium italic leading-relaxed">
         "{testimonial.text}"
       </p>
       
       <div className="mt-auto pt-6 border-t border-white/5 flex items-center gap-4">
-        <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary to-secondary shrink-0" />
+        <div className="h-12 w-12 rounded-full bg-gradient-to-br from-primary via-secondary to-accent p-0.5 shadow-xl">
+          <div className="h-full w-full rounded-full bg-background flex items-center justify-center font-bold text-primary text-xs">
+            {testimonial.author.split(' ').map(n => n[0]).join('')}
+          </div>
+        </div>
         <div className="flex flex-col">
-          <p className="font-bold text-base sm:text-lg text-primary">{testimonial.author}</p>
-          <p className="text-[10px] sm:text-xs font-black text-muted-foreground uppercase tracking-[0.2em]">
-            {testimonial.company}
-          </p>
+          <p className="font-bold text-lg text-foreground group-hover:text-primary transition-colors">{testimonial.author}</p>
+          <div className="flex items-center gap-1.5">
+            <Sparkles className="h-3 w-3 text-accent animate-pulse" />
+            <p className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em]">
+              {testimonial.company}
+            </p>
+          </div>
         </div>
       </div>
     </CardContent>
@@ -38,9 +50,17 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
 );
 
 export default function Testimonials() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
+
   return (
     <section id="testimonials" className="section-padding relative overflow-hidden bg-muted/5">
-      {/* Subtle Background Glow */}
+      {/* Background Decorative Element */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/2 blur-[120px] pointer-events-none" />
       
       <div className="container relative z-10">
@@ -48,17 +68,21 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-4">
-            Client <span className="text-gradient">Voices</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold mb-6">
+            <Quote className="h-4 w-4" />
+            <span>Success Stories</span>
+          </div>
+          <h2 className="text-4xl sm:text-6xl font-black tracking-tight mb-6">
+            Trusted by <span className="text-gradient">Clients</span>
           </h2>
-          <p className="mx-auto max-w-2xl text-sm sm:text-lg text-muted-foreground leading-relaxed px-4">
-            Stories of successful collaborations and high-quality digital solutions delivered to partners.
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed px-4">
+            Hear from the partners I've collaborated with to build high-quality digital solutions.
           </p>
         </motion.div>
 
-        <div className="relative mt-8 px-2 sm:px-12">
+        <div className="relative mt-8">
           <Carousel
             opts={{
               align: 'start',
@@ -72,19 +96,19 @@ export default function Testimonials() {
             ]}
             className="w-full"
           >
-            <CarouselContent className="-ml-4">
+            <CarouselContent className="-ml-4 sm:-ml-6">
               {testimonialsData.map((testimonial) => (
-                <CarouselItem key={testimonial.id} className="pl-4 basis-full md:basis-1/2 lg:basis-1/2">
-                  <div className="p-1 h-full">
+                <CarouselItem key={testimonial.id} className="pl-4 sm:pl-6 basis-full md:basis-1/2 lg:basis-1/2">
+                  <div className="p-2 h-full">
                     <TestimonialCard testimonial={testimonial} />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
             
-            <div className="hidden sm:flex items-center justify-center gap-4 mt-12">
-              <CarouselPrevious className="static h-12 w-12 rounded-2xl glass-card border-white/10 hover:bg-primary hover:text-white transition-all translate-y-0" />
-              <CarouselNext className="static h-12 w-12 rounded-2xl glass-card border-white/10 hover:bg-primary hover:text-white transition-all translate-y-0" />
+            <div className="flex items-center justify-center gap-6 mt-12">
+              <CarouselPrevious className="static h-14 w-14 rounded-2xl glass-card border-white/10 hover:bg-primary hover:text-white hover:border-primary transition-all translate-y-0 shadow-lg" />
+              <CarouselNext className="static h-14 w-14 rounded-2xl glass-card border-white/10 hover:bg-primary hover:text-white hover:border-primary transition-all translate-y-0 shadow-lg" />
             </div>
           </Carousel>
         </div>
