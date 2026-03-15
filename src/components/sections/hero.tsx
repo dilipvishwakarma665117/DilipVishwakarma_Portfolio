@@ -106,11 +106,11 @@ export default function Hero() {
             <div className="relative group cursor-pointer max-w-[280px] sm:max-w-[400px] w-full">
               <div className="absolute inset-0 rounded-[2rem] sm:rounded-[2.5rem] bg-gradient-to-br from-primary via-secondary to-accent blur-2xl sm:blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
               
-              {/* Floating Badge at Top Right */}
+              {/* Floating Badge at Top Left */}
               <motion.div 
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-6 -right-6 sm:-top-10 sm:-right-10 z-20 glass-card p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl border-white/20"
+                className="absolute -top-6 -left-6 sm:-top-10 sm:-left-10 z-20 glass-card p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl border-white/20"
               >
                 <div className="flex items-center gap-3 sm:gap-4">
                   <div className="h-8 w-8 sm:h-12 sm:w-12 rounded-full bg-primary/20 flex items-center justify-center relative">
