@@ -37,7 +37,9 @@ export default function Projects() {
             visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
           }}
         >
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Featured Projects</h2>
+          <h2 className="text-3xl font-bold tracking-tighter text-[#08244C] sm:text-4xl md:text-5xl font-headline">
+            Featured <span className="text-[#B89748] italic font-serif font-normal">Projects</span>
+          </h2>
           <p className="mx-auto mt-4 max-w-3xl text-muted-foreground md:text-xl">
             A glimpse into my work and personal explorations in software quality.
           </p>

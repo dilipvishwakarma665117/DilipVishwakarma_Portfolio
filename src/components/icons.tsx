@@ -1,34 +1,15 @@
-import type { SVGProps } from "react";
+import type { ComponentPropsWithoutRef } from "react";
 import { cn } from "@/lib/utils";
 
-export function DVLogo(props: SVGProps<SVGSVGElement>) {
+export function DVLogo({ className, ...props }: ComponentPropsWithoutRef<"img">) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="32"
-      height="32"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-      className={cn("logo-animate", props.className)}
-    >
-      <path className="logo-path" />
-      <text
-        x="12"
-        y="12"
-        textAnchor="middle"
-        dominantBaseline="middle"
-        fontSize="14"
-        fontWeight="bold"
-        fill="currentColor"
-        stroke="none"
-      >
-        D
-      </text>
-    </svg>
+    <div className={cn("overflow-hidden rounded-full relative flex items-center justify-center shrink-0 border border-white/10", className)}>
+      <img
+        src="/logo.png"
+        alt="DV Logo"
+        className="w-full h-full object-cover scale-[1.02] transition-transform duration-300 hover:scale-[1.12]"
+        {...props}
+      />
+    </div>
   );
 }

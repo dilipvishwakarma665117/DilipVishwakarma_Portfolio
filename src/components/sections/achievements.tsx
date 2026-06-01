@@ -24,7 +24,7 @@ export default function Achievements() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Achievements & Milestones</h2>
+          <h2 className="text-3xl font-bold tracking-tighter text-[#08244C] sm:text-4xl md:text-5xl font-headline">Key <span className="text-[#B89748] italic font-serif font-normal">Achievements</span></h2>
           <p className="mx-auto mt-4 max-w-3xl text-muted-foreground md:text-xl">
             Proud moments and key accomplishments in my professional journey.
           </p>
@@ -51,8 +51,8 @@ export default function Achievements() {
                   <div className="p-1">
                     <Card className="h-full glass-morphism">
                       <CardContent className="flex flex-col items-center justify-center gap-4 p-6 text-center">
-                        <div className="rounded-full bg-primary/10 p-4">
-                          <Icon className="h-10 w-10 text-primary" strokeWidth={1.5} />
+                        <div className="rounded-full bg-[#B89748]/10 p-4">
+                          <Icon className="h-10 w-10 text-[#B89748]" strokeWidth={1.5} />
                         </div>
                         <h3 className="text-xl font-semibold">{title}</h3>
                         <p className="text-sm text-muted-foreground">

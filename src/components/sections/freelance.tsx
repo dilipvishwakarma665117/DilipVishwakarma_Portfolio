@@ -52,7 +52,7 @@ export default function Freelance() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Let's Build Your Website</h2>
+          <h2 className="text-3xl font-bold tracking-tighter text-[#08244C] sm:text-4xl md:text-5xl font-headline">Freelance <span className="text-[#B89748] italic font-serif font-normal">Services</span></h2>
           <p className="mx-auto mt-4 max-w-3xl text-muted-foreground md:text-xl">
             As a part-time web developer, I build modern, responsive websites to bring your vision to life.
           </p>
@@ -63,8 +63,8 @@ export default function Freelance() {
             <motion.div key={index} variants={cardVariants}>
               <Card className="glass-morphism h-full text-center">
                 <CardHeader className="items-center">
-                  <div className="rounded-full bg-primary/10 p-4">
-                    <service.icon className="h-10 w-10 text-primary" strokeWidth={1.5} />
+                  <div className="rounded-full bg-[#B89748]/10 p-4">
+                    <service.icon className="h-10 w-10 text-[#B89748]" strokeWidth={1.5} />
                   </div>
                   <CardTitle className="mt-4">{service.title}</CardTitle>
                 </CardHeader>
@@ -83,7 +83,7 @@ export default function Freelance() {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <Link href="#contact" passHref>
-            <Button size="lg" className="bg-gradient-to-r from-primary to-accent text-white transition-all duration-300 hover:scale-105">
+            <Button size="lg" className="bg-[#08244C] hover:bg-[#123058] text-white rounded-full px-6 py-2.5 transition-all duration-300 transform hover:scale-[1.02] shadow-md">
               <MessageCircle className="mr-2 h-5 w-5" />
               Get a Free Quote
             </Button>

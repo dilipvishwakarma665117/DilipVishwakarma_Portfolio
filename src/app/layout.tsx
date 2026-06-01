@@ -46,8 +46,8 @@ export default function RootLayout({
       <body className={`${inter.variable} ${montserrat.variable} font-body antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
-          enableSystem
+          forcedTheme="light"
+          enableSystem={false}
           disableTransitionOnChange
         >
           {children}

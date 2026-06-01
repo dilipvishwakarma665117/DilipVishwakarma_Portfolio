@@ -56,7 +56,7 @@ export default function CreationsServices() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">What I Can Build For You</h2>
+          <h2 className="text-3xl font-bold tracking-tighter text-[#08244C] sm:text-4xl md:text-5xl font-headline">What I Can <span className="text-[#B89748] italic font-serif font-normal">Build For You</span></h2>
           <p className="mx-auto mt-4 max-w-3xl text-muted-foreground md:text-xl">
             From personal pages to full-featured business sites, I can bring your vision to life.
           </p>
@@ -84,8 +84,8 @@ export default function CreationsServices() {
                        <Image src={imageUrl} alt={title} fill style={{ objectFit: "cover" }} data-ai-hint={imageHint} />
                     </div>
                     <CardContent className="flex flex-col flex-1 items-center justify-center gap-4 p-6 text-center">
-                      <div className="rounded-full bg-primary/10 p-4">
-                        <Icon className="h-10 w-10 text-primary" strokeWidth={1.5} />
+                      <div className="rounded-full bg-[#B89748]/10 p-4">
+                        <Icon className="h-10 w-10 text-[#B89748]" strokeWidth={1.5} />
                       </div>
                       <CardTitle className="text-xl font-semibold">{title}</CardTitle>
                       <p className="text-sm text-muted-foreground flex-1">

@@ -110,7 +110,7 @@ export default function Contact() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Get In Touch</h2>
+          <h2 className="text-3xl font-bold tracking-tighter text-[#08244C] sm:text-4xl md:text-5xl font-headline">Get In <span className="text-[#B89748] italic font-serif font-normal">Touch</span></h2>
           <p className="mx-auto mt-4 max-w-3xl text-muted-foreground md:text-xl">
             Have a question or want to work together? Feel free to reach out.
           </p>
@@ -119,7 +119,7 @@ export default function Contact() {
         <div className="mt-12 flex justify-center">
           <Card className="glass-morphism w-full max-w-2xl">
             <CardHeader>
-              <CardTitle>Send a Message</CardTitle>
+              <CardTitle className="text-[#08244C] font-headline">Send a Message</CardTitle>
             </CardHeader>
             <CardContent>
               {formState === 'success' ? (
@@ -127,7 +127,7 @@ export default function Contact() {
                   <CheckCircle className="w-16 h-16 text-green-500" />
                   <h3 className="text-xl font-semibold">Thank You!</h3>
                   <p className="text-muted-foreground">Your message has been sent successfully. I'll get back to you soon.</p>
-                   <Button onClick={() => setFormState('idle')}>Send Another Message</Button>
+                   <Button onClick={() => setFormState('idle')} className="rounded-full px-6 py-2.5 bg-[#08244C] hover:bg-[#123058] text-white">Send Another Message</Button>
                 </div>
               ) : (
                 <Form {...form}>
@@ -171,7 +171,7 @@ export default function Contact() {
                         </FormItem>
                       )}
                     />
-                    <Button type="submit" className="w-full" disabled={formState === 'submitting'}>
+                    <Button type="submit" className="w-full rounded-full bg-[#08244C] hover:bg-[#123058] text-white py-6" disabled={formState === 'submitting'}>
                       {formState === 'submitting' ? (
                         <>
                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />

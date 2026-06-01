@@ -139,7 +139,7 @@ export default function QaList() {
         </motion.div>
        {visibleItems < filteredData.length && (
           <div className="mt-8 text-center">
-            <Button onClick={loadMore}>Load More</Button>
+            <Button onClick={loadMore} className="rounded-full px-6 py-2 bg-[#08244C] hover:bg-[#123058] text-white shadow-md">Load More</Button>
           </div>
         )}
     </section>
