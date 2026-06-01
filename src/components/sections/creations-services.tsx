@@ -18,28 +18,28 @@ const services = [
     icon: User,
     title: "Personal Portfolios",
     description: "Showcase your skills and projects with a stunning personal website that stands out.",
-    imageUrl: "https://plus.unsplash.com/premium_photo-1678917651747-5c58fda9e7f1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cG9ydGZvbGlvfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
+    imageUrl: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80",
     imageHint: "portfolio website"
-  },
-  {
-    icon: ShoppingCart,
-    title: "E-commerce Stores",
-    description: "Launch your online store with a custom-built, user-friendly e-commerce platform.",
-    imageUrl: "https://media.istockphoto.com/id/1972284692/photo/digital-cart-icon-on-future-tech-background-online-shopping-evolution-futuristic-shopping.webp?a=1&b=1&s=612x612&w=0&k=20&c=K7G451e5Hrxv-Akc7jFFvO7qdDLbt_zwxoS2Fh1AR9o=",
-    imageHint: "online store"
   },
   {
     icon: Briefcase,
     title: "Business Websites",
     description: "Establish a professional online presence for your business to attract and inform customers.",
-    imageUrl: "https://plus.unsplash.com/premium_photo-1678917651747-5c58fda9e7f1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cG9ydGZvbGlvfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
+    imageUrl: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80",
     imageHint: "corporate website"
+  },
+  {
+    icon: ShoppingCart,
+    title: "E-commerce Stores",
+    description: "Launch your online store with a custom-built, user-friendly e-commerce platform.",
+    imageUrl: "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=600&q=80",
+    imageHint: "online store"
   },
   {
     icon: Code,
     title: "Custom Web Apps",
     description: "Need something unique? I can build custom web applications tailored to your specific needs.",
-    imageUrl: "https://images.unsplash.com/photo-1545665277-5937489579f2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydGZvbGlvfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
+    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
     imageHint: "web application"
   },
 ];

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { navLinks } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
@@ -13,7 +13,10 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
   const pathname = usePathname();
+  const isDropdownActive = pathname === "/web-projects";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +32,7 @@ export default function Header() {
       return;
     }
 
-    const sections = ["about", "projects", "achievements", "freelance", "contact"];
+    const sections = ["about", "projects", "achievements", "contact"];
     
     const handleScrollTop = () => {
       if (window.scrollY < 100) {
@@ -68,6 +71,12 @@ export default function Header() {
     };
   }, [pathname]);
 
+  useEffect(() => {
+    if (isMobileMenuOpen && isDropdownActive) {
+      setIsMobileDropdownOpen(true);
+    }
+  }, [isMobileMenuOpen, isDropdownActive]);
+
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   const isLinkActive = (href: string) => {
@@ -103,7 +112,9 @@ export default function Header() {
 
         {/* Center Nav Links */}
         <nav className="hidden items-center gap-6 md:flex h-full">
-          {navLinks.map((link) => {
+          {["About", "Projects", "Achievements", "Contact", "QA Hub"].map((name) => {
+            const link = navLinks.find((l) => l.name === name);
+            if (!link) return null;
             const active = isLinkActive(link.href);
             return (
               <Link
@@ -124,6 +135,67 @@ export default function Header() {
               </Link>
             );
           })}
+
+          {/* Web Projects Dropdown */}
+          <div 
+            className="relative flex items-center h-full"
+            onMouseEnter={() => setIsDropdownOpen(true)}
+            onMouseLeave={() => setIsDropdownOpen(false)}
+          >
+            <button
+              className={cn(
+                "flex items-center gap-1.5 py-1.5 px-0.5 font-headline text-[13px] font-bold tracking-wider uppercase transition-colors duration-300 group focus:outline-none relative",
+                isDropdownActive 
+                  ? "text-white" 
+                  : "text-slate-400 hover:text-white"
+              )}
+            >
+              <span>Web Projects</span>
+              <ChevronDown 
+                className={cn(
+                  "h-3.5 w-3.5 transition-transform duration-300",
+                  isDropdownOpen ? "rotate-180" : "rotate-0"
+                )} 
+              />
+              <span className={cn(
+                "absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#B89748] rounded-full transition-transform duration-300 origin-center",
+                isDropdownActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+              )} />
+            </button>
+            
+            {/* Dropdown Menu */}
+            <div 
+              className={cn(
+                "absolute top-full left-1/2 -translate-x-1/2 mt-0 w-48 bg-white border border-slate-100 rounded-2xl shadow-xl py-2 flex flex-col transition-all duration-300 origin-top z-50",
+                isDropdownOpen 
+                  ? "opacity-100 translate-y-0 scale-100 pointer-events-auto" 
+                  : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
+              )}
+            >
+              <Link
+                href="/web-projects"
+                className={cn(
+                  "px-4 py-2.5 text-xs font-bold tracking-wider uppercase font-headline transition-colors duration-200 text-left rounded-lg mx-2",
+                  pathname === "/web-projects"
+                    ? "text-[#B89748] bg-slate-50"
+                    : "text-[#08244C] hover:text-[#B89748] hover:bg-slate-50"
+                )}
+              >
+                Web Projects
+              </Link>
+              <Link
+                href="/web-projects#services"
+                className={cn(
+                  "px-4 py-2.5 text-xs font-bold tracking-wider uppercase font-headline transition-colors duration-200 text-left rounded-lg mx-2",
+                  pathname === "/web-projects"
+                    ? "text-[#08244C]/60 hover:text-[#B89748] hover:bg-slate-50"
+                    : "text-[#08244C] hover:text-[#B89748] hover:bg-slate-50"
+                )}
+              >
+                Services
+              </Link>
+            </div>
+          </div>
         </nav>
 
         {/* Right CTA / Mobile Menu Trigger */}
@@ -166,7 +238,10 @@ export default function Header() {
               </SheetHeader>
               <div className="py-4">
                 <nav className="flex flex-col items-stretch gap-4">
-                  {navLinks.map((link) => {
+                  {/* Main Sections before Dropdown */}
+                  {["About", "Projects", "Achievements", "Contact", "QA Hub"].map((name) => {
+                    const link = navLinks.find((l) => l.name === name);
+                    if (!link) return null;
                     const active = isLinkActive(link.href);
                     return (
                       <Link
@@ -184,6 +259,59 @@ export default function Header() {
                       </Link>
                     );
                   })}
+
+                  {/* Web Projects Collapsible Menu */}
+                  <div className="flex flex-col">
+                    <button
+                      onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
+                      className={cn(
+                        "flex items-center justify-between py-2.5 px-4 font-headline text-sm font-bold tracking-wider uppercase transition-colors duration-300 border-l-4 rounded-r-md text-left focus:outline-none",
+                        isDropdownActive
+                          ? "text-white bg-white/10 border-[#B89748]"
+                          : "text-slate-300 border-transparent hover:text-white hover:bg-white/5"
+                      )}
+                    >
+                      <span>Web Projects</span>
+                      <ChevronDown 
+                        className={cn(
+                          "h-4 w-4 transition-transform duration-300",
+                          isMobileDropdownOpen ? "rotate-180" : "rotate-0"
+                        )} 
+                      />
+                    </button>
+                    
+                    {/* Collapsible Sub-menu items */}
+                    <div 
+                      className={cn(
+                        "overflow-hidden transition-all duration-300 flex flex-col pl-6 mt-1 gap-1",
+                        isMobileDropdownOpen ? "max-h-24 opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+                      )}
+                    >
+                      <Link
+                        href="/web-projects"
+                        onClick={closeMobileMenu}
+                        className={cn(
+                          "py-2 px-4 font-headline text-xs font-bold tracking-wider uppercase transition-colors duration-300 border-l-2 rounded-r-sm",
+                          pathname === "/web-projects"
+                            ? "text-[#B89748] border-[#B89748] bg-white/5"
+                            : "text-slate-400 border-transparent hover:text-white hover:bg-white/5"
+                        )}
+                      >
+                        Web Projects
+                      </Link>
+                      <Link
+                        href="/web-projects#services"
+                        onClick={closeMobileMenu}
+                        className={cn(
+                          "py-2 px-4 font-headline text-xs font-bold tracking-wider uppercase transition-colors duration-300 border-l-2 rounded-r-sm",
+                          "text-slate-400 border-transparent hover:text-white hover:bg-white/5"
+                        )}
+                      >
+                        Services
+                      </Link>
+                    </div>
+                  </div>
+
                   <Link 
                     href="/#contact" 
                     onClick={closeMobileMenu}

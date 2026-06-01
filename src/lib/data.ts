@@ -5,10 +5,10 @@ export const navLinks = [
   { name: "About", href: "/#about" },
   { name: "Projects", href: "/#projects" },
   { name: "Achievements", href: "/#achievements" },
-  { name: "Freelance", href: "/#freelance" },
   { name: "Contact", href: "/#contact" },
-  { name: "QAHub", href: "/qa" },
-  { name: "My Creations", href: "/my-creations" },
+  { name: "QA Hub", href: "/qa" },
+  { name: "Web Projects", href: "/web-projects" },
+  { name: "Services", href: "/web-projects#services" },
 ];
 
 export const socialLinks = [

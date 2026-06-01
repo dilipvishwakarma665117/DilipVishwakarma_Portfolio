@@ -35,10 +35,10 @@ const cardVariants = {
   },
 };
 
-export default function Freelance() {
+export default function Services() {
   return (
     <motion.section
-      id="freelance"
+      id="services"
       className="bg-transparent"
       initial="hidden"
       whileInView="visible"
@@ -52,7 +52,7 @@ export default function Freelance() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold tracking-tighter text-[#08244C] sm:text-4xl md:text-5xl font-headline">Freelance <span className="text-[#B89748] italic font-serif font-normal">Services</span></h2>
+          <h2 className="text-3xl font-bold tracking-tighter text-[#08244C] sm:text-4xl md:text-5xl font-headline">My <span className="text-[#B89748] italic font-serif font-normal">Services</span></h2>
           <p className="mx-auto mt-4 max-w-3xl text-muted-foreground md:text-xl">
             As a part-time web developer, I build modern, responsive websites to bring your vision to life.
           </p>
