@@ -3,6 +3,7 @@ import { Inter, Montserrat } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
+import PWARegister from '@/components/pwa-register';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const montserrat = Montserrat({
@@ -21,6 +22,12 @@ export const metadata: Metadata = {
     title: "Dilip's Digital Domain",
     description: 'A showcase of my skills, projects, and achievements in software quality assurance.',
     type: 'website',
+  },
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: "Dilip's Domain",
   },
 };
 
@@ -52,6 +59,7 @@ export default function RootLayout({
         >
           {children}
           <Toaster />
+          <PWARegister />
         </ThemeProvider>
       </body>
     </html>
